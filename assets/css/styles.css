@@ -1,0 +1,1297 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, div, span, applet, object, iframe,
+blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+a {
+  transition: all ease 0.3s;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: tahoma, arial, sans-serif;
+}
+
+header#global-header {
+  width: 100%;
+  height: 60px;
+  z-index: 9000;
+  position: fixed;
+  background-image: url(../img/common/m/header_bg.webp);
+  background-size: auto 100%;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 1000px) {
+  header#global-header {
+    height: 194px;
+    background: none;
+    display: block;
+  }
+}
+header#global-header #mainnav-bar {
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  header#global-header #mainnav-bar {
+    display: block;
+    width: 100%;
+    height: 194px;
+    background-image: url(../img/common/header_bg_white.webp);
+    background-position: 50% top;
+    background-repeat: repeat-x;
+    background-size: 1864px;
+    z-index: 9000;
+    position: fixed;
+    pointer-events: none;
+    transition: all ease 0.3s;
+  }
+  header#global-header #mainnav-bar #mainnav-left,
+  header#global-header #mainnav-bar #mainnav-right {
+    pointer-events: all;
+    width: calc((100% - 300px) / 2);
+    left: 20px;
+    position: absolute;
+    height: 73px;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1000px) {
+  header#global-header #mainnav-bar #mainnav-left,
+  header#global-header #mainnav-bar #mainnav-right {
+    width: calc((100% - 380px) / 2);
+    left: 30px;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1600px) {
+  header#global-header #mainnav-bar #mainnav-left,
+  header#global-header #mainnav-bar #mainnav-right {
+    width: calc((100% - 400px) / 2);
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1800px) {
+  header#global-header #mainnav-bar #mainnav-left,
+  header#global-header #mainnav-bar #mainnav-right {
+    width: calc((100% - 440px) / 2);
+  }
+}
+@media screen and (min-width: 1000px) {
+  header#global-header #mainnav-bar #mainnav-left ul,
+  header#global-header #mainnav-bar #mainnav-right ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 4%;
+  }
+  header#global-header #mainnav-bar #mainnav-left ul li,
+  header#global-header #mainnav-bar #mainnav-right ul li {
+    height: 73px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  header#global-header #mainnav-bar #mainnav-left ul li a,
+  header#global-header #mainnav-bar #mainnav-right ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #2b2b2b;
+    font-family: "IM Fell English", Georgia, serif;
+    line-height: 1;
+    transition: color 0.3s ease;
+  }
+  header#global-header #mainnav-bar #mainnav-left ul li a small,
+  header#global-header #mainnav-bar #mainnav-right ul li a small {
+    display: block;
+    font-size: clamp(11px, 1.05vw, 14px);
+    margin-bottom: 3px;
+    white-space: nowrap;
+  }
+  header#global-header #mainnav-bar #mainnav-left ul li a span,
+  header#global-header #mainnav-bar #mainnav-right ul li a span {
+    display: block;
+    font-size: clamp(15px, 1.75vw, 29px);
+    white-space: nowrap;
+  }
+  header#global-header #mainnav-bar #mainnav-left ul li a:hover,
+  header#global-header #mainnav-bar #mainnav-right ul li a:hover,
+  header#global-header #mainnav-bar #mainnav-left ul li a.on,
+  header#global-header #mainnav-bar #mainnav-right ul li a.on {
+    color: #4177c5;
+  }
+  header#global-header #mainnav-bar #mainnav-right {
+    left: auto;
+    right: 20px;
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1200px) {
+  header#global-header #mainnav-bar #mainnav-right {
+    left: auto;
+    right: 30px;
+  }
+}
+header#global-header #subnav-bar {
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  header#global-header #subnav-bar {
+    display: block;
+    width: 100%;
+    height: 36px;
+    background-image: url(../img/common/header_bg_dark.webp);
+    background-position: 50% top;
+    background-repeat: repeat-x;
+    background-size: 1860px;
+    z-index: 8000;
+    position: fixed;
+    top: 79px;
+  }
+  header#global-header #subnav-bar #subnav-left,
+  header#global-header #subnav-bar #subnav-right {
+    width: calc((100% - 400px) / 2);
+    height: 36px;
+    position: absolute;
+    left: 10px;
+    line-height: 36px;
+    text-align: right;
+    text-transform: uppercase;
+  }
+  header#global-header #subnav-bar #subnav-left ul,
+  header#global-header #subnav-bar #subnav-right ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  header#global-header #subnav-bar #subnav-left ul li,
+  header#global-header #subnav-bar #subnav-right ul li {
+    font-family: "IM Fell English", Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0;
+    white-space: nowrap;
+    color: #fff;
+    transition: color ease 0.3s;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header#global-header #subnav-bar #subnav-left ul li,
+  header#global-header #subnav-bar #subnav-right ul li {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header#global-header #subnav-bar #subnav-left ul li a,
+  header#global-header #subnav-bar #subnav-right ul li a {
+    color: #fff;
+  }
+  header#global-header #subnav-bar #subnav-left ul li a:hover,
+  header#global-header #subnav-bar #subnav-right ul li a:hover {
+    color: #4177c5;
+  }
+  header#global-header #subnav-bar #subnav-left ul li.on a,
+  header#global-header #subnav-bar #subnav-right ul li.on a {
+    color: #4177c5;
+  }
+  header#global-header #subnav-bar #subnav-right {
+    left: auto;
+    right: 10px;
+  }
+}
+header#global-header #mainlogo {
+  width: auto;
+  height: 46px;
+  position: fixed;
+  margin-left: 10px;
+  top: 7px;
+  transition: 0.3s all ease;
+}
+header#global-header #mainlogo h1 {
+  margin: 0;
+  padding: 0;
+}
+header#global-header #mainlogo h1 img {
+  width: auto;
+  height: 46px;
+  vertical-align: top;
+}
+@media screen and (min-width: 1000px) {
+  header#global-header #mainlogo {
+    width: 270px;
+    height: 155px;
+    top: 14px;
+    z-index: 9998;
+    left: 50%;
+    margin-left: -140px;
+  }
+  header#global-header #mainlogo h1 img {
+    width: 100%;
+    height: auto;
+  }
+}
+header#global-header .mobnav {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  z-index: 1001;
+  cursor: pointer;
+}
+@media screen and (min-width: 1000px) {
+  header#global-header .mobnav {
+    display: none;
+  }
+}
+header#global-header .mobnav img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+header#global-header .mobile-nav {
+  position: fixed;
+  top: 0;
+  right: calc(-80% - 8px);
+  width: 80%;
+  height: 100vh;
+  background-color: #000;
+  color: #000;
+  z-index: 1000;
+  transition: right 0.3s ease;
+  display: flex;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+@media screen and (min-width: 600px) {
+  header#global-header .mobile-nav {
+    right: calc(-60% - 8px);
+    width: 60%;
+  }
+}
+@media screen and (min-width: 800px) {
+  header#global-header .mobile-nav {
+    right: calc(-40% - 8px);
+    width: 40%;
+  }
+}
+header#global-header .mobile-nav.open {
+  right: 0;
+}
+header#global-header .nav_inner {
+  width: 100%;
+}
+header#global-header .nav_inner ul.mobnav_main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+header#global-header .nav_inner ul.mobnav_main li {
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  text-align: left;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+/* Os fundos do menu mobile (m/menubg-*.webp) eram key visuals dos jogos
+   do Ys e foram removidos. Os itens ficam com fundo branco liso.
+   TODO: gerar um menubg-<slug>[-on].webp por volume com a arte do
+   cliente e devolver aqui uma regra por volume. */
+header#global-header .nav_inner ul.mobnav_main li.mobnav_header img {
+  height: 40px;
+  margin: 10px;
+}
+header#global-header .nav_inner ul.mobnav_main li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+header#global-header .nav_inner ul.mobnav_main li a small,
+header#global-header .nav_inner ul.mobnav_main li a span {
+  display: block;
+  padding-left: 14px;
+  font-family: "IM Fell English", Georgia, serif;
+  color: #2b2b2b;
+  line-height: 1;
+}
+header#global-header .nav_inner ul.mobnav_main li a small {
+  font-size: 12px;
+  padding-top: 12px;
+  margin-bottom: 4px;
+}
+header#global-header .nav_inner ul.mobnav_main li a span {
+  font-size: 22px;
+}
+header#global-header .nav_inner ul.mobnav_main li.on a small,
+header#global-header .nav_inner ul.mobnav_main li.on a span {
+  color: #4177c5;
+}
+header#global-header .nav_inner ul.mobnav_main li.mobnav_sub {
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 17px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 14px;
+  border-bottom: 1px solid #666;
+  background: #000;
+}
+header#global-header .nav_inner ul.mobnav_main li.mobnav_sub a {
+  color: #fff;
+}
+header#global-header .nav_inner ul.mobnav_main li.mobnav_sub a:hover {
+  color: #336699;
+}
+header#global-header .nav_inner ul.mobnav_main li.mobnav_sub.on a {
+  color: #336699;
+}
+
+#slider-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  position: relative;
+  background-image: url(../img/top/slide_bg.webp);
+  background-position: 50% top;
+  background-size: 130%;
+  background-repeat: no-repeat;
+  padding: 60px 0 20px 0;
+  z-index: 1;
+}
+@media screen and (min-width: 1000px) {
+  #slider-container {
+    padding: 180px 0 70px 0;
+    background-image: url(../img/top/slide_bg.webp);
+  }
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.swiper-slide img {
+  width: 90%;
+}
+@media screen and (min-width: 1200px) {
+  .swiper-slide img {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+/* Pagination */
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 40px !important;
+}
+@media screen and (min-width: 1000px) {
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 50px !important;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid #fff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 34px !important;
+  color: #fff !important;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0 !important;
+  transition: 0.3s all ease;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: #000 !important;
+}
+
+.swiper-button-next {
+  left: auto !important;
+  right: 0 !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 1.2em !important;
+}
+
+#intro_box {
+  width: 100%;
+  background-image: url(../img/top/intro_bg.webp);
+  background-size: cover;
+  background-position: center 25px;
+  background-repeat: no-repeat;
+}
+#intro_box .inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 10%;
+}
+@media screen and (min-width: 1000px) {
+  #intro_box .inner {
+    /* a personagem da faixa seguinte vaza ~115px para cima; o padding
+       extra garante que ela nao cubra o ultimo paragrafo */
+    padding: 100px 100px 240px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #intro_box .inner {
+    padding: 100px 100px 180px;
+  }
+}
+#intro_box .inner p {
+  color: #fff;
+  font-family: "Calligraffitti", arial;
+  font-size: 5vw;
+  text-align: justify;
+}
+@media screen and (min-width: 600px) {
+  #intro_box .inner p {
+    font-size: 4vw;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #intro_box .inner p {
+    font-size: 1.7em;
+  }
+}
+.index_timeline {
+  width: 100%;
+  background-image: url(../img/common/bg_light_01.webp);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.index_timeline .inner {
+  margin: 0;
+  height: 156px;
+  padding: 30px 0;
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  .index_timeline .inner {
+    display: block;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .index_timeline .inner {
+    height: 200px;
+    padding: 38px 0;
+  }
+}
+.index_timeline .index_timeline_img {
+  width: 250px;
+  position: absolute;
+  bottom: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(50px);
+  left: 50%;
+  margin-left: -480px;
+}
+@media screen and (min-width: 1600px) {
+  .index_timeline .index_timeline_img {
+    margin-left: -570px;
+  }
+}
+.index_timeline .index_timeline_img2 {
+  width: 700px;
+  height: 96px;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(50px);
+  position: absolute;
+  right: 50%;
+  margin-right: calc(-350px - 11vw);
+}
+@media screen and (min-width: 1600px) {
+  .index_timeline .index_timeline_img2 {
+    width: 900px;
+    height: 124px;
+    margin-right: -600px;
+  }
+}
+
+.reveal_content1,
+.reveal_content3 {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.reveal_content3 {
+  transition-delay: 0.08s !important;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer.rodape {
+  width: 100%;
+  position: relative;
+  background: #000;
+  border-top: 1px solid rgba(246, 241, 230, 0.12);
+  color: #d9d0bf;
+  font-family: "Lato", sans-serif;
+  padding: 10vw 0 6vw;
+}
+footer.rodape .rodape-inner {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+footer.rodape .rodape-marca img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+footer.rodape .rodape-marca p {
+  margin: 14px 0 0;
+  font-size: 0.9em;
+  color: #b9ae9c;
+}
+footer.rodape .rodape-sns {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 14px;
+}
+footer.rodape .rodape-sns a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(246, 241, 230, 0.25);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+footer.rodape .rodape-sns a:hover {
+  border-color: #4177c5;
+  background: rgba(65, 119, 197, 0.18);
+}
+footer.rodape .rodape-sns img {
+  width: 22px;
+  height: 22px;
+}
+footer.rodape .rodape-mapa {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+footer.rodape .rodape-mapa h3 {
+  font-family: "IM Fell English", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #f6f1e6;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(246, 241, 230, 0.15);
+}
+footer.rodape .rodape-mapa ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+footer.rodape .rodape-mapa a {
+  color: #d9d0bf;
+  text-decoration: none;
+  font-size: 0.92em;
+  transition: color 0.3s ease;
+}
+footer.rodape .rodape-mapa a:hover,
+footer.rodape .rodape-mapa a.on {
+  color: #4177c5;
+}
+footer.rodape .rodape-mapa a small {
+  display: inline-block;
+  min-width: 4.2em;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 0.85em;
+  color: #8f8474;
+}
+footer.rodape .rodape-mapa a.on small,
+footer.rodape .rodape-mapa a:hover small {
+  color: inherit;
+}
+footer.rodape #copyright {
+  width: 90%;
+  max-width: 1100px;
+  margin: 10vw auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(246, 241, 230, 0.12);
+  text-align: left;
+  color: #8f8474;
+  font-size: 0.75em;
+}
+@media screen and (min-width: 700px) {
+  footer.rodape .rodape-inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+    gap: 48px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  footer.rodape {
+    padding: 64px 0 32px;
+  }
+  footer.rodape #copyright {
+    margin-top: 48px;
+  }
+}
+
+.para_style2 {
+  position: relative;
+}
+.para_style2 .inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0);
+  padding: 5vw;
+}
+@media screen and (min-width: 2000px) {
+  .para_style2 .inner {
+    padding: 50px 0;
+  }
+}
+.para_style2 .inner .bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+#index_gamelist {
+  width: 100%;
+  height: 185vw;
+  overflow: hidden;
+}
+@media screen and (min-width: 600px) {
+  #index_gamelist {
+    height: 40vw;
+  }
+}
+@media screen and (min-width: 2000px) {
+  #index_gamelist {
+    height: 560px;
+  }
+}
+#index_gamelist .bg {
+  background-image: url(../img/common/bg_dark_01.webp);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+#index_gamelist ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media screen and (min-width: 2000px) {
+  #index_gamelist ul {
+    width: 1600px;
+    margin: 0 auto;
+  }
+}
+#index_gamelist ul li {
+  width: 100%;
+  margin: 5% 0 0 0;
+}
+#index_gamelist ul li img {
+  width: 100%;
+  border: 1px solid #666;
+}
+#index_gamelist ul li a.secao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  text-decoration: none;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 9vw;
+  color: #f6f1e6;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid #666;
+  transition: 0.3s all ease;
+}
+/* card com imagem de fundo e o nome sobre um degrade na base */
+#index_gamelist ul li a.secao--img {
+  position: relative;
+  overflow: hidden;
+  align-items: flex-end;
+  padding-bottom: 5%;
+}
+#index_gamelist ul li a.secao--img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  transition: transform 0.5s ease;
+}
+#index_gamelist ul li a.secao--img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0) 75%);
+}
+#index_gamelist ul li a.secao--img span {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+#index_gamelist ul li a.secao--img:hover img {
+  transform: scale(1.04);
+}
+@media screen and (min-width: 600px) {
+  #index_gamelist ul li {
+    width: 31%;
+    margin: 2% 0 0 0;
+  }
+  #index_gamelist ul li a.secao {
+    aspect-ratio: 4 / 3;
+    font-size: 3.4vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #index_gamelist ul li a.secao:hover {
+    margin-top: -5px;
+    color: #fff;
+    border-color: #4177c5;
+    box-shadow: -2px -2px 12px rgba(51, 153, 255, 0.4), -2px 2px 12px rgba(51, 153, 255, 0.4), 2px -2px 12px rgba(51, 153, 255, 0.4), 2px 2px 12px rgba(51, 153, 255, 0.4);
+  }
+  #index_gamelist ul li img {
+    position: relative;
+    transition: 0.3s all ease;
+  }
+  #index_gamelist ul li img:hover {
+    margin-top: -5px;
+    box-shadow: -2px -2px 12px rgba(51, 153, 255, 0.4), -2px 2px 12px rgba(51, 153, 255, 0.4), 2px -2px 12px rgba(51, 153, 255, 0.4), 2px 2px 12px rgba(51, 153, 255, 0.4);
+  }
+}
+@media screen and (min-width: 2000px) {
+  #index_gamelist ul li {
+    margin-top: 34px;
+  }
+  #index_gamelist ul li a.secao {
+    font-size: 48px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  header#global-header.scrld {
+    height: 95px;
+  }
+  header#global-header.scrld #mainnav-bar {
+    height: 95px;
+    background-size: auto 100px;
+  }
+  header#global-header.scrld #mainnav-bar #mainnav-left,
+  header#global-header.scrld #mainnav-bar #mainnav-right {
+    height: 38px;
+  }
+  header#global-header.scrld #mainnav-bar #mainnav-left ul li,
+  header#global-header.scrld #mainnav-bar #mainnav-right ul li {
+    height: 38px;
+  }
+  header#global-header.scrld #mainnav-bar #mainnav-left ul li a small,
+  header#global-header.scrld #mainnav-bar #mainnav-right ul li a small {
+    display: none;
+  }
+  header#global-header.scrld #mainnav-bar #mainnav-left ul li a span,
+  header#global-header.scrld #mainnav-bar #mainnav-right ul li a span {
+    font-size: clamp(16px, 1.5vw, 22px);
+  }
+}
+@media screen and (min-width: 1000px) and (min-width: 1000px) {
+  header#global-header.scrld #mainnav-bar #mainnav-right {
+    left: auto;
+    right: 30px;
+  }
+}
+header#global-header.scrld #subnav-bar {
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  header#global-header.scrld #subnav-bar {
+    display: block;
+    height: 40px;
+    background-image: url(../img/common/header_bg_dark_sm.webp) !important;
+    top: 41px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header#global-header.scrld #mainlogo {
+    width: 140px;
+    top: 5px;
+    margin-left: -70px;
+  }
+}
+
+/* botao "Onde comprar": no mirror era uma imagem "AVAILABLE NOW!" em ingles */
+.btn-comprar {
+  display: inline-block;
+  padding: 14px 38px;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f6f1e6;
+  background: #7a1d1d;
+  border: 2px solid #f6f1e6;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-comprar:hover {
+  background: #f6f1e6;
+  color: #7a1d1d;
+}
+
+/* Paginas simples (O Universo, Onde comprar): afastam o conteudo do header fixo */
+#pagina {
+  width: 100%;
+  min-height: 60vh;
+  padding: 90px 0 8vw;
+  background-color: #000;
+  background-image: url(../img/common/bg_dark_01.webp);
+  background-size: cover;
+  background-position: 50% 50%;
+  color: #fff;
+}
+@media screen and (min-width: 1000px) {
+  #pagina {
+    padding: 240px 0 80px;
+  }
+}
+#pagina .inner {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#pagina h2 {
+  font-family: "IM Fell English", Georgia, serif;
+  font-weight: 400;
+  font-size: 9vw;
+  line-height: 1.1;
+  margin: 0 0 1em;
+  color: #fff;
+}
+@media screen and (min-width: 1000px) {
+  #pagina h2 {
+    font-size: 48px;
+  }
+}
+#pagina p {
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+  line-height: 1.7;
+  max-width: 70ch;
+  margin: 0 0 1.2em;
+}
+#pagina a {
+  color: #4177c5;
+}
+#pagina .lojas li {
+  margin: 0 0 0.6em;
+}
+
+/* Downloads */
+#pagina .aviso-vazio {
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.25em;
+  color: #b9ae9c;
+  padding: 28px 24px;
+  border: 1px dashed rgba(246, 241, 230, 0.3);
+  border-radius: 6px;
+  max-width: none;
+}
+#pagina .downloads {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+#pagina .downloads:empty {
+  display: none;
+}
+#pagina .download {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 18px 20px 16px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(246, 241, 230, 0.18);
+  border-radius: 6px;
+  color: #f6f1e6;
+  text-decoration: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+#pagina .download:hover {
+  border-color: #4177c5;
+  transform: translateY(-3px);
+}
+#pagina .download-titulo {
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.3em;
+  line-height: 1.15;
+}
+#pagina .download-desc {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #d9d0bf;
+}
+#pagina .download-meta {
+  margin-top: auto;
+  padding-top: 10px;
+  font-size: 0.8em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4177c5;
+}
+
+/* Onde comprar */
+#pagina .volume-compra {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(246, 241, 230, 0.15);
+}
+#pagina .volume-compra:first-of-type {
+  margin-top: 24px;
+  padding-top: 0;
+  border-top: 0;
+}
+#pagina .volume-compra-capa {
+  margin: 0;
+  max-width: 260px;
+}
+#pagina .volume-compra-capa img {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+#pagina .volume-compra-info h3 {
+  font-family: "IM Fell English", Georgia, serif;
+  font-weight: 400;
+  font-size: 2.2em;
+  line-height: 1;
+  margin: 0 0 18px;
+  color: #fff;
+}
+#pagina .volume-compra-info h3 small {
+  display: block;
+  font-size: 0.45em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b9ae9c;
+  margin-bottom: 4px;
+}
+#pagina .volume-compra-info h4 {
+  font-family: "IM Fell English", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  margin: 26px 0 10px;
+  color: #b9ae9c;
+}
+#pagina .lojas {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+#pagina .loja {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 16px 18px 14px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(246, 241, 230, 0.18);
+  border-radius: 6px;
+  color: #f6f1e6;
+  text-decoration: none;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+#pagina .loja:hover {
+  border-color: #4177c5;
+  transform: translateY(-3px);
+}
+#pagina .loja-nome {
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.25em;
+  line-height: 1.15;
+}
+#pagina .loja-desc {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #d9d0bf;
+}
+#pagina .loja-meta {
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4177c5;
+}
+#pagina .livrarias {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+#pagina .livrarias a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f6f1e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#pagina .livrarias a:hover {
+  color: #4177c5;
+}
+#pagina .livrarias img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(246, 241, 230, 0.25);
+}
+#pagina .livrarias span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.1em;
+}
+#pagina .livrarias small {
+  font-family: "Lato", sans-serif;
+  font-size: 0.75em;
+  color: #b9ae9c;
+}
+#pagina .volume-compra--breve .aviso-vazio {
+  max-width: 480px;
+}
+@media screen and (min-width: 700px) {
+  #pagina .volume-compra {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 36px;
+    align-items: start;
+  }
+}
+
+/* Sobre o autor (home) */
+#index_autor {
+  width: 100%;
+  background-color: #0e0c0a;
+  background-image: url(../img/common/bg_light_01.webp);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 12vw 0;
+  color: #2a2622;
+}
+#index_autor .inner {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+#index_autor .autor-foto {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #fff;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+}
+#index_autor .autor-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  display: block;
+}
+#index_autor h2 {
+  font-family: "IM Fell English", Georgia, serif;
+  font-weight: 400;
+  font-size: 9vw;
+  line-height: 1;
+  margin: 0 0 18px;
+}
+#index_autor h2 small {
+  display: block;
+  font-size: 0.42em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a1a2c;
+  margin-bottom: 8px;
+}
+#index_autor p {
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+  line-height: 1.7;
+  margin: 0 0 1em;
+  max-width: 62ch;
+  text-align: justify;
+}
+#index_autor .autor-sns {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+#index_autor .autor-sns a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #2a2622;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#index_autor .autor-sns a:hover {
+  background: #4177c5;
+  transform: translateY(-2px);
+}
+#index_autor .autor-sns img {
+  width: 22px;
+  height: 22px;
+}
+@media screen and (min-width: 800px) {
+  #index_autor {
+    padding: 90px 0;
+  }
+  #index_autor .inner {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 56px;
+  }
+  #index_autor .autor-foto {
+    width: 100%;
+  }
+  #index_autor h2 {
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Lenda dos Deuses | Site Oficial</title>
+
+<meta name="description" content="Site oficial da série literária A Lenda dos Deuses, escrita por Ariel S. Nascimento.">
+<meta name="author" content="Ariel S. Nascimento">
+<meta name="copyright" content="© Ariel S. Nascimento. Todos os direitos reservados.">
+
+<meta property="og:site_name" content="A Lenda dos Deuses">
+<meta property="og:title" content="A Lenda dos Deuses | Site Oficial">
+<meta property="og:description" content="Site oficial da série literária A Lenda dos Deuses, escrita por Ariel S. Nascimento.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=IM+Fell+English&family=Lato:wght@400;900&display=swap">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body data-pagina="home">
+
+<header id="global-header">
+
+	<div id="mainnav-bar">
+		<div id="mainnav-left">
+			<ul>
+				<li class="genesis">
+					<a href="genesis/"><small>Volume I</small><span>Gênesis</span></a>
+				</li>
+				<li class="cronicas">
+					<a href="cronicas/"><small>Volume II</small><span>Crônicas</span></a>
+				</li>
+				<li class="proverbios">
+					<a href="proverbios/"><small>Volume III</small><span>Provérbios</span></a>
+				</li>
+				<li class="exodo">
+					<a href="exodo/"><small>Volume IV</small><span>Êxodo</span></a>
+				</li>
+			</ul>
+		</div>
+		<div id="mainnav-right">
+			<ul>
+				<li class="lamentacoes">
+					<a href="lamentacoes/"><small>Volume V</small><span>Lamentações</span></a>
+				</li>
+				<li class="atos">
+					<a href="atos/"><small>Volume VI</small><span>Atos</span></a>
+				</li>
+				<li class="reis">
+					<a href="reis/"><small>Volume VII</small><span>Reis</span></a>
+				</li>
+				<li class="apocalipse">
+					<a href="apocalipse/"><small>Volume VIII</small><span>Apocalipse</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="subnav-bar">
+		<div id="subnav-left">
+			<ul>
+				<li class="on"><a href="./">Página Inicial</a></li>
+				<li><a href="universo/">O Universo</a></li>
+				<li><a href="comprar/">Onde comprar</a></li>
+			</ul>
+		</div>
+		<div id="subnav-right">
+			<!-- Antes aqui ficavam os icones de redes sociais (TikTok, Threads,
+			     Instagram), como no World of Ys. Para reverter, ver "Menus" no
+			     LEIAME.md. -->
+			<ul>
+				<li><a href="personagens/">Personagens</a></li>
+				<li><a href="bestiario/">Bestiário</a></li>
+				<li><a href="downloads/">Downloads</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="mainlogo">
+		<a href="./">
+			<h1>
+				<!-- TODO: recorte do logo para mobile. O m/logo.webp do mirror
+				     era o logo "WORLD OF Ys" e foi removido. -->
+				<img src="assets/img/common/logo.png" alt="A Lenda dos Deuses">
+			</h1>
+		</a>
+	</div>
+
+	<button class="mobnav" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
+		<img src="assets/img/common/m/mobnav.webp" alt="" id="toggleIcon">
+	</button>
+
+	<nav class="mobile-nav" id="mobileNav">
+		<div class="nav_inner">
+			<ul class="mobnav_main">
+				<li class="mobnav_header">
+					<a href="./"><img src="assets/img/common/logo.png" alt="A Lenda dos Deuses"></a>
+				</li>
+				<li class="genesis">
+					<a href="genesis/"><small>Volume I</small><span>Gênesis</span></a>
+				</li>
+				<li class="cronicas">
+					<a href="cronicas/"><small>Volume II</small><span>Crônicas</span></a>
+				</li>
+				<li class="proverbios">
+					<a href="proverbios/"><small>Volume III</small><span>Provérbios</span></a>
+				</li>
+				<li class="exodo">
+					<a href="exodo/"><small>Volume IV</small><span>Êxodo</span></a>
+				</li>
+				<li class="lamentacoes">
+					<a href="lamentacoes/"><small>Volume V</small><span>Lamentações</span></a>
+				</li>
+				<li class="atos">
+					<a href="atos/"><small>Volume VI</small><span>Atos</span></a>
+				</li>
+				<li class="reis">
+					<a href="reis/"><small>Volume VII</small><span>Reis</span></a>
+				</li>
+				<li class="apocalipse">
+					<a href="apocalipse/"><small>Volume VIII</small><span>Apocalipse</span></a>
+				</li>
+				<li class="mobnav_sub on"><a href="./">Página Inicial</a></li>
+				<li class="mobnav_sub"><a href="universo/">O Universo</a></li>
+				<li class="mobnav_sub"><a href="comprar/">Onde comprar</a></li>
+				<li class="mobnav_sub"><a href="personagens/">Personagens</a></li>
+				<li class="mobnav_sub"><a href="bestiario/">Bestiário</a></li>
+				<li class="mobnav_sub"><a href="downloads/">Downloads</a></li>
+			</ul>
+		</div>
+	</nav>
+
+</header>
+
+<div id="slider-container">
+	<div class="swiper">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="assets/img/top/slide-2.webp" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="assets/img/top/slide-3.webp" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="assets/img/top/slide-4.webp" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="assets/img/top/slide-5.webp" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="assets/img/top/slide-6.webp" alt="">
+			</div>
+		</div>
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-pagination"></div>
+	</div>
+</div>
+
+<div id="intro_box">
+	<div class="inner">
+			<p>A cosmogênese conta que, no princípio dos tempos, o Grande Arquiteto do Universo expandiu sua existência no vazio do infinito, criando as estrelas, os planetas, os corpos celestes, as galáxias, as dimensões, o tempo… transformou o nada em tudo.</p>
+			<p>Por sua vez, antropogênese é o período conhecido como a criação da raça humana, a imagem e semelhança do Todo-Poderoso. Para tanto, o mundo em que viveria esta raça foi dividido em duas dimensões: o Mundo Concreto e o Mundo Abstrato. Cada um destes mundos possuía uma subdivisão, que existiam de forma harmônica e dependente.</p>
+			<p>O Mundo Abstrato, pois, era formado pelo Mundo Luminoso e pelo Mundo Sombrio. No primeiro, viviam seres de luz, pacíficos por natureza, raça conhecida como anjos. No segundo, criaturas perversas, movidas por guerras, conhecidas como demônios. E assim se dava o equilíbrio cósmico: o bem exatamente igual ao mal, em número e intensidade.</p>
+			<p>Eis que, com a essência de ambos, o Eterno pôde dar início à criação dos habitantes do Mundo Concreto, a raça humana: seres perfeitamente equilibrados entre bem e mal, senhores da evolução.</p>
+			<p>Contudo, o sopro do Livre Arbítrio sobre a raça humana causou uma profunda revolta entre os seres sombrios, pois muitos não aceitavam que criaturas sublimes como os homens pudessem ocupar o trono da evolução das raças, fazendo uso da mais importante virtude dada aos demônios e aos anjos.</p>
+			<p>Encabeçada por Lusbel, o levante trouxe os demônios ao Mundo dos Homens, dando início a um massacre sem precedentes. Através da influência, incitaram guerras. Através de ataques diretos, dizimaram populações.</p>
+			<p>Diante do cenário catastrófico induzido pelos demônios, o Eterno despejou sua essência divina em seres humanos que, por possuírem a chamada Centelha Divina e poderes sobrenaturais, eram conhecidos como “deuses”. Eles ficaram responsáveis por proteger a raça humana e derrubar a ameaça demoníaca que caía sobre ela. E, após longos três anos, a guerra chegou ao fim, com a vitória da raça humana.</p>
+			<p>Entretanto, Lusbel novamente se ergueu e juntamente com ele, os demônios que outrora se rebelaram contra a vontade de Deus, causando o estopim para uma nova guerra entre deuses e demônios.</p>
+	</div>
+</div>
+
+<div class="index_timeline">
+	<div class="inner">
+		<a href="universo/" title="O Universo">
+			<img class="index_timeline_img reveal" src="assets/img/top/universo.png" alt="">
+			<img class="index_timeline_img2 reveal" src="assets/img/top/universo2.png"
+			     alt="Você é um novo leitor? Conheça o universo que ambientaliza a história: descrição dos mundos e dos seres que os habitam, amostra do bestiário, divisão de castas, organização política e muito mais.">
+		</a>
+	</div>
+</div>
+
+<div id="index_gamelist" class="para_style2">
+	<div class="inner">
+		<div class="bg"></div>
+		<!-- TODO: paginas de Personagens, Bestiario e Downloads ainda nao existem.
+		     Lista provisoria no lugar dos cards dos volumes (a arte dos cards
+		     ainda nao foi entregue). Ligar os href quando as paginas surgirem. -->
+		<ul>
+				<li class="reveal reveal_content">
+					<a href="personagens/" class="secao secao--img"><img src="assets/img/top/card-personagens.jpg" alt=""><span>Personagens</span></a>
+				</li>
+				<li class="reveal reveal_content">
+					<a href="bestiario/" class="secao secao--img"><img src="assets/img/top/card-bestiario.jpg" alt=""><span>Bestiário</span></a>
+				</li>
+				<li class="reveal reveal_content">
+					<a href="downloads/" class="secao secao--img"><img src="assets/img/top/card-downloads.jpg" alt=""><span>Downloads</span></a>
+				</li>
+		</ul>
+	</div>
+</div>
+
+<section id="index_autor">
+	<div class="inner">
+		<figure class="autor-foto reveal reveal_content">
+			<img src="assets/img/autor/ariel.jpg" alt="Ariel S. Nascimento">
+		</figure>
+		<div class="autor-texto reveal reveal_content">
+			<h2><small>Sobre o autor</small>Ariel S. Nascimento</h2>
+			<p>Ariel S. Nascimento veio ao mundo em 10 de dezembro de 1987. Sempre foi apaixonado pela leitura e, desde criança, escrevia para colocar em prática a mente criativa de uma infância que guardou na memória. Começou a escrever esta série aos 14 anos de idade, inspirado em mitologia grega, nórdica e templária, além de diversas outras tradições. Terminou o primeiro volume com pouco mais de 450 páginas, e rascunhava o segundo livro quando resolveu dedicar-se aos estudos, arquivando o projeto. Quando estava prestes a se formar em Direito, em 2011, retomou a obra, reescrevendo-a e readaptando-a, aprofundando-a.</p>
+			<p>Atualmente trabalha como servidor do Poder Judiciário e sonha poder publicar suas obras em outras línguas por diversos países ao redor do mundo.</p>
+			<ul class="autor-sns">
+				<li><a href="https://www.tiktok.com/@ariels.n" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/img/common/sns-tiktok.svg" alt=""></a></li>
+				<li><a href="https://www.threads.com/@ariels.n" target="_blank" rel="noopener" aria-label="Threads"><img src="assets/img/common/sns-threads.svg" alt=""></a></li>
+				<li><a href="https://www.instagram.com/ariels.n/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/img/common/sns-instagram.webp" alt=""></a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<footer class="rodape">
+	<div class="rodape-inner">
+		<div class="rodape-marca">
+			<a href="./"><img src="assets/img/common/logo.png" alt="A Lenda dos Deuses"></a>
+			<p>Série literária de Ariel S. Nascimento.</p>
+			<ul class="rodape-sns">
+				<li><a href="https://www.tiktok.com/@ariels.n" target="_blank" rel="noopener" aria-label="TikTok"><img src="assets/img/common/sns-tiktok.svg" alt=""></a></li>
+				<li><a href="https://www.threads.com/@ariels.n" target="_blank" rel="noopener" aria-label="Threads"><img src="assets/img/common/sns-threads.svg" alt=""></a></li>
+				<li><a href="https://www.instagram.com/ariels.n/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/img/common/sns-instagram.webp" alt=""></a></li>
+			</ul>
+		</div>
+		<nav class="rodape-mapa" aria-label="Mapa do site">
+			<div>
+				<h3>Volumes</h3>
+				<ul>
+					<li><a href="genesis/"><small>Vol. I</small> Gênesis</a></li>
+					<li><a href="cronicas/"><small>Vol. II</small> Crônicas</a></li>
+					<li><a href="proverbios/"><small>Vol. III</small> Provérbios</a></li>
+					<li><a href="exodo/"><small>Vol. IV</small> Êxodo</a></li>
+					<li><a href="lamentacoes/"><small>Vol. V</small> Lamentações</a></li>
+					<li><a href="atos/"><small>Vol. VI</small> Atos</a></li>
+					<li><a href="reis/"><small>Vol. VII</small> Reis</a></li>
+					<li><a href="apocalipse/"><small>Vol. VIII</small> Apocalipse</a></li>
+				</ul>
+			</div>
+			<div>
+				<h3>Páginas</h3>
+				<ul>
+					<li><a href="./" class="on">Página Inicial</a></li>
+					<li><a href="universo/">O Universo</a></li>
+					<li><a href="personagens/">Personagens</a></li>
+					<li><a href="bestiario/">Bestiário</a></li>
+					<li><a href="downloads/">Downloads</a></li>
+					<li><a href="comprar/">Onde comprar</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div id="copyright">
+		&copy; Ariel S. Nascimento. Todos os direitos reservados.
+	</div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
