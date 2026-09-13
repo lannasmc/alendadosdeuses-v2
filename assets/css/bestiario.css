@@ -1,10 +1,14 @@
-/* Bestiario: herda tudo de personagens.css e acrescenta a coluna de
-   classes a esquerda (como as regioes do Genshin) e o palco com a arte,
-   que e horizontal, ocupando o fundo inteiro. */
+/* Bestiario: herda tudo de personagens.css (inclusive o palco) e
+   acrescenta a coluna de classes a esquerda, como as regioes do Genshin. */
 
 /* aviso de spoilers, discreto abaixo do titulo */
 .best .pers-titulo p {
   max-width: 70ch;
+}
+
+/* a arte das criaturas e horizontal: centralizada */
+.best .pers-arte img {
+  object-position: 50% 50%;
 }
 
 /* lista de classes */
@@ -67,73 +71,15 @@
   box-shadow: 0 0 10px rgba(65, 119, 197, 0.9);
 }
 
-/* palco: arte e ficha nunca se sobrepoem. No celular, arte em cima
-   (16:9) e ficha embaixo com rolagem propria; no desktop, lado a lado. */
-.best .pers-card.on {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: 0;
-}
-.best .pers-arte {
-  position: relative;
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  aspect-ratio: 16 / 9;
-  border-radius: 6px 6px 0 0;
-  overflow: hidden;
-  background: #0c0a09;
-}
-.best .pers-arte img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  -webkit-mask-image: none;
-  mask-image: none;
-}
-.best .pers-ficha {
-  position: relative;
-  left: auto;
-  right: auto;
-  bottom: auto;
-  flex: 1 1 0;
-  min-height: 0;
-  max-height: none;
-  overflow-y: auto;
-  scrollbar-width: none;
-  padding: 12px 5% 28px;
-  background: rgba(12, 10, 9, 0.82);
-  border-radius: 0 0 6px 6px;
-  text-shadow: none;
-  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent 100%);
-}
-.best .pers-ficha::-webkit-scrollbar {
-  display: none;
-}
-.best .pers-ficha h2 {
-  font-size: clamp(32px, 9vw, 48px);
-}
-.best .pers-ficha dl {
-  grid-template-columns: max-content minmax(0, 1fr);
-  margin-top: 10px;
-  row-gap: 8px;
-  font-size: 13px;
-}
-
 @media screen and (min-width: 1000px) {
   .best .pers-inner {
     grid-template-columns: 220px minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, var(--palco-max)) auto;
     column-gap: 24px;
   }
   .best .pers-titulo {
     grid-column: 1 / -1;
+    max-width: none;
     align-items: center;
     gap: 20px;
   }
@@ -159,55 +105,18 @@
     padding: 10px 14px 10px 12px;
     border-radius: 0 4px 4px 0;
   }
+  /* arte horizontal: palco na largura toda, arte mais larga que a ficha */
   .best .pers-palco {
     grid-column: 2;
     grid-row: 2;
+    max-width: none;
+  }
+  .best .pers-card.on {
+    grid-template-columns: minmax(0, 3fr) minmax(320px, 2fr);
   }
   .best .pers-carrossel {
     grid-column: 1 / -1;
     grid-row: 3;
-  }
-  .best .pers-card.on {
-    flex: 1 1 0;
-    min-height: 0;
-    display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(320px, 2fr);
-    grid-template-rows: minmax(0, 1fr);
-  }
-  .best .pers-arte {
-    height: 100%;
-    aspect-ratio: auto;
-    border-radius: 6px 0 0 6px;
-  }
-  /* borda direita da arte se funde no painel */
-  .best .pers-arte img {
-    -webkit-mask-image: linear-gradient(to right, #000 88%, rgba(0, 0, 0, 0.35) 100%);
-    mask-image: linear-gradient(to right, #000 88%, rgba(0, 0, 0, 0.35) 100%);
-  }
-  .best .pers-ficha {
-    flex: none;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 24px 28px 44px 30px;
-    border-radius: 0 6px 6px 0;
-    background: rgba(12, 10, 9, 0.86);
-    display: flex;
-    flex-direction: column;
-    justify-content: safe center;
-    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent 100%);
-  }
-  .best .pers-ficha h2 {
-    font-size: clamp(40px, 8vh, 84px);
-  }
-  .best .pers-ficha dl {
-    grid-template-columns: max-content minmax(0, 1fr);
-    margin-top: clamp(10px, 2vh, 22px);
-    row-gap: clamp(6px, 1.4vh, 14px);
-    font-size: clamp(12px, 1.75vh, 15px);
-  }
-  .best .pers-ficha dd {
-    line-height: 1.5;
   }
 }
 
@@ -234,19 +143,5 @@
   .best .pers-carrossel {
     order: 4;
     margin-top: 6px;
-  }
-  /* a ficha sobe por cima da arte, como um card */
-  .best .pers-arte {
-    border-radius: 6px;
-  }
-  .best .pers-ficha {
-    position: relative;
-    z-index: 1;
-    margin: -36px 3% 0;
-    padding: 18px 5% 30px;
-    border-radius: 14px 14px 6px 6px;
-    background: rgba(14, 12, 10, 0.94);
-    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.55);
-    border-top: 1px solid rgba(246, 241, 230, 0.12);
   }
 }

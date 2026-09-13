@@ -20,7 +20,10 @@
       open = !open;
       nav.classList.toggle('open', open);
       toggle.classList.toggle('is-open', open);
-      if (icon) icon.alt = open ? 'Fechar menu' : 'Abrir menu';
+      /* troca o icone: menu (claro, sobre o header) e X (escuro, sobre o
+         topo branco do painel aberto) */
+      if (icon) icon.src = icon.src.replace(/menu(-fechar)?\.svg$/, open ? 'menu-fechar.svg' : 'menu.svg');
+      toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
       toggle.setAttribute('aria-expanded', String(open));
     });
   }
@@ -59,11 +62,10 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  /* --- parallax (rellax, carregado via CDN) -------------- */
-  function initParallax() {
-    if (typeof Rellax === 'undefined') return;
-    if (!document.querySelector('.js-parallax')) return;
-    new Rellax('.js-parallax');
+  /* --- ano do copyright no rodape ------------------------- */
+  function initAno() {
+    var ano = String(new Date().getFullYear());
+    document.querySelectorAll('.rodape-ano').forEach(function (el) { el.textContent = ano; });
   }
 
   /* --- slider da home ------------------------------------ */
@@ -84,8 +86,8 @@
     initMobileNav();
     initHeaderScroll();
     initReveal();
-    initParallax();
     initSlider();
+    initAno();
   }
 
   if (document.readyState === 'loading') {

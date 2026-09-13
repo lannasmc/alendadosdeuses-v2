@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="../assets/css/volume.css">
 </head>
 
-<body data-volume="reis">
+<body data-pagina="volume">
 
 <header id="global-header">
 
@@ -85,25 +85,28 @@
 		</div>
 	</div>
 
+	<a class="mobicon" href="../" aria-label="Página inicial"><img src="../assets/img/common/m/icon_logo.png" alt=""></a>
+
 	<div id="mainlogo">
 		<a href="../">
 			<h1>
-				<!-- TODO: recorte do logo para mobile. O m/logo.webp do mirror
-				     era o logo "WORLD OF Ys" e foi removido. -->
-				<img src="../assets/img/common/logo.png" alt="A Lenda dos Deuses">
+				<picture>
+					<source media="(max-width: 999px)" srcset="../assets/img/common/m/logo_inline.png">
+					<img src="../assets/img/common/logo.png" alt="A Lenda dos Deuses">
+				</picture>
 			</h1>
 		</a>
 	</div>
 
 	<button class="mobnav" id="navToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
-		<img src="../assets/img/common/m/mobnav.webp" alt="" id="toggleIcon">
+		<img src="../assets/img/common/m/menu.svg" alt="" id="toggleIcon">
 	</button>
 
 	<nav class="mobile-nav" id="mobileNav">
 		<div class="nav_inner">
 			<ul class="mobnav_main">
 				<li class="mobnav_header">
-					<a href="../"><img src="../assets/img/common/logo.png" alt="A Lenda dos Deuses"></a>
+					<a href="../"><img src="../assets/img/common/m/logo_inline.png" alt="A Lenda dos Deuses"></a>
 				</li>
 				<li class="genesis">
 					<a href="../genesis/"><small>Volume I</small><span>Gênesis</span></a>
@@ -141,114 +144,83 @@
 
 </header>
 
-<!-- ============================================================
-     Arte deste volume: assets/img/volumes/reis/
-       kv.webp          key visual desktop
-       kv-mobile.webp   key visual mobile
-       logo.webp        logo do volume sobre o key visual
-       story-bg.webp    fundo do trecho de historia
-       features-bg.webp fundo da secao de destaques
-       card.webp        card usado na home
-     Os caminhos ja estao ligados no volume.css via data-volume.
-     ============================================================ -->
-
-<div id="keyvisual">
-	<h2 class="js-parallax" data-rellax-speed="-3">
-		<img class="reveal reveal_content1 logo" src="../assets/img/volumes/reis/logo.webp"
-		     alt="Volume VII - Reis"
-		     onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'slot-vazio',textContent:'Volume VII — Reis'}))">
-	</h2>
-</div>
-
-<div id="journal_nav">
-		<div class="journal_prev">
-			<a href="../atos/">&laquo; Volume VI &mdash; Atos</a>
-		</div>
-		<div class="journal_next">
-			<a href="../apocalipse/">Volume VIII &mdash; Apocalipse &raquo;</a>
-		</div>
-	<div class="journal_current">Volume VII &mdash; Reis</div>
-</div>
-
-<div id="story">
+<main id="pagina" class="volume">
 	<div class="inner">
-		<p>
-			<!-- TODO: sinopse do volume Reis, escrita pelo Ariel S. Nascimento. -->
-		</p>
-	</div>
-</div>
+		<header class="volume-topo">
+			<p class="volume-num">Volume VII</p>
+			<h2>Reis</h2>
+			<span class="volume-status volume-status--breve">Em breve</span>
+		</header>
 
-<div id="features" class="section">
-	<div class="inner">
-		<div class="section_group">
-			<div class="section_img reveal reveal_content1 posi_right order2">
-				<img src="../assets/img/volumes/reis/features.webp" alt="">
+		<section class="volume-corpo volume-corpo--breve">
+			<div class="volume-aviso">
+				<p>Este volume ainda não foi lançado.</p>
+				<p class="volume-aviso-sub">Enquanto isso, conheça <a href="../universo/">o universo</a> da série.</p>
 			</div>
-			<div class="textbox reveal reveal_content3 posi_left order1">
-				<div class="textbox_top">&nbsp;</div>
-				<div class="textbox_mid">
-					<h3>~ Sobre o volume ~</h3>
-					<ul>
-						<li><!-- TODO --></li>
-					</ul>
-				</div>
-				<div class="textbox_bottom">&nbsp;</div>
-			</div>
-		</div>
-	</div>
-</div>
+		</section>
 
-<div id="comprar_cta">
-	<div class="inner">
-		<a class="btn-comprar" href="../comprar/">Onde comprar</a>
+		<nav class="volume-nav" aria-label="Outros volumes">
+			<a class="volume-nav-item volume-nav-item--ant" href="../atos/"><small>&larr; Volume anterior</small><span>Vol. VI &middot; Atos</span></a>
+			<a class="volume-nav-item volume-nav-item--prox" href="../apocalipse/"><small>Próximo volume &rarr;</small><span>Vol. VIII &middot; Apocalipse</span></a>
+		</nav>
 	</div>
-</div>
+</main>
 
 <footer class="rodape">
 	<div class="rodape-inner">
 		<div class="rodape-marca">
-			<a href="../"><img src="../assets/img/common/logo.png" alt="A Lenda dos Deuses"></a>
+			<a href="../"><picture>
+				<source media="(max-width: 999px)" srcset="../assets/img/common/m/logo_inline.png">
+				<img src="../assets/img/common/logo.png" alt="A Lenda dos Deuses">
+			</picture></a>
 			<p>Série literária de Ariel S. Nascimento.</p>
+		</div>
+		<nav class="rodape-col rodape-volumes" aria-label="Volumes">
+			<h3>Volumes</h3>
+			<ul>
+				<li><a href="../genesis/"><small>Vol. I</small> Gênesis</a></li>
+				<li><a href="../cronicas/"><small>Vol. II</small> Crônicas</a></li>
+				<li class="breve"><a href="../proverbios/"><small>Vol. III</small> Provérbios</a></li>
+				<li class="breve"><a href="../exodo/"><small>Vol. IV</small> Êxodo</a></li>
+				<li class="breve"><a href="../lamentacoes/"><small>Vol. V</small> Lamentações</a></li>
+				<li class="breve"><a href="../atos/"><small>Vol. VI</small> Atos</a></li>
+				<li class="breve"><a href="../reis/" class="on"><small>Vol. VII</small> Reis</a></li>
+				<li class="breve"><a href="../apocalipse/"><small>Vol. VIII</small> Apocalipse</a></li>
+			</ul>
+		</nav>
+		<nav class="rodape-col rodape-paginas" aria-label="Páginas">
+			<h3>Páginas</h3>
+			<ul>
+				<li><a href="../">Página Inicial</a></li>
+				<li><a href="../universo/">O Universo</a></li>
+				<li><a href="../personagens/">Personagens</a></li>
+				<li><a href="../bestiario/">Bestiário</a></li>
+				<li><a href="../downloads/">Downloads</a></li>
+			</ul>
+		</nav>
+		<div class="rodape-col rodape-contato">
+			<h3>Contato</h3>
+			<!-- TODO: e-mail provisorio, o autor ainda vai criar o endereco -->
+			<a class="rodape-email" href="mailto:contato@alendadosdeuses.com.br">contato@alendadosdeuses.com.br</a>
 			<ul class="rodape-sns">
 				<li><a href="https://www.tiktok.com/@ariels.n" target="_blank" rel="noopener" aria-label="TikTok"><img src="../assets/img/common/sns-tiktok.svg" alt=""></a></li>
 				<li><a href="https://www.threads.com/@ariels.n" target="_blank" rel="noopener" aria-label="Threads"><img src="../assets/img/common/sns-threads.svg" alt=""></a></li>
 				<li><a href="https://www.instagram.com/ariels.n/" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/img/common/sns-instagram.webp" alt=""></a></li>
 			</ul>
+			<h3 class="rodape-livros-titulo">Os livros</h3>
+			<div class="rodape-livros">
+				<a href="../comprar/"><img src="../assets/img/common/rodape-capa-genesis.jpg" alt="Capa do Volume I: Gênesis" width="60" height="83" loading="lazy"></a>
+				<a href="../comprar/"><img src="../assets/img/common/rodape-capa-cronicas.jpg" alt="Capa do Volume II: Crônicas" width="60" height="83" loading="lazy"></a>
+				<a class="rodape-comprar" href="../comprar/">Onde comprar <span aria-hidden="true">&rarr;</span></a>
+			</div>
 		</div>
-		<nav class="rodape-mapa" aria-label="Mapa do site">
-			<div>
-				<h3>Volumes</h3>
-				<ul>
-					<li><a href="../genesis/"><small>Vol. I</small> Gênesis</a></li>
-					<li><a href="../cronicas/"><small>Vol. II</small> Crônicas</a></li>
-					<li><a href="../proverbios/"><small>Vol. III</small> Provérbios</a></li>
-					<li><a href="../exodo/"><small>Vol. IV</small> Êxodo</a></li>
-					<li><a href="../lamentacoes/"><small>Vol. V</small> Lamentações</a></li>
-					<li><a href="../atos/"><small>Vol. VI</small> Atos</a></li>
-					<li><a href="../reis/" class="on"><small>Vol. VII</small> Reis</a></li>
-					<li><a href="../apocalipse/"><small>Vol. VIII</small> Apocalipse</a></li>
-				</ul>
-			</div>
-			<div>
-				<h3>Páginas</h3>
-				<ul>
-					<li><a href="../">Página Inicial</a></li>
-					<li><a href="../universo/">O Universo</a></li>
-					<li><a href="../personagens/">Personagens</a></li>
-					<li><a href="../bestiario/">Bestiário</a></li>
-					<li><a href="../downloads/">Downloads</a></li>
-					<li><a href="../comprar/">Onde comprar</a></li>
-				</ul>
-			</div>
-		</nav>
 	</div>
 	<div id="copyright">
-		&copy; Ariel S. Nascimento. Todos os direitos reservados.
+		&copy; <span class="rodape-ano">2026</span> Ariel S. Nascimento. Todos os direitos reservados.
 	</div>
 </footer>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
 <script src="../assets/js/main.js"></script>
 
 </body>

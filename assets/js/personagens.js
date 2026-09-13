@@ -1,7 +1,7 @@
 /* Galeria de fichas (personagens/ e bestiario/): troca o card visivel,
    sincroniza o cartao selecionado e a URL, setas, teclado e deslize.
    Se a pagina tiver .pers-grupo (classes do bestiario), filtra o
-   carrossel pelo grupo ativo. */
+   carrossel pelo grupo ativo; o botao com data-grupo="" mostra todos. */
 (function () {
   var main = document.querySelector('main.best, main#personagens');
   var avatares = Array.prototype.slice.call(document.querySelectorAll('.pers-avatar'));
@@ -28,7 +28,10 @@
     if (v.indexOf(i) === -1) i = v[0];
     if (i === atual) return;
     atual = i;
-    cards.forEach(function (c, k) { c.classList.toggle('on', k === i); });
+    cards.forEach(function (c, k) {
+      c.classList.toggle('on', k === i);
+      fecharFicha(c);
+    });
     avatares.forEach(function (a, k) {
       a.classList.toggle('on', k === i);
       a.setAttribute('aria-pressed', k === i ? 'true' : 'false');
@@ -46,6 +49,36 @@
     }
   }
 
+  /* arte em pe (personagens/): no celular a ficha fica recolhida, so com o
+     nome, e abre por cima da arte ao tocar no botao */
+  var retrato = main && main.classList.contains('retrato');
+
+  function fecharFicha(card) {
+    var b = card.querySelector('.pers-abrir');
+    if (!b) return;
+    card.classList.remove('aberta');
+    b.setAttribute('aria-expanded', 'false');
+    b.textContent = 'Ver ficha';
+  }
+
+  if (retrato) {
+    cards.forEach(function (card) {
+      var ficha = card.querySelector('.pers-ficha');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pers-abrir';
+      ficha.insertBefore(b, ficha.querySelector('dl'));
+      fecharFicha(card);
+      b.addEventListener('click', function () {
+        if (card.classList.contains('aberta')) return fecharFicha(card);
+        card.classList.add('aberta');
+        b.setAttribute('aria-expanded', 'true');
+        b.textContent = 'Fechar';
+      });
+      card.querySelector('.pers-arte').addEventListener('click', function () { fecharFicha(card); });
+    });
+  }
+
   function passo(dir) {
     var v = visiveis();
     var pos = v.indexOf(atual);
@@ -56,7 +89,7 @@
   function escolherGrupo(g, manterAtual) {
     grupoAtual = g;
     grupos.forEach(function (b) {
-      var on = b.getAttribute('data-grupo') === g;
+      var on = (b.getAttribute('data-grupo') || null) === g;
       b.classList.toggle('on', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
@@ -75,7 +108,11 @@
     a.addEventListener('click', function () { mostrar(k); });
   });
   grupos.forEach(function (b) {
-    b.addEventListener('click', function () { escolherGrupo(b.getAttribute('data-grupo')); });
+    b.addEventListener('click', function () {
+      var g = b.getAttribute('data-grupo') || null;
+      /* "ver todos" mantem a criatura que ja esta no palco */
+      escolherGrupo(g, !g);
+    });
   });
 
   var ant = document.querySelector('.pers-seta--ant');
@@ -108,8 +145,7 @@
   var inicial = slugs.indexOf(pedido);
   if (inicial < 0) inicial = 0;
   if (grupos.length) {
-    grupoAtual = grupoDe[inicial];
-    escolherGrupo(grupoAtual, 'inicio');
+    escolherGrupo(null, 'inicio');
     atual = -1;
   }
   mostrar(inicial, false);

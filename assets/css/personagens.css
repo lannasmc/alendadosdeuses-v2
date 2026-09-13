@@ -43,19 +43,20 @@
   }
 }
 
-/* palco: um card visivel por vez */
+/* palco: um card visivel por vez. Arte e ficha nunca se sobrepoem: no
+   celular, arte em cima (16:9) e ficha embaixo com rolagem propria; no
+   desktop, lado a lado. */
 .pers-palco {
   position: relative;
   margin-top: 28px;
 }
 .pers-card {
   display: none;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  align-items: start;
 }
 .pers-card.on {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   animation: pers-entra 0.5s ease both;
 }
 @keyframes pers-entra {
@@ -69,38 +70,59 @@
 /* arte */
 .pers-arte {
   position: relative;
+  flex: 0 0 auto;
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  background: #0c0a09;
 }
 .pers-arte img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-mask-image: radial-gradient(ellipse closest-side at 50% 45%, #000 58%, transparent 100%);
-  mask-image: radial-gradient(ellipse closest-side at 50% 45%, #000 58%, transparent 100%);
-}
-.pers-marca {
-  position: absolute;
-  left: 50%;
-  top: 48%;
-  transform: translate(-50%, -50%);
-  font-family: "IM Fell English", Georgia, serif;
-  font-size: 34vw;
-  line-height: 1;
-  color: rgba(246, 241, 230, 0.06);
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
+  object-position: 50% 15%;
 }
 
 /* ficha */
+.pers-ficha {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px 5% 28px;
+  background: rgba(12, 10, 9, 0.82);
+  border-radius: 0 0 6px 6px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent 100%);
+}
+/* barra de rolagem fina e sempre visivel, para deixar claro que da para
+   rolar. Chrome e Safari usam ::-webkit-scrollbar (que nao some no macOS);
+   o Firefox, scrollbar-color. */
+.pers-ficha::-webkit-scrollbar {
+  width: 6px;
+}
+.pers-ficha::-webkit-scrollbar-track {
+  background: rgba(246, 241, 230, 0.08);
+  border-radius: 3px;
+}
+.pers-ficha::-webkit-scrollbar-thumb {
+  background: rgba(65, 119, 197, 0.7);
+  border-radius: 3px;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .pers-ficha {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(65, 119, 197, 0.7) rgba(246, 241, 230, 0.08);
+  }
+}
 .pers-ficha h2 {
   font-family: "IM Fell English", Georgia, serif;
   font-weight: 400;
-  font-size: 15vw;
+  font-size: clamp(32px, 9vw, 48px);
   line-height: 0.95;
   margin: 0;
   color: #fff;
@@ -112,11 +134,12 @@
   color: #b9ae9c;
 }
 .pers-ficha dl {
-  margin: 28px 0 0;
+  margin: 10px 0 0;
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: max-content minmax(0, 1fr);
   column-gap: 22px;
-  row-gap: 16px;
+  row-gap: 8px;
+  font-size: 13px;
 }
 .pers-ficha dt {
   font-family: "IM Fell English", Georgia, serif;
@@ -134,21 +157,9 @@
   padding-left: 16px;
 }
 
-@media screen and (min-width: 800px) {
-  .pers-card {
-    grid-template-columns: minmax(300px, 46%) 1fr;
-    gap: 5%;
-  }
-  .pers-arte {
-    max-width: none;
-    margin: 0;
-  }
-  .pers-marca {
-    font-size: 15vw;
-  }
-  .pers-ficha h2 {
-    font-size: clamp(56px, 7vw, 108px);
-  }
+/* botao que abre a ficha: so existe no celular, em paginas .retrato */
+.pers-abrir {
+  display: none;
 }
 
 /* carrossel de personagens (embaixo do palco), no estilo do Genshin */
@@ -312,27 +323,42 @@
     padding: 112px 0 20px;
     display: flex;
   }
+  /* o palco cresce com a altura da tela so ate --palco-max; acima disso o
+     conjunto fica centralizado na vertical. Assim a arte mantem o recorte
+     de um notebook (1440x900) e nao e ampliada demais em telas altas. */
   .pers-inner {
+    --palco-max: 480px;
+    --palco-largura: 1080px;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, var(--palco-max)) auto;
+    align-content: center;
     height: 100%;
   }
+  /* titulo alinhado com a borda do palco (mais estreito, ver abaixo) */
   .pers-titulo {
     display: flex;
     align-items: baseline;
     gap: 16px;
+    width: 100%;
+    max-width: var(--palco-largura);
+    justify-self: center;
   }
   .pers-titulo h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
   .pers-titulo p {
     margin: 0;
     font-size: 0.85em;
   }
+  /* palco mais estreito: a arte (em pe, 3:4) fica menos deitada e
+     perde menos da imagem no recorte */
   .pers-palco {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: var(--palco-largura);
+    justify-self: center;
     min-width: 0;
     min-height: 0;
     margin-top: 12px;
@@ -341,50 +367,47 @@
     flex: 1 1 0;
     min-width: 0;
     min-height: 0;
-    width: 100%;
-    grid-template-columns: minmax(280px, 40%) 1fr;
-    gap: 4%;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr);
+    grid-template-rows: minmax(0, 1fr);
   }
   .pers-arte {
-    position: relative;
-    height: auto;
-    min-height: 0;
-    aspect-ratio: auto;
-  }
-  .pers-arte img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
     height: 100%;
-    object-position: 50% 12%;
+    aspect-ratio: auto;
+    border-radius: 6px 0 0 6px;
+  }
+  /* borda direita da arte se funde no painel */
+  .pers-arte img {
+    -webkit-mask-image: linear-gradient(to right, #000 88%, rgba(0, 0, 0, 0.35) 100%);
+    mask-image: linear-gradient(to right, #000 88%, rgba(0, 0, 0, 0.35) 100%);
   }
   .pers-ficha {
-    align-self: center;
-    min-width: 0;
-    min-height: 0;
-    overflow: hidden;
-  }
-  .pers-ficha dl {
-    grid-template-columns: max-content minmax(0, 1fr);
-  }
-  .pers-marca {
-    font-size: 22vh;
+    flex: none;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 24px 28px 44px 30px;
+    border-radius: 0 6px 6px 0;
+    background: rgba(12, 10, 9, 0.86);
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 36px), transparent 100%);
   }
   .pers-ficha h2 {
-    font-size: clamp(44px, 10vh, 100px);
+    font-size: clamp(40px, 8vh, 84px);
   }
   .pers-nome {
     margin-top: 4px;
     font-size: 1.05em;
   }
   .pers-ficha dl {
-    margin-top: clamp(12px, 2.5vh, 26px);
-    row-gap: clamp(8px, 1.6vh, 16px);
-    font-size: clamp(13px, 1.9vh, 16px);
+    margin-top: clamp(10px, 2vh, 22px);
+    row-gap: clamp(6px, 1.4vh, 14px);
+    font-size: clamp(12px, 1.75vh, 15px);
   }
   .pers-ficha dd {
-    line-height: 1.55;
+    line-height: 1.5;
   }
   .pers-carrossel {
     margin-top: 12px;
@@ -398,6 +421,16 @@
   }
   .pers-avatar span {
     padding: clamp(8px, 1.4vh, 14px) 6px clamp(9px, 1.6vh, 16px);
+  }
+}
+
+/* telas Full HD ou maiores: o conjunto cresce nas duas direcoes, na mesma
+   proporcao do notebook */
+@media screen and (min-width: 1920px) and (min-height: 1080px) {
+  .pers-inner {
+    max-width: 1700px;
+    --palco-max: 630px;
+    --palco-largura: 1310px;
   }
 }
 
@@ -425,10 +458,9 @@
     padding: 10px 5% 0;
   }
   .pers-titulo h1 {
-    font-size: 26px;
+    font-size: 32px;
   }
   .pers-palco {
-    position: relative;
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -436,58 +468,28 @@
     margin-top: 6px;
   }
   .pers-card.on {
-    display: block;
-    position: relative;
     flex: 1 1 0;
     min-height: 0;
   }
+  /* a ficha sobe por cima da arte, como um card */
   .pers-arte {
-    position: absolute;
-    inset: 0;
-    max-width: none;
-    margin: 0;
-    aspect-ratio: auto;
-  }
-  .pers-arte img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-position: 50% 8%;
-    -webkit-mask-image: linear-gradient(to bottom, #000 40%, rgba(0, 0, 0, 0.55) 62%, transparent 96%);
-    mask-image: linear-gradient(to bottom, #000 40%, rgba(0, 0, 0, 0.55) 62%, transparent 96%);
-  }
-  .pers-marca {
-    display: none;
+    border-radius: 6px;
   }
   .pers-ficha {
-    position: absolute;
-    left: 5%;
-    right: 5%;
-    bottom: 0;
-    max-height: 70%;
-    overflow-y: auto;
-    scrollbar-width: none;
-    padding: 36px 0 4px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.72) 36px, rgba(0, 0, 0, 0.72) 100%);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  }
-  .pers-ficha::-webkit-scrollbar {
-    display: none;
-  }
-  .pers-ficha h2 {
-    font-size: clamp(40px, 12vw, 64px);
+    z-index: 1;
+    margin: -36px 3% 0;
+    padding: 18px 5% 30px;
+    border-radius: 14px 14px 6px 6px;
+    background: rgba(14, 12, 10, 0.94);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.55);
+    border-top: 1px solid rgba(246, 241, 230, 0.12);
   }
   .pers-nome {
     margin-top: 2px;
     font-size: 1em;
   }
   .pers-ficha dl {
-    margin-top: 12px;
-    grid-template-columns: max-content minmax(0, 1fr);
     column-gap: 12px;
-    row-gap: 8px;
-    font-size: 13px;
   }
   .pers-ficha dt {
     font-size: 0.8em;
@@ -524,5 +526,63 @@
   }
   .pers-avatar span {
     padding: 7px 4px 8px;
+  }
+}
+
+/* celular, arte em pe (personagens/): a arte ocupa o palco inteiro e a
+   ficha fica recolhida embaixo, so com o nome. O botao abre a ficha por
+   cima da arte; tocar na arte fecha. */
+@media screen and (max-width: 999px) {
+  .retrato .pers-card.on {
+    position: relative;
+  }
+  .retrato .pers-arte {
+    position: absolute;
+    inset: 0;
+    aspect-ratio: auto;
+  }
+  .retrato .pers-arte img {
+    object-position: 50% 10%;
+  }
+  .retrato .pers-ficha {
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    bottom: 0;
+    max-height: 80%;
+    padding: 14px 5% 16px;
+    margin: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .retrato .pers-ficha h2 {
+    padding-right: 96px;
+  }
+  .retrato .pers-abrir {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 5%;
+    padding: 7px 12px;
+    border: 1px solid rgba(246, 241, 230, 0.35);
+    border-radius: 999px;
+    background: rgba(65, 119, 197, 0.3);
+    color: #f6f1e6;
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .retrato .pers-abrir:focus-visible {
+    outline: 2px solid #4177c5;
+    outline-offset: 2px;
+  }
+  .retrato .pers-card:not(.aberta) .pers-ficha dl {
+    display: none;
+  }
+  .retrato .pers-card.aberta .pers-ficha {
+    padding-bottom: 28px;
+  }
+  .retrato .pers-card.aberta .pers-ficha dl {
+    animation: pers-entra 0.3s ease both;
   }
 }
