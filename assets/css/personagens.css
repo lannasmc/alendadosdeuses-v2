@@ -586,3 +586,60 @@
     animation: pers-entra 0.3s ease both;
   }
 }
+
+/* Mundo Luminoso (experimento): na pagina de personagens a ficha e clara
+   com letras escuras, o inverso do bestiario (Mundo Sombrio). So vale com
+   a classe .luz no <main>; o bestiario, que tambem carrega este arquivo,
+   continua escuro. */
+.luz .pers-ficha {
+  background: rgba(246, 241, 230, 0.9);
+  color: #2a241e;
+}
+.luz .pers-ficha h2 {
+  color: #1a1612;
+}
+.luz .pers-nome {
+  color: #7a6a55;
+}
+.luz .pers-ficha dt {
+  color: #2f5c9e;
+}
+.luz .pers-ficha dd {
+  border-left-color: rgba(42, 36, 30, 0.2);
+}
+.luz .pers-ficha::-webkit-scrollbar-track {
+  background: rgba(42, 36, 30, 0.1);
+}
+@supports not selector(::-webkit-scrollbar) {
+  .luz .pers-ficha {
+    scrollbar-color: rgba(65, 119, 197, 0.7) rgba(42, 36, 30, 0.1);
+  }
+}
+@media screen and (min-width: 1000px) {
+  /* sem os esmaecimentos do card escuro: sobre o creme eles viravam uma
+     faixa escura na base e uma emenda escura entre arte e ficha */
+  .luz .pers-ficha {
+    background: rgba(246, 241, 230, 0.93);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .luz .pers-arte img {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+@media screen and (max-width: 999px) {
+  .luz .pers-ficha {
+    background: rgba(246, 241, 230, 0.96);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+    border-top-color: rgba(255, 255, 255, 0.6);
+  }
+  .luz.retrato .pers-abrir {
+    border-color: rgba(42, 36, 30, 0.3);
+    background: rgba(65, 119, 197, 0.14);
+    color: #2a241e;
+  }
+  .luz.retrato .pers-abrir:focus-visible {
+    outline-color: #2f5c9e;
+  }
+}
