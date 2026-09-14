@@ -102,8 +102,11 @@ header#global-header #mainnav-bar {
        (repeat-x) duplicava a seta em telas ultrawide, e imagem + gradientes
        nas laterais deixavam um risco na emenda. O SVG se estica na largura
        toda e a seta fica em x=50%, entao nao ha emenda nem repeticao. As
-       medidas vem da imagem original (1920x200 mostrada a 1864px). */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='.902'%3E%3Crect width='100%25' height='73' fill='%23fff'/%3E%3Crect y='73' width='100%25' height='7' fill='%23000'/%3E%3Csvg x='50%25' overflow='visible'%3E%3Cpolygon points='-205,73 205,73 0,180' fill='%23000'/%3E%3Cpolygon points='-191,73 191,73 0,172' fill='%23fff'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E");
+       medidas vem da imagem original (1920x200 mostrada a 1864px).
+       Sao so duas formas: uma preta (linha + contorno da seta) e uma branca
+       unica por cima (faixa + miolo). Formas brancas separadas com borda em
+       comum deixavam um risco da linha preta aparecer no zoom 110-150%. */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Csvg x='50%25' overflow='visible'%3E%3Cg opacity='.902'%3E%3Cpath d='M-99999 0H99999V80H191.6L0 180L-191.6 80H-99999Z'/%3E%3Cpath d='M-99999 0H99999V73H191L0 172L-191 73H-99999Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E");
     background-position: 50% top;
     background-repeat: no-repeat;
     background-size: 100% 194px;
@@ -1194,7 +1197,7 @@ footer.rodape #copyright {
   header#global-header.scrld #mainnav-bar {
     height: 95px;
     /* mesma seta na metade do tamanho (a imagem antiga era mostrada a 960px) */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='.902'%3E%3Crect width='100%25' height='37.5' fill='%23fff'/%3E%3Crect y='37.5' width='100%25' height='3.5' fill='%23000'/%3E%3Csvg x='50%25' overflow='visible'%3E%3Cpolygon points='-105.5,37.5 105.5,37.5 0,92.5' fill='%23000'/%3E%3Cpolygon points='-98.5,37.5 98.5,37.5 0,88.5' fill='%23fff'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Csvg x='50%25' overflow='visible'%3E%3Cg opacity='.902'%3E%3Cpath d='M-99999 0H99999V41H98.8L0 92.5L-98.8 41H-99999Z'/%3E%3Cpath d='M-99999 0H99999V37.5H98.5L0 88.5L-98.5 37.5H-99999Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E");
     background-size: 100% 100px;
   }
   header#global-header.scrld #mainnav-bar #mainnav-left,
