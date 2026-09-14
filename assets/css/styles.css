@@ -97,16 +97,16 @@ header#global-header #mainnav-bar {
     display: block;
     width: 100%;
     height: 194px;
-    /* A imagem tem a seta no centro; repeti-la (repeat-x) duplicava a seta nas
-       laterais em telas mais largas que ela. Agora ela fica unica no centro e
-       as laterais sao preenchidas por gradientes com o mesmo branco e a mesma
-       linha (y 75-82 de 200px, alpha 230), cobrindo so a area fora da imagem. */
-    --nav-img-w: 1864px;
-    --nav-img-h: 194.17px;
-    background-image: url(../img/common/header_bg_white.webp), linear-gradient(to bottom, rgba(255, 255, 255, 0.902) 37.5%, rgba(0, 0, 0, 0.902) 37.5%, rgba(0, 0, 0, 0.902) 41%, transparent 41%), linear-gradient(to bottom, rgba(255, 255, 255, 0.902) 37.5%, rgba(0, 0, 0, 0.902) 37.5%, rgba(0, 0, 0, 0.902) 41%, transparent 41%);
-    background-position: 50% top, left top, right top;
+    /* Fundo desenhado em SVG (branco 90%, linha preta de 7px e seta central
+       para o logo), em vez da imagem header_bg_white.webp: a imagem repetida
+       (repeat-x) duplicava a seta em telas ultrawide, e imagem + gradientes
+       nas laterais deixavam um risco na emenda. O SVG se estica na largura
+       toda e a seta fica em x=50%, entao nao ha emenda nem repeticao. As
+       medidas vem da imagem original (1920x200 mostrada a 1864px). */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='.902'%3E%3Crect width='100%25' height='73' fill='%23fff'/%3E%3Crect y='73' width='100%25' height='7' fill='%23000'/%3E%3Csvg x='50%25' overflow='visible'%3E%3Cpolygon points='-205,73 205,73 0,180' fill='%23000'/%3E%3Cpolygon points='-191,73 191,73 0,172' fill='%23fff'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E");
+    background-position: 50% top;
     background-repeat: no-repeat;
-    background-size: var(--nav-img-w) var(--nav-img-h), calc((100% - var(--nav-img-w)) / 2) var(--nav-img-h), calc((100% - var(--nav-img-w)) / 2) var(--nav-img-h);
+    background-size: 100% 194px;
     z-index: 9000;
     position: fixed;
     pointer-events: none;
@@ -207,14 +207,12 @@ header#global-header #subnav-bar {
     display: block;
     width: 100%;
     height: 36px;
-    /* mesma logica do #mainnav-bar: seta unica no centro, laterais preenchidas
-       com o preto da imagem (alpha 179) */
-    --nav-img-w: 1860px;
-    --nav-img-h: 35.84px;
-    background-image: url(../img/common/header_bg_dark.webp), linear-gradient(rgba(0, 0, 0, 0.702), rgba(0, 0, 0, 0.702)), linear-gradient(rgba(0, 0, 0, 0.702), rgba(0, 0, 0, 0.702));
-    background-position: 50% top, left top, right top;
+    /* mesma logica do #mainnav-bar: preto 70% com o recorte central em SVG,
+       no lugar de header_bg_dark.webp */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' opacity='.702'%3E%3Csvg x='50%25' overflow='visible'%3E%3Cpath d='M-99999 0H-191L-124.5 36H-99999Z'/%3E%3Cpath d='M99999 0H191L124.5 36H99999Z'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E");
+    background-position: 50% top;
     background-repeat: no-repeat;
-    background-size: var(--nav-img-w) var(--nav-img-h), calc((100% - var(--nav-img-w)) / 2) var(--nav-img-h), calc((100% - var(--nav-img-w)) / 2) var(--nav-img-h);
+    background-size: 100% 36px;
     z-index: 8000;
     position: fixed;
     top: 79px;
@@ -1195,8 +1193,9 @@ footer.rodape #copyright {
   }
   header#global-header.scrld #mainnav-bar {
     height: 95px;
-    --nav-img-w: 960px;
-    --nav-img-h: 100px;
+    /* mesma seta na metade do tamanho (a imagem antiga era mostrada a 960px) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='.902'%3E%3Crect width='100%25' height='37.5' fill='%23fff'/%3E%3Crect y='37.5' width='100%25' height='3.5' fill='%23000'/%3E%3Csvg x='50%25' overflow='visible'%3E%3Cpolygon points='-105.5,37.5 105.5,37.5 0,92.5' fill='%23000'/%3E%3Cpolygon points='-98.5,37.5 98.5,37.5 0,88.5' fill='%23fff'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100% 100px;
   }
   header#global-header.scrld #mainnav-bar #mainnav-left,
   header#global-header.scrld #mainnav-bar #mainnav-right {
@@ -1228,7 +1227,8 @@ header#global-header.scrld #subnav-bar {
   header#global-header.scrld #subnav-bar {
     display: block;
     height: 40px;
-    background-image: url(../img/common/header_bg_dark_sm.webp), linear-gradient(rgba(0, 0, 0, 0.702), rgba(0, 0, 0, 0.702)), linear-gradient(rgba(0, 0, 0, 0.702), rgba(0, 0, 0, 0.702)) !important;
+    /* recorte menor, para o logo reduzido (era header_bg_dark_sm.webp) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000' opacity='.702'%3E%3Csvg x='50%25' overflow='visible'%3E%3Cpath d='M-99999 0H-95L-29.5 36H-99999Z'/%3E%3Cpath d='M99999 0H95L29.5 36H99999Z'/%3E%3C/svg%3E%3C/g%3E%3C/svg%3E") !important;
     top: 41px;
   }
 }
