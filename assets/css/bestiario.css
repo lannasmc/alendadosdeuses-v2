@@ -6,6 +6,13 @@
   max-width: 70ch;
 }
 
+/* sem o esmaecimento na base da ficha: o texto vai ate o fim, e a barra
+   de rolagem continua indicando quando ha mais conteudo */
+.best .pers-ficha {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
 /* a arte das criaturas e horizontal: centralizada */
 .best .pers-arte img {
   object-position: 50% 50%;
