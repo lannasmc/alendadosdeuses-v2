@@ -192,7 +192,7 @@ enfileirado, e as URLs já estão no formato final.
 
 ## O que é real e o que é provisório
 
-**Real (vem do site atual e do blog do cliente):** moldura alada do logo; capas de Gênesis e
+**Real (vem do site atual e do blog do cliente):** moldura alada do logo; arte da 404 (gerada por IA, reenquadrada no miolo da moldura); capas de Gênesis e
 Crônicas; ilustrações e fichas dos 10 personagens e das 13 criaturas;
 texto da cosmogênese; mapa do Mundo Concreto; bio, trajetória e foto do
 autor; links e preços da Amazon e do Mercado Livre; livrarias; redes
@@ -212,7 +212,6 @@ nos caminhos definitivos; é só sobrescrever com a arte final de mesmo nome):
 |---|---|
 | `assets/img/livros/capa-proverbios.jpg` … `capa-apocalipse.jpg` | 867 × 1200 |
 | `assets/img/universo/luminoso.jpg`, `sombrio.jpg` | 1600 × 900 |
-| `assets/img/erro/404.jpg` | 800 × 800 |
 
 A moldura alada (`assets/img/moldura.png`) é a arte do logo, colocada num
 quadrado de 1000 × 1000 com fundo transparente. O miolo fica centrado em
@@ -220,6 +219,11 @@ quadrado de 1000 × 1000 com fundo transparente. O miolo fica centrado em
 `clip-path: ellipse(26.5% 31% at 50% 52.5%)` em `.moldura-alada__arte`
 (`ornamentos.css`). Se a moldura for trocada por outra, ajuste esse
 recorte. As sete gemas vêm desenhadas na própria arte.
+
+Para trocar a arte da 404 (`assets/img/erro/404.jpg`): imagem quadrada de
+800 × 800 com o assunto dentro de um oval centrado, de 53% da largura por
+62% da altura, com o centro a 52,5% do topo. O que fica fora do oval é
+coberto pela moldura.
 
 A moldura aparece em três lugares apenas: emblema da home, portais da home
 e 404. Personagens e bestiário usam placas retangulares.
