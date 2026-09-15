@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Ficha · lista de rótulo + valor. Serve para personagem, demônio,
+   dados de volume e resumo do universo. Muda só o texto dos rótulos.
+
+   <dl class="ficha">
+     <div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>16 anos.</dd></div>
+   </dl>
+   ========================================================================== */
+
+.ficha { margin: 0; }
+.ficha-linha dd { margin: 0; }
+
+/* ---------- Ficha em tabela (personagens, bestiário) ---------- */
+.ficha--tabela .ficha-linha {
+	display: grid;
+	gap: .35rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--gold-faint);
+}
+.ficha--tabela .ficha-linha:last-child { border-bottom: 0; }
+.ficha--tabela dd { font-size: 1.15rem; color: var(--text); }
+
+@media (min-width: 44rem) {
+	.ficha--tabela .ficha-linha {
+		grid-template-columns: 12rem 1fr;
+		gap: 0;
+		padding: 0;
+		border-bottom: 0;
+	}
+	.ficha--tabela dt { padding: 1.15rem 1.5rem 0 0; }
+	.ficha--tabela dd {
+		padding: .85rem 0 .85rem 1.6rem;
+		border-left: 1px solid rgba(201, 162, 39, .5);
+		border-bottom: 1px solid var(--gold-faint);
+	}
+	.ficha--tabela .ficha-linha:last-child dd { border-bottom: 0; }
+}
+
+/* ---------- Ficha empilhada (dados do volume, resumo do universo) ---------- */
+.ficha--empilhada .ficha-linha {
+	padding: .7rem 0;
+	border-bottom: 1px solid var(--gold-faint);
+}
+.ficha--empilhada .ficha-linha:first-child { padding-top: 0; }
+.ficha--empilhada .ficha-linha:last-child { border-bottom: 0; padding-bottom: 0; }
+.ficha--empilhada dd { margin-top: .15rem; color: var(--parch); }
