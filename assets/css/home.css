@@ -160,7 +160,8 @@
 
 /* ---------- Abertura em pergaminho ---------- */
 .abertura p { font-size: clamp(1.25rem, 2vw, 1.4rem); }
-.abertura .link-seta { display: inline-block; margin-top: 1.25rem; font-size: 1.05rem; }
+/* o link acompanha o tamanho do texto do bloco */
+.abertura .link-seta { display: inline-block; margin-top: 1.25rem; font-size: 1em; }
 .abertura .nota { margin-top: 1.25rem; font-style: italic; color: var(--parch-dim); }
 .abertura .nota a { font-style: normal; }
 
