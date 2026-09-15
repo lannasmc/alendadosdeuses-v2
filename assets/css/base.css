@@ -90,8 +90,8 @@ body {
 	background: var(--ink);
 	color: var(--text);
 	font-family: var(--font-text);
-	font-size: 1.125rem;
-	line-height: 1.65;
+	font-size: 1.25rem;
+	line-height: 1.7;
 	text-align: left;
 	hyphens: manual;
 	-webkit-font-smoothing: antialiased;
@@ -175,6 +175,9 @@ a:hover { color: var(--parch); }
 	background-repeat: repeat, repeat, repeat, repeat, no-repeat, no-repeat;
 }
 
+/* texto corrido das páginas de leitura: um passo acima da base */
+.prosa p, .texto p { font-size: 1.32rem; }
+
 /* ---------- Tipografia de livro ---------- */
 /* capitular */
 .capitular::first-letter {
@@ -204,7 +207,7 @@ a:hover { color: var(--parch); }
 /* subtítulo em itálico sob títulos */
 .linha-fina {
 	font-style: italic;
-	font-size: 1.15rem;
+	font-size: 1.25rem;
 	color: var(--text-dim);
 }
 .fundo-pergaminho .linha-fina { color: var(--parch-dim); }

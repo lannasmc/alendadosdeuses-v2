@@ -173,7 +173,7 @@
 /* ---------- Epígrafe ---------- */
 .epigrafe p {
 	font-style: italic;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	line-height: 1.6;
 	color: var(--text);
 }

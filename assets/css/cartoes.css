@@ -23,7 +23,7 @@
 	margin-top: .35rem;
 	font-size: clamp(1.15rem, 2vw, 1.35rem);
 }
-.cartao p { font-size: 1.05rem; color: var(--text); }
+.cartao p { font-size: 1.15rem; color: var(--text); }
 .cartao__meta {
 	font-family: var(--font-label);
 	font-size: .72rem;
