@@ -145,8 +145,16 @@
 	filter: saturate(.85) brightness(.85);
 	transition: filter .25s;
 }
-/* arte em pé: mostra a parte de cima (rosto) em vez do meio */
-.moldura-alada > .moldura-alada__arte--topo { object-position: center top; }
+/* arte inteira: a imagem ocupa só o retângulo do miolo, em vez do quadrado todo,
+   então aparece bem mais do entorno */
+.moldura-alada > .moldura-alada__arte--inteira {
+	inset: 21.5% 23.5% 16.5%;
+	width: 53%;
+	height: 62%;
+	clip-path: ellipse(50% 50% at 50% 50%);
+}
+/* arte em pé: prioriza a parte de cima (rosto) */
+.moldura-alada > .moldura-alada__arte--topo { object-position: center 20%; }
 
 /* ---------- Citação centralizada ---------- */
 .citacao {
