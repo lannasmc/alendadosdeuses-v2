@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Linha do tempo · agenda de eventos e trajetória do autor
+   <ol class="linha-tempo"><li class="marco">…</li></ol>
+   ========================================================================== */
+
+.linha-tempo {
+	position: relative;
+	margin-top: 1.5rem;
+	padding-left: 2.25rem;
+}
+.linha-tempo::before {
+	content: "";
+	position: absolute;
+	left: .45rem;
+	top: .5rem;
+	bottom: 0;
+	width: 1px;
+	background: #C9A227;
+	opacity: .7;
+}
+.marco { position: relative; }
+.marco + .marco { margin-top: 1.5rem; }
+.marco::before {
+	content: "";
+	position: absolute;
+	left: -2.25rem;
+	top: .15rem;
+	width: .8rem;
+	height: .8rem;
+	margin-left: .05rem;
+	border: 1.5px solid #C9A227;
+	background: var(--parch);
+	transform: rotate(45deg);
+}
+.marco .rotulo { color: var(--vol); }
+.marco h3 {
+	margin-top: .2rem;
+	font-family: var(--font-text);
+	font-weight: 600;
+	font-size: 1.4rem;
+}
+.marco p { margin-top: .2rem; max-width: 40rem; }
+
+/* marco com selo à direita (agenda) */
+.marco--evento { display: grid; gap: .5rem 1.5rem; }
+.marco--evento .selo { justify-self: start; }
+@media (min-width: 40rem) {
+	.marco--evento { grid-template-columns: 1fr auto; }
+	.marco--evento .selo { grid-column: 2; grid-row: 1 / span 3; align-self: start; }
+}

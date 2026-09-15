@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Faixa de título · abertura escura antes de uma seção em pergaminho
+   (eventos, autor). Com retrato redondo opcional.
+   ========================================================================== */
+
+.faixa {
+	padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+.faixa .titulo-secao { margin-bottom: 0; }
+
+.retrato {
+	width: clamp(9rem, 22vw, 12rem);
+	aspect-ratio: 1;
+	margin: 2rem auto 0;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 3px solid var(--parch);
+	box-shadow: 0 0 0 1px var(--gold-soft), 0 0 0 7px var(--ink), 0 0 0 8px var(--gold-soft);
+}
+.faixa .citacao { margin-top: 2rem; }

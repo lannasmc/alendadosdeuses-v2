@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Cartões · downloads (tipo, título, descrição, formato, link)
+   ========================================================================== */
+
+.cartoes {
+	display: grid;
+	gap: 1.5rem;
+}
+@media (min-width: 40rem) {
+	.cartoes { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 62rem) {
+	.cartoes { grid-template-columns: repeat(3, 1fr); }
+}
+.cartao {
+	display: flex;
+	flex-direction: column;
+	gap: .75rem;
+	padding: 1.6rem 1.6rem 1.4rem;
+}
+.cartao .selo { align-self: flex-start; }
+.cartao h2 {
+	margin-top: .35rem;
+	font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+.cartao p { font-size: 1.05rem; color: var(--text); }
+.cartao__meta {
+	font-family: var(--font-label);
+	font-size: .62rem;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	color: var(--text-dim);
+}
+.cartao__link {
+	align-self: flex-start;
+	margin-top: auto;
+	padding: .75rem 0 .2rem;
+	border-bottom: 1px solid var(--vol);
+	font-family: var(--font-label);
+	font-size: .72rem;
+	letter-spacing: .22em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--vol-text);
+}
+.cartao__link:hover { color: var(--parch); border-color: var(--parch); }
+.cartao__link[aria-disabled="true"] { pointer-events: none; opacity: .6; }
+
+.downloads-aviso {
+	max-width: 44rem;
+	margin: -1.5rem auto 2.5rem;
+	text-align: center;
+}

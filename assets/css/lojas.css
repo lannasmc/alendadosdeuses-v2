@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Onde comprar · um bloco por volume com lojas e livrarias
+   ========================================================================== */
+
+.compra {
+	display: grid;
+	gap: 2rem;
+	align-items: start;
+}
+.compra + .compra { margin-top: clamp(3rem, 7vw, 4.5rem); }
+.compra .capa { max-width: 15rem; }
+@media (min-width: 50rem) {
+	.compra { grid-template-columns: 15rem 1fr; gap: clamp(3rem, 7vw, 6rem); }
+}
+.compra h2 { margin: .3rem 0 1.5rem; }
+
+.lojas { display: grid; gap: 1rem; }
+.loja {
+	display: block;
+	padding: 1.2rem 1.5rem;
+	border: 1px solid var(--gold-soft);
+	text-decoration: none;
+	color: var(--text);
+}
+.loja:hover { border-color: var(--gold); background: rgba(201, 162, 39, .04); color: var(--text); }
+.loja__nome {
+	display: block;
+	font-family: var(--font-label);
+	font-weight: 600;
+	font-size: 1.05rem;
+	letter-spacing: .08em;
+	color: var(--parch);
+}
+.loja:hover .loja__nome { color: var(--gold); }
+.loja__preco { display: block; margin: .35rem 0 .6rem; }
+
+.livrarias {
+	margin-top: 1.75rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--gold-faint);
+}
+.livrarias ul { margin-top: .9rem; padding: 0; list-style: none; }
+.livrarias li + li { margin-top: .6rem; }
+.livrarias a {
+	font-family: var(--font-label);
+	font-weight: 600;
+	letter-spacing: .06em;
+	color: var(--parch);
+	text-decoration: none;
+}
+.livrarias a:hover { color: var(--gold); }
+.livrarias small { margin-left: .5rem; font-size: 1rem; color: var(--text-dim); }
+
+.aviso-breve {
+	padding: 1.5rem 1.75rem;
+	border: 1px dashed var(--gold-soft);
+	font-style: italic;
+	font-size: 1.15rem;
+	color: var(--text-dim);
+}

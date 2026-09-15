@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Downloads · A Lenda dos Deuses</title>
+<meta name="description" content="Jogos, mapas e materiais extras gratuitos do universo de A Lenda dos Deuses.">
+<link rel="preload" href="../assets/fonts/cinzel-decorative-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/footer.css">
+<link rel="stylesheet" href="../assets/css/ornamentos.css">
+<link rel="stylesheet" href="../assets/css/botoes.css">
+<link rel="stylesheet" href="../assets/css/cartoes.css">
+<link rel="stylesheet" href="../assets/css/convite.css">
+<script src="../assets/js/menu.js" defer></script>
+</head>
+<body data-vol="genesis">
+<!-- ============ CABEÇALHO (idêntico em todas as páginas) ============ -->
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+	<div class="topo__barra wrap">
+		<a class="topo__logo" href="../">A Lenda dos Deuses</a>
+		<a class="btn btn--primario topo__comprar" href="../onde-comprar/">Comprar</a>
+		<button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+			<svg class="ico-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+			<svg class="ico-fechar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+		</button>
+		<nav class="topo__nav" id="menu-principal" aria-label="Principal">
+			<ul>
+				<li><a href="../livros/">Os Livros</a></li>
+				<li><a href="../universo/">O Universo</a></li>
+				<li><a href="../personagens/">Personagens</a></li>
+				<li><a href="../bestiario/">Bestiário</a></li>
+				<li><a href="../downloads/" aria-current="page">Downloads</a></li>
+				<li><a href="../autor/">Autor</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- ============ /CABEÇALHO ============ -->
+
+<main id="conteudo">
+<div class="secao fundo-tinta">
+<div class="wrap">
+	<header class="titulo-secao">
+		<h1>Downloads</h1>
+		<p class="linha-fina">Jogos, mapas e materiais extras</p>
+	</header>
+	<p class="linha-fina downloads-aviso">Tudo aqui é gratuito. Arquivos grandes ficam hospedados fora do site; o link leva direto para a origem.</p>
+
+	<!-- CONTEÚDO: um cartão por download. A cor do selo e do link vem de data-vol.
+	     Enquanto o arquivo não existir, o link fica com aria-disabled="true" e sem href. -->
+	<ul class="cartoes">
+		<li class="ornate cartao" data-vol="genesis">
+			<span class="selo">Jogo</span>
+			<h2>A Fuga de Agharta</h2>
+			<p>Um pequeno jogo de plataforma ambientado nas ruínas de Agharta.</p>
+			<span class="cartao__meta">Jogue no navegador &middot; itch.io &middot; HTML5</span>
+			<a class="cartao__link" aria-disabled="true">Em breve</a>
+		</li>
+		<li class="ornate cartao" data-vol="proverbios">
+			<span class="selo">Mapa</span>
+			<h2>Mapa-múndi em alta</h2>
+			<p>O mapa do Mundo Concreto em resolução para impressão.</p>
+			<span class="cartao__meta">PNG &middot; 3,4 MB &middot; Download direto</span>
+			<a class="cartao__link" href="arquivos/mapa-mundo-concreto.png" download>Baixar &rarr;</a>
+		</li>
+		<li class="ornate cartao" data-vol="cronicas">
+			<span class="selo">Imagens</span>
+			<h2>Pacote de wallpapers</h2>
+			<p>Doze artes do universo em formatos para celular e desktop.</p>
+			<span class="cartao__meta">ZIP &middot; 24 MB &middot; Download direto</span>
+			<a class="cartao__link" aria-disabled="true">Em breve</a>
+		</li>
+		<li class="ornate cartao" data-vol="exodo">
+			<span class="selo">PDF</span>
+			<h2>Fichas para imprimir</h2>
+			<p>Fichas em branco de personagem e de demônio, para preencher.</p>
+			<span class="cartao__meta">PDF &middot; 2 MB &middot; Download direto</span>
+			<a class="cartao__link" aria-disabled="true">Em breve</a>
+		</li>
+		<li class="ornate cartao" data-vol="lamentacoes">
+			<span class="selo">Leitura</span>
+			<h2>Os contos da Gaia</h2>
+			<p>Histórias curtas que ela contou e que não estão nos livros.</p>
+			<span class="cartao__meta">PDF &middot; 1 MB &middot; Download direto</span>
+			<a class="cartao__link" aria-disabled="true">Em breve</a>
+		</li>
+		<li class="ornate cartao" id="primeiro-capitulo" data-vol="reis">
+			<span class="selo">Leitura</span>
+			<h2>Primeiro capítulo</h2>
+			<p>Os capítulos iniciais do Volume I, de graça.</p>
+			<span class="cartao__meta">PDF &middot; 800 KB &middot; Download direto</span>
+			<a class="cartao__link" aria-disabled="true">Em breve</a>
+		</li>
+	</ul>
+
+	<hr class="rule-double">
+
+	<div class="ornate convite">
+		<div>
+			<h2>Quer saber quando tiver material novo?</h2>
+			<p>Acompanhe pelas redes: é lá que os lançamentos são anunciados primeiro.</p>
+		</div>
+		<div class="convite__acoes">
+			<a class="btn btn--secundario" href="../autor/#redes">Ver as redes</a>
+		</div>
+	</div>
+</div>
+</div>
+</main>
+
+<!-- ============ RODAPÉ (idêntico em todas as páginas) ============ -->
+<footer class="rodape fundo-tinta">
+	<div class="wrap">
+		<div class="rodape__grade">
+			<div>
+				<a class="rodape__logo" href="../">A Lenda<small>dos</small>Deuses</a>
+				<p class="rodape__tagline">Série literária de Ariel S. Nascimento.</p>
+			</div>
+			<nav aria-labelledby="rodape-volumes">
+				<h2 id="rodape-volumes">Volumes</h2>
+				<ul class="rodape__lista">
+					<li><a href="../livros/genesis/"><small>Vol. I</small> Gênesis</a></li>
+					<li><a href="../livros/cronicas/"><small>Vol. II</small> Crônicas</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. III</small> Provérbios</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. IV</small> Êxodo</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. V</small> Lamentações</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VI</small> Atos</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VII</small> Reis</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VIII</small> Apocalipse</a></li>
+				</ul>
+			</nav>
+			<nav aria-labelledby="rodape-paginas">
+				<h2 id="rodape-paginas">Páginas</h2>
+				<ul class="rodape__lista">
+					<li><a href="../">Página Inicial</a></li>
+					<li><a href="../livros/">Os Livros</a></li>
+					<li><a href="../universo/">O Universo</a></li>
+					<li><a href="../personagens/">Personagens</a></li>
+					<li><a href="../bestiario/">Bestiário</a></li>
+					<li><a href="../downloads/" aria-current="page">Downloads</a></li>
+					<li><a href="../eventos/">Eventos</a></li>
+					<li><a href="../autor/">O Autor</a></li>
+					<li><a href="../onde-comprar/">Onde comprar</a></li>
+				</ul>
+			</nav>
+			<div>
+				<h2>Contato</h2>
+				<a class="rodape__email" href="mailto:ariels.nascimento@gmail.com">ariels.nascimento@gmail.com</a>
+				<ul class="redes">
+					<li><a href="https://www.instagram.com/ariels.n/" target="_blank" rel="noopener" aria-label="Instagram (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a></li>
+					<li><a href="https://www.tiktok.com/@ariels.n" target="_blank" rel="noopener" aria-label="TikTok (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 2.5c.4 2.3 1.9 3.9 4.4 4.2v3.2c-1.6 0-3.1-.5-4.4-1.3v6.6a6.3 6.3 0 1 1-6.3-6.3c.3 0 .7 0 1 .1v3.3a3 3 0 1 0 2 2.9V2.5h3.3z"/></svg></a></li>
+					<li><a href="https://www.threads.com/@ariels.n" target="_blank" rel="noopener" aria-label="Threads (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M17.8 8.2C16.9 5.4 14.8 3.8 12 3.8c-4.4 0-7.2 3.2-7.2 8.2s2.8 8.2 7.2 8.2c3.6 0 6-2 6-4.9 0-2.6-2.1-4.2-5.1-4.2-2.2 0-3.7 1.1-3.7 2.6 0 1.4 1.2 2.3 2.8 2.3 2.5 0 3.7-1.9 3.7-5V9"/></svg></a></li>
+				</ul>
+				<h2 class="rodape__subtitulo">Os livros</h2>
+				<div class="rodape__capas">
+					<a href="../livros/genesis/"><img src="../assets/img/livros/capa-genesis.jpg" alt="Capa do Volume I: Gênesis" width="68" height="94" loading="lazy"></a>
+					<a href="../livros/cronicas/"><img src="../assets/img/livros/capa-cronicas.jpg" alt="Capa do Volume II: Crônicas" width="68" height="94" loading="lazy"></a>
+					<a class="rodape__onde link-seta" href="../onde-comprar/">Onde comprar</a>
+				</div>
+			</div>
+		</div>
+		<p class="rodape__copy">&copy; 2026 Ariel S. Nascimento. Todos os direitos reservados.</p>
+	</div>
+</footer>
+<!-- ============ /RODAPÉ ============ -->
+</body>
+</html>

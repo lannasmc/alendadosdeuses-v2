@@ -1,0 +1,19 @@
+/* ==========================================================================
+   O Autor · bio, onde acompanhar
+   ========================================================================== */
+
+.autor-bio p { font-size: 1.2rem; }
+
+.autor-contato {
+	display: grid;
+	gap: 2rem 4rem;
+	align-items: start;
+}
+@media (min-width: 48rem) {
+	.autor-contato { grid-template-columns: 1fr 22rem; }
+}
+.autor-contato .redes a { border-color: rgba(140, 106, 30, .55); color: #7A5A14; }
+.autor-contato .redes a:hover { background: #5A3E10; border-color: #5A3E10; color: var(--parch); }
+.autor-contato__email { margin-top: 1.25rem; color: var(--parch-dim); }
+.autor-contato__email a { font-weight: 600; text-decoration: none; }
+.autor-contato__caixa p { margin-top: .6rem; }
