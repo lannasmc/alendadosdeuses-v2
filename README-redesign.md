@@ -36,6 +36,7 @@ assets/fonts/               Cinzel Decorative, Cinzel, EB Garamond (woff2)
 assets/css/                 um arquivo por componente (lista abaixo)
 assets/js/menu.js           abre e fecha o menu no celular
 assets/js/carrossel.js      carrossel de personagens e bestiário
+assets/img/logo.png         logo do cabeçalho (logo inline do cliente, recortado)
 assets/img/moldura.png      moldura alada (arte do logo, quadrada e transparente)
 assets/img/livros/          capas: capa-<volume>.jpg
 assets/img/personagens/     uma imagem por personagem: <nome>.jpg
@@ -192,7 +193,7 @@ enfileirado, e as URLs já estão no formato final.
 
 ## O que é real e o que é provisório
 
-**Real (vem do site atual e do blog do cliente):** moldura alada do logo; arte da 404 (fantasma gerado por IA); capas de Gênesis e
+**Real (vem do site atual e do blog do cliente):** logo inline no cabeçalho; moldura alada do logo; arte da 404 (fantasma gerado por IA); capas de Gênesis e
 Crônicas; ilustrações e fichas dos 10 personagens e das 13 criaturas;
 texto da cosmogênese; mapa do Mundo Concreto; bio, trajetória e foto do
 autor; links e preços da Amazon e do Mercado Livre; livrarias; redes
