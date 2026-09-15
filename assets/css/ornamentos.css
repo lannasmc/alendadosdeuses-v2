@@ -145,6 +145,8 @@
 	filter: saturate(.85) brightness(.85);
 	transition: filter .25s;
 }
+/* arte em pé: mostra a parte de cima (rosto) em vez do meio */
+.moldura-alada > .moldura-alada__arte--topo { object-position: center top; }
 
 /* ---------- Citação centralizada ---------- */
 .citacao {
