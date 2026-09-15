@@ -1,6 +1,6 @@
 /* ==========================================================================
    Faixa de título · abertura escura antes de uma seção em pergaminho
-   (eventos, autor). Com retrato redondo opcional.
+   (eventos, autor). Com retrato em placa opcional.
    ========================================================================== */
 
 .faixa {
@@ -8,13 +8,12 @@
 }
 .faixa .titulo-secao { margin-bottom: 0; }
 
+/* retrato do autor: placa retangular, como as do carrossel */
 .retrato {
-	width: clamp(9rem, 22vw, 12rem);
-	aspect-ratio: 1;
-	margin: 2rem auto 0;
-	border-radius: 50%;
-	object-fit: cover;
-	border: 3px solid var(--parch);
-	box-shadow: 0 0 0 1px var(--gold-soft), 0 0 0 7px var(--ink), 0 0 0 8px var(--gold-soft);
+	width: clamp(13rem, 46vw, 21rem);
+	aspect-ratio: 4 / 5;
+	margin: 2.5rem auto 0;
 }
+.retrato img { object-position: center 20%; }
+
 .faixa .citacao { margin-top: 2rem; }
