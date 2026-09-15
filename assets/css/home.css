@@ -19,10 +19,13 @@
 	gap: 2.5rem;
 	align-items: center;
 }
-.hero h1 {
-	font-size: clamp(2.6rem, 8vw, 4.75rem);
-	line-height: 1;
-	margin-top: .75rem;
+.hero__logo {
+	margin-top: 1rem;
+	line-height: 0;
+}
+.hero__logo img {
+	width: min(100%, 30rem);
+	filter: drop-shadow(0 .4rem 1.2rem rgba(0, 0, 0, .6));
 }
 .hero__lema {
 	margin: 1.25rem 0 2rem;

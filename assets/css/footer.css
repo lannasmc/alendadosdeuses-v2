@@ -20,22 +20,9 @@
 	.rodape__grade { grid-template-columns: 1.1fr 1fr .85fr 1.2fr; }
 }
 
-.rodape__logo {
-	display: inline-block;
-	font-family: var(--font-title);
-	font-size: 1.9rem;
-	line-height: 1;
-	color: var(--parch);
-	text-decoration: none;
-}
-.rodape__logo small {
-	display: block;
-	margin: .2rem 0 .15rem;
-	font-family: var(--font-label);
-	font-size: .8rem;
-	letter-spacing: .3em;
-	color: var(--gold);
-}
+.rodape__logo { display: inline-block; }
+.rodape__logo img { width: 11rem; }
+.rodape__logo:hover img { filter: brightness(1.15) drop-shadow(0 0 .4rem rgba(201, 162, 39, .35)); }
 .rodape__tagline { margin-top: 1rem; color: var(--text-dim); }
 
 .rodape h2 {

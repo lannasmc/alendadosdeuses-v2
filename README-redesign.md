@@ -37,6 +37,8 @@ assets/css/                 um arquivo por componente (lista abaixo)
 assets/js/menu.js           abre e fecha o menu no celular
 assets/js/carrossel.js      carrossel de personagens e bestiário
 assets/img/logo.png         logo do cabeçalho (logo inline do cliente, recortado)
+assets/img/logo-empilhado.png  logo empilhado do hero e do rodapé (remontado em alta
+                            resolução a partir das letras do logo inline)
 assets/img/moldura.png      moldura alada (arte do logo, quadrada e transparente)
 assets/img/livros/          capas: capa-<volume>.jpg
 assets/img/personagens/     uma imagem por personagem: <nome>.jpg
