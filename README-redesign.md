@@ -46,7 +46,7 @@ assets/img/livros/          capas: capa-<volume>.jpg
 assets/img/personagens/     uma imagem por personagem: <nome>.jpg
 assets/img/bestiario/       uma imagem por criatura: <nome>.jpg
 assets/img/universo/        luminoso.jpg, sombrio.jpg, mapa.jpg
-assets/img/home/            arte dos três portais da home
+assets/img/home/            arte dos três portais e dos personagens no emblema do hero
 assets/img/autor/           foto do autor
 assets/img/erro/            arte dentro da moldura na 404
 ```
@@ -64,7 +64,7 @@ assets/img/erro/            arte dentro da moldura na 404
 | `capa.css` | capa, grade de volumes, navegação anterior/próximo | home, livros, onde comprar |
 | `ficha.css` | `.ficha` / `.ficha-linha` (rótulo + valor) | volumes, universo, personagens, bestiário |
 | `carrossel.css` | carrossel de placas e filtro | personagens, bestiário |
-| `home.css` | hero, emblema com gemas, mundos, portais, autor | home |
+| `home.css` | hero, emblema com personagens e brilhos, mundos, portais, autor | home |
 | `volume.css` | corpo da página de volume | volumes |
 | `universo.css` | resumo, cartões dos mundos, mapa, tabela | universo |
 | `cartoes.css` | cartões de download | downloads |

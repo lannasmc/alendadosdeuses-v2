@@ -32,15 +32,16 @@
 	color: var(--text);
 }
 @media (min-width: 56rem) {
-	.hero__grade { grid-template-columns: 1.1fr .9fr; }
+	.hero__grade { grid-template-columns: 1fr 1fr; }
 	.hero { min-height: min(40rem, calc(100vh - var(--header-h))); display: flex; align-items: center; }
 	.hero > .wrap { width: 100%; }
 }
 
-/* ---------- Emblema: moldura alada (as gemas já vêm desenhadas na arte) ---------- */
+/* ---------- Emblema do hero: moldura alada com os personagens ---------- */
 .emblema {
 	position: relative;
-	width: min(100%, 28rem);
+	container-type: inline-size;
+	width: min(100%, 36rem);
 	aspect-ratio: 1;
 	margin-inline: auto;
 }
@@ -68,9 +69,9 @@
 	filter: drop-shadow(0 0 1.5rem rgba(201, 162, 39, .18));
 	z-index: 1;
 }
-/* ---------- Centelha Divina: brilho no miolo da moldura ----------
+/* ---------- Fundo do miolo: brilho dourado e raios girando ----------
    Tudo em CSS. O recorte acompanha o oval da moldura (ver .moldura-alada__arte).
-   Com "reduzir movimento" ligado no sistema, fica parada. */
+   Com "reduzir movimento" ligado no sistema, fica parado. */
 .centelha {
 	position: absolute;
 	inset: 0;
@@ -98,70 +99,10 @@
 	animation: centelha-girar 90s linear infinite;
 }
 
-/* núcleo: ponto de luz com cruz de brilho */
-.centelha__nucleo {
-	width: 9%;
-	aspect-ratio: 1;
-	border-radius: 50%;
-	background: radial-gradient(circle, #FFFBEA 0%, #F7DC8A 30%, rgba(242, 208, 107, .55) 55%, rgba(201, 162, 39, 0) 100%);
-	box-shadow:
-		0 0 1.5rem .6rem rgba(242, 208, 107, .45),
-		0 0 4.5rem 2.2rem rgba(201, 162, 39, .22),
-		0 0 9rem 4rem rgba(201, 162, 39, .10);
-	animation: centelha-pulsar 5s ease-in-out infinite;
-}
-.centelha__nucleo::before,
-.centelha__nucleo::after {
-	content: "";
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	background: linear-gradient(var(--dir), transparent, rgba(255, 246, 214, .85) 50%, transparent);
-	transform: translate(-50%, -50%);
-}
-.centelha__nucleo::before { --dir: to bottom; width: 2px; height: 520%; }
-.centelha__nucleo::after  { --dir: to right;  width: 380%; height: 2px; }
-
-/* faíscas subindo */
-.centelha__faiscas {
-	width: 50%;
-	height: 60%;
-	background:
-		radial-gradient(circle, #FFF3C4 0 2.5px, transparent 4px) 18% 80% / 100% 100% no-repeat,
-		radial-gradient(circle, #F2D06B 0 2px, transparent 3.5px) 72% 70% / 100% 100% no-repeat,
-		radial-gradient(circle, #FFF3C4 0 2px, transparent 3.5px) 40% 95% / 100% 100% no-repeat,
-		radial-gradient(circle, #F2D06B 0 2.5px, transparent 4px) 85% 88% / 100% 100% no-repeat,
-		radial-gradient(circle, #FFF3C4 0 2px, transparent 3.5px) 58% 60% / 100% 100% no-repeat,
-		radial-gradient(circle, #F2D06B 0 2px, transparent 3.5px) 28% 55% / 100% 100% no-repeat;
-	animation: centelha-subir 9s linear infinite;
-}
-.centelha__faiscas--2 {
-	transform: translate(-50%, -50%) scaleX(-1);
-	animation-delay: -4.5s;
-}
-
 @keyframes centelha-girar {
 	to { transform: translate(-50%, -50%) rotate(360deg); }
 }
-@keyframes centelha-pulsar {
-	0%, 100% { transform: translate(-50%, -50%) scale(.9); opacity: .85; }
-	50%      { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
-}
-@keyframes centelha-subir {
-	0%   { translate: 0 18%; opacity: 0; }
-	20%  { opacity: 1; }
-	80%  { opacity: .8; }
-	100% { translate: 0 -22%; opacity: 0; }
-}
-
-/* ---------- Alternativa 2: personagens no miolo, brilhos saltando ---------- */
-@media (min-width: 56rem) {
-	.hero__grade--amplo { grid-template-columns: 1fr 1fr; }
-}
-.emblema--personagens {
-	width: min(100%, 36rem);
-	container-type: inline-size;
-}
+/* ---------- Personagens no miolo e brilhos saltando para fora da moldura ---------- */
 .emblema__arte {
 	position: absolute;
 	inset: 0;

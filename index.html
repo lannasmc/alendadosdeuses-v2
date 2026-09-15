@@ -57,15 +57,32 @@
 			</div>
 		</div>
 
-		<!-- Emblema: moldura alada com a Centelha Divina no miolo (só CSS, sem imagem) -->
+		<!-- Emblema: personagens no miolo da moldura, com brilhos saltando -->
 		<div class="emblema">
 			<div class="centelha" aria-hidden="true">
 				<span class="centelha__raios"></span>
-				<span class="centelha__faiscas"></span>
-				<span class="centelha__faiscas centelha__faiscas--2"></span>
-				<span class="centelha__nucleo"></span>
 			</div>
+			<picture class="emblema__arte">
+				<source srcset="assets/img/home/hero-personagens.webp" type="image/webp">
+				<img src="assets/img/home/hero-personagens.png" alt="Os personagens da série em pose de batalha" width="1000" height="890">
+			</picture>
 			<img class="emblema__moldura" src="assets/img/moldura.png" alt="" width="1000" height="1000">
+			<div class="brilhos" aria-hidden="true">
+				<span style="--a:8deg;--t:-0s"></span>
+				<span style="--a:34deg;--t:-1.7s"></span>
+				<span style="--a:61deg;--t:-0.6s"></span>
+				<span style="--a:92deg;--t:-2.4s"></span>
+				<span style="--a:118deg;--t:-1.1s"></span>
+				<span style="--a:147deg;--t:-2.9s"></span>
+				<span style="--a:176deg;--t:-0.3s"></span>
+				<span style="--a:203deg;--t:-1.9s"></span>
+				<span style="--a:231deg;--t:-0.9s"></span>
+				<span style="--a:259deg;--t:-2.6s"></span>
+				<span style="--a:288deg;--t:-1.4s"></span>
+				<span style="--a:314deg;--t:-0.2s"></span>
+				<span style="--a:338deg;--t:-2.1s"></span>
+				<span style="--a:352deg;--t:-1.2s"></span>
+			</div>
 		</div>
 	</div>
 </section>
