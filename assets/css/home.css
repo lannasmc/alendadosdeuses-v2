@@ -1,0 +1,205 @@
+/* ==========================================================================
+   Página inicial · hero com emblema, volume em destaque, dois mundos,
+   portal das seções, autor
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.hero {
+	position: relative;
+	overflow: hidden;
+	padding-block: clamp(3rem, 8vw, 6rem);
+	background-color: var(--ink);
+	background-image:
+		radial-gradient(ellipse 60% 70% at 64% 45%, rgba(201, 162, 39, .10), transparent 70%),
+		repeating-conic-gradient(from 0deg at 64% 45%, rgba(201, 162, 39, .07) 0deg 2.5deg, transparent 2.5deg 22.5deg),
+		linear-gradient(#18110F, var(--ink));
+}
+.hero__grade {
+	display: grid;
+	gap: 2.5rem;
+	align-items: center;
+}
+.hero h1 {
+	font-size: clamp(2.6rem, 8vw, 4.75rem);
+	line-height: 1;
+	margin-top: .75rem;
+}
+.hero__lema {
+	margin: 1.25rem 0 2rem;
+	font-style: italic;
+	font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+	line-height: 1.4;
+	color: var(--text);
+}
+@media (min-width: 56rem) {
+	.hero__grade { grid-template-columns: 1.1fr .9fr; }
+	.hero { min-height: min(40rem, calc(100vh - var(--header-h))); display: flex; align-items: center; }
+	.hero > .wrap { width: 100%; }
+}
+
+/* ---------- Emblema: moldura alada com as gemas dos volumes ---------- */
+.emblema {
+	position: relative;
+	width: min(100%, 28rem);
+	aspect-ratio: 1;
+	margin-inline: auto;
+}
+.emblema__moldura {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	filter: drop-shadow(0 0 1.5rem rgba(201, 162, 39, .18));
+}
+.emblema__centro {
+	position: absolute;
+	left: 50%;
+	top: 52%;
+	display: grid;
+	place-content: center;
+	width: 34%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 1px solid var(--gold-soft);
+	background: radial-gradient(circle, color-mix(in oklab, var(--vol), transparent 35%) 0%, transparent 70%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.emblema__centro b {
+	font-family: var(--font-title);
+	font-size: clamp(1.4rem, 4vw, 2rem);
+	line-height: 1;
+	color: var(--parch);
+}
+.emblema__centro .rotulo { margin-top: .4rem; font-size: .55rem; }
+
+.gemas { position: absolute; inset: 0; }
+.gema {
+	position: absolute;
+	width: 5%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, .45), transparent 45%), var(--vol);
+	border: 2px solid var(--gold);
+	opacity: .45;
+	transform: translate(-50%, -50%);
+}
+.gema--acesa {
+	opacity: 1;
+	box-shadow: 0 0 0 3px color-mix(in oklab, var(--vol), transparent 55%), 0 0 1.25rem var(--vol);
+}
+/* posições sobre a elipse da moldura (centro 50% 52%, raios 21.5% x 28.5%) */
+.gema:nth-child(1) { left: 50%;   top: 23.5%; }
+.gema:nth-child(2) { left: 65.2%; top: 31.8%; }
+.gema:nth-child(3) { left: 71.5%; top: 52%; }
+.gema:nth-child(4) { left: 65.2%; top: 72.2%; }
+.gema:nth-child(5) { left: 50%;   top: 80.5%; }
+.gema:nth-child(6) { left: 34.8%; top: 72.2%; }
+.gema:nth-child(7) { left: 28.5%; top: 52%; }
+.gema:nth-child(8) { left: 34.8%; top: 31.8%; }
+
+/* ---------- Abertura em pergaminho ---------- */
+.abertura p { font-size: clamp(1.15rem, 2vw, 1.3rem); }
+.abertura .link-seta { display: inline-block; margin-top: 1.25rem; font-size: 1.05rem; }
+.abertura .nota { margin-top: 1.25rem; font-style: italic; color: var(--parch-dim); }
+.abertura .nota a { font-style: normal; }
+
+/* ---------- Volume em destaque ---------- */
+.destaque {
+	display: grid;
+	gap: 2.5rem;
+	align-items: center;
+}
+.destaque .capa { max-width: 15rem; }
+.destaque h2 { margin-top: .5rem; }
+.destaque p { margin-top: 1.25rem; color: var(--text); }
+.destaque .etiquetas { margin-top: 1.25rem; }
+.destaque .botoes { margin-top: 1.75rem; }
+@media (min-width: 48rem) {
+	.destaque { grid-template-columns: 15rem 1fr; gap: 4rem; }
+}
+
+/* ---------- Os dois mundos ---------- */
+.mundos {
+	display: grid;
+}
+.mundo { display: flex; flex-direction: column; }
+.mundo .placa { aspect-ratio: 16 / 9; box-shadow: none; }
+.mundo__texto { padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3rem); flex: 1; }
+.mundo__texto p { margin-top: .6rem; color: var(--text); font-size: 1.05rem; }
+.mundo--luminoso { background: #111A20; }
+.mundo--sombrio { background: #1C0C0F; }
+@media (min-width: 48rem) {
+	.mundos { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Portal das seções (moldura alada) ---------- */
+.portais {
+	display: grid;
+	gap: 2.5rem 1.5rem;
+}
+@media (min-width: 44rem) {
+	.portais { grid-template-columns: repeat(3, 1fr); }
+}
+.portal {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: var(--text);
+}
+.portal__moldura {
+	position: relative;
+	width: min(100%, 20rem);
+	aspect-ratio: 1;
+	margin-inline: auto;
+	transition: transform .25s;
+}
+.portal__arte {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	clip-path: ellipse(21.5% 28.5% at 50% 52%);
+	background: var(--leather);
+	filter: saturate(.85) brightness(.85);
+	transition: filter .25s;
+}
+.portal__moldura > img:last-child {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+.portal h3 {
+	margin-top: -1.25rem;
+	position: relative;
+	font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+	letter-spacing: .04em;
+	text-shadow: 0 2px 10px rgba(0, 0, 0, .9);
+}
+.portal p { margin-top: .25rem; font-style: italic; color: var(--text-dim); }
+.portal:hover .portal__moldura { transform: translateY(-4px); }
+.portal:hover .portal__arte { filter: none; }
+.portal:hover h3 { color: var(--gold); }
+
+/* ---------- Autor ---------- */
+.autor-resumo {
+	display: grid;
+	gap: 1.5rem 2.5rem;
+	align-items: start;
+}
+.autor-resumo__foto {
+	width: 8.5rem;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid #A8862A;
+	box-shadow: 0 0 0 5px var(--parch), 0 0 0 6px rgba(168, 134, 42, .5);
+}
+.autor-resumo h2 { margin-top: .4rem; font-size: clamp(1.5rem, 3vw, 1.9rem); }
+.autor-resumo p { margin-top: .9rem; }
+.autor-resumo .link-seta { display: inline-block; margin-top: 1rem; }
+@media (min-width: 40rem) {
+	.autor-resumo { grid-template-columns: auto 1fr; }
+}

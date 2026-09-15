@@ -1,0 +1,251 @@
+/* ==========================================================================
+   A Lenda dos Deuses · base
+   Fontes, tokens, reset, tipografia e fundos. Todas as páginas carregam.
+   ========================================================================== */
+
+/* ---------- Fontes (Google Fonts, self-hosted, subset latin) ---------- */
+@font-face {
+	font-family: "Cinzel Decorative";
+	src: url("../fonts/cinzel-decorative-700.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "Cinzel";
+	src: url("../fonts/cinzel.woff2") format("woff2");
+	font-weight: 400 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "EB Garamond";
+	src: url("../fonts/eb-garamond.woff2") format("woff2");
+	font-weight: 400 600;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: "EB Garamond";
+	src: url("../fonts/eb-garamond-italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+	--ink: #0D0A0B;
+	--leather: #1A1012;
+	--gold: #C9A227;
+	--parch: #EDE4CE;
+	--vol: var(--gold);
+
+	/* derivados */
+	--night: #1E1428;                 /* céu das páginas de galeria e da 404 */
+	--gold-soft: rgba(201, 162, 39, .35);
+	--gold-faint: rgba(201, 162, 39, .16);
+	--text: #E6DCC4;                  /* texto corrido sobre escuro */
+	--text-dim: #A99E86;              /* texto secundário sobre escuro */
+	--parch-ink: #2A1E1A;             /* texto corrido sobre pergaminho */
+	--parch-dim: #6A5A4C;
+	/* cor do volume legível como TEXTO sobre fundo escuro */
+	--vol-text: color-mix(in oklab, var(--vol), #fff 42%);
+	/* cor do texto dentro de um botão pintado com --vol */
+	--vol-on: var(--parch);
+
+	--font-title: "Cinzel Decorative", "Cinzel", Georgia, serif;
+	--font-label: "Cinzel", Georgia, serif;
+	--font-text: "EB Garamond", Garamond, Georgia, serif;
+
+	--wrap: 70rem;
+	--gutter: clamp(1.25rem, 4vw, 3rem);
+	--header-h: 4rem;
+}
+
+/* ---------- Cor por volume ----------
+   Vale no <body> (página inteira) ou em qualquer elemento (card, capa). */
+[data-vol="genesis"]     { --vol: #8C2F2F; }
+[data-vol="cronicas"]    { --vol: #2E4A7D; }
+[data-vol="proverbios"]  { --vol: #3F7F4F; }
+[data-vol="exodo"]       { --vol: #B4592A; }
+[data-vol="lamentacoes"] { --vol: #6B3F8C; }
+[data-vol="atos"]        { --vol: #1F6F7A; }
+[data-vol="reis"]        { --vol: #A8862A; --vol-on: var(--ink); }
+[data-vol="apocalipse"]  { --vol: #5A1E1E; }
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 1rem); }
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+ul[class], ol[class] { list-style: none; padding: 0; }
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; }
+table { border-collapse: collapse; }
+
+/* ---------- Corpo ---------- */
+body {
+	min-height: 100vh;
+	padding-top: var(--header-h);
+	background: var(--ink);
+	color: var(--text);
+	font-family: var(--font-text);
+	font-size: 1.125rem;
+	line-height: 1.65;
+	text-align: left;
+	hyphens: manual;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+	font-family: var(--font-title);
+	font-weight: 700;
+	line-height: 1.15;
+	color: var(--parch);
+}
+h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.25rem); }
+h3 { font-size: 1.35rem; }
+
+p + p { margin-top: 1em; }
+
+a { color: var(--gold); text-underline-offset: .2em; }
+a:hover { color: var(--parch); }
+/* links dentro do texto corrido: cor do volume */
+.texto a, .prosa a { color: var(--vol-text); font-weight: 600; text-decoration: none; }
+.texto a:hover, .prosa a:hover { text-decoration: underline; }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.pular {
+	position: absolute; left: 1rem; top: -3rem; z-index: 200;
+	padding: .5rem 1rem; background: var(--gold); color: var(--ink);
+	font-family: var(--font-label); letter-spacing: .15em; text-transform: uppercase; font-size: .8rem;
+}
+.pular:focus { top: .75rem; }
+
+.sr-only {
+	position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+	overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Layout ---------- */
+.wrap {
+	width: 100%;
+	max-width: calc(var(--wrap) + 2 * var(--gutter));
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+.wrap--estreito { max-width: calc(52rem + 2 * var(--gutter)); }
+
+.secao { position: relative; padding-block: clamp(3rem, 7vw, 5.5rem); }
+.secao--curta { padding-block: clamp(2rem, 5vw, 3.5rem); }
+
+/* ---------- Superfícies ---------- */
+/* tinta: círculos finos, como gravação em couro */
+.fundo-tinta {
+	background-color: var(--ink);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cg fill='none' stroke='%23C9A227' stroke-opacity='.05'%3E%3Ccircle cx='90' cy='90' r='88'/%3E%3Ccircle cx='250' cy='200' r='120'/%3E%3Ccircle cx='60' cy='300' r='70'/%3E%3C/g%3E%3Cg fill='%23C9A227' fill-opacity='.025'%3E%3Cpath d='M200 40q30-14 60 0q-30 14-60 0z'/%3E%3Cpath d='M20 190q30-14 60 0q-30 14-60 0z'/%3E%3Cpath d='M260 330q30-14 60 0q-30 14-60 0z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.fundo-couro {
+	background-color: var(--leather);
+	background-image: radial-gradient(ellipse at 30% 0%, rgba(201, 162, 39, .06), transparent 60%);
+}
+/* pergaminho: escamas suaves */
+.fundo-pergaminho {
+	background-color: var(--parch);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60'%3E%3Cpath d='M0 30q30-22 60 0q30-22 60 0' fill='none' stroke='%238C6A3A' stroke-opacity='.07'/%3E%3Ccircle cx='90' cy='50' r='1.5' fill='%238C6A3A' fill-opacity='.08'/%3E%3C/svg%3E");
+	color: var(--parch-ink);
+	--vol-text: var(--vol);
+}
+.fundo-pergaminho h1, .fundo-pergaminho h2, .fundo-pergaminho h3 { color: #3B2418; }
+.fundo-pergaminho a:not(.btn) { color: var(--vol); }
+.fundo-pergaminho .rotulo { color: var(--vol); }
+/* noite: céu estrelado com halo, para galerias e 404 */
+.fundo-noite {
+	background-color: var(--ink);
+	background-image:
+		radial-gradient(1px 1px at 20px 30px, rgba(237, 228, 206, .5), transparent),
+		radial-gradient(1px 1px at 140px 90px, rgba(237, 228, 206, .35), transparent),
+		radial-gradient(1.5px 1.5px at 90px 160px, rgba(237, 228, 206, .45), transparent),
+		radial-gradient(1px 1px at 190px 210px, rgba(237, 228, 206, .3), transparent),
+		radial-gradient(ellipse 48% 42% at 50% 34%, #2A1D38 0%, transparent 100%),
+		linear-gradient(var(--night), var(--ink));
+	background-size: 230px 230px, 230px 230px, 230px 230px, 230px 230px, 100% 100%, 100% 100%;
+	background-repeat: repeat, repeat, repeat, repeat, no-repeat, no-repeat;
+}
+
+/* ---------- Tipografia de livro ---------- */
+/* capitular */
+.capitular::first-letter {
+	float: left;
+	margin: .08em .12em 0 0;
+	font-family: var(--font-title);
+	font-size: 3.6em;
+	line-height: .8;
+	color: var(--vol);
+}
+.fundo-tinta .capitular::first-letter,
+.fundo-couro .capitular::first-letter,
+.fundo-noite .capitular::first-letter { color: var(--vol-text); }
+
+/* rótulo de ficha */
+.rotulo {
+	display: block;
+	font-family: var(--font-label);
+	font-size: .66rem;
+	font-weight: 400;
+	letter-spacing: .28em;
+	line-height: 1.4;
+	text-transform: uppercase;
+	color: var(--gold);
+}
+
+/* subtítulo em itálico sob títulos */
+.linha-fina {
+	font-style: italic;
+	font-size: 1.15rem;
+	color: var(--text-dim);
+}
+.fundo-pergaminho .linha-fina { color: var(--parch-dim); }
+
+/* selo de status (Disponível, Em breve…) */
+.selo {
+	display: inline-block;
+	padding: .2rem .7rem;
+	border: 1px solid var(--vol);
+	font-family: var(--font-label);
+	font-size: .62rem;
+	letter-spacing: .26em;
+	line-height: 1.5;
+	text-transform: uppercase;
+	color: var(--vol-text);
+}
+.selo--apagado { --vol: #5C5347; --vol-text: #8F8574; }
+.fundo-pergaminho .selo { color: var(--vol); }
+
+/* etiqueta neutra (450 páginas · Kindle) */
+.etiqueta {
+	display: inline-block;
+	padding: .15rem .6rem;
+	border: 1px solid var(--gold-soft);
+	font-family: var(--font-label);
+	font-size: .62rem;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	color: var(--gold);
+}
+.etiquetas { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* ---------- Placeholder de imagem ----------
+   Fundo neutro atrás de toda <img> de conteúdo: se a arte ainda não
+   existir no caminho previsto, aparece o tom de couro com o texto alt. */
+.arte img, .placa img, .capa img {
+	background: var(--leather);
+	color: var(--text-dim);
+	font-size: .8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

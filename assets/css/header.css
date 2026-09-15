@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Cabeçalho fixo · logo, navegação, COMPRAR, menu mobile
+   ========================================================================== */
+
+.topo {
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: 100;
+	height: var(--header-h);
+	background: rgba(13, 10, 11, .96);
+	border-bottom: 1px solid var(--gold-soft);
+}
+.topo__barra {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	height: 100%;
+	max-width: none;
+}
+
+.topo__logo {
+	margin-right: auto;
+	font-family: var(--font-title);
+	font-weight: 700;
+	font-size: clamp(.95rem, 2.6vw, 1.2rem);
+	letter-spacing: .06em;
+	color: var(--parch);
+	text-decoration: none;
+	white-space: nowrap;
+}
+.topo__logo:hover { color: var(--gold); }
+
+/* botão COMPRAR: sempre visível */
+.topo__comprar {
+	order: 3;
+	padding: .55rem 1rem;
+	font-size: .72rem;
+}
+
+/* botão do menu (mobile) */
+.topo__menu {
+	order: 4;
+	display: grid;
+	place-items: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	margin-right: -.5rem;
+	background: none;
+	border: 0;
+	color: var(--gold);
+	cursor: pointer;
+}
+.topo__menu svg { width: 1.5rem; height: 1.5rem; }
+.topo__menu .ico-fechar { display: none; }
+.topo__menu[aria-expanded="true"] .ico-abrir { display: none; }
+.topo__menu[aria-expanded="true"] .ico-fechar { display: block; }
+
+/* navegação: painel no mobile */
+.topo__nav {
+	position: fixed;
+	inset: var(--header-h) 0 auto;
+	max-height: calc(100vh - var(--header-h));
+	overflow-y: auto;
+	background: var(--ink);
+	border-bottom: 1px solid var(--gold-soft);
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-.5rem);
+	transition: opacity .2s, transform .2s, visibility 0s .2s;
+}
+.topo__nav.aberto {
+	visibility: visible;
+	opacity: 1;
+	transform: none;
+	transition: opacity .2s, transform .2s;
+}
+.topo__nav ul { list-style: none; margin: 0; padding: .5rem var(--gutter) 1.25rem; }
+.topo__nav a {
+	display: block;
+	padding: .8rem 0;
+	border-bottom: 1px solid var(--gold-faint);
+	font-family: var(--font-label);
+	font-size: .85rem;
+	letter-spacing: .22em;
+	text-transform: uppercase;
+	color: var(--text);
+	text-decoration: none;
+}
+.topo__nav a:hover,
+.topo__nav a[aria-current="page"] { color: var(--gold); }
+
+/* sem JS o menu fica sempre aberto no mobile, abaixo do cabeçalho */
+.sem-js .topo__menu { display: none; }
+.sem-js .topo__nav { position: static; visibility: visible; opacity: 1; transform: none; }
+
+@media (min-width: 62rem) {
+	.topo__menu { display: none; }
+	.topo__nav,
+	.sem-js .topo__nav {
+		position: static;
+		order: 2;
+		max-height: none;
+		overflow: visible;
+		background: none;
+		border: 0;
+		visibility: visible;
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+	.topo__nav ul { display: flex; gap: clamp(1rem, 2vw, 1.75rem); padding: 0; }
+	.topo__nav a {
+		padding: .5rem 0;
+		border: 0;
+		font-size: .72rem;
+		letter-spacing: .2em;
+		white-space: nowrap;
+	}
+	.topo__comprar { margin-left: clamp(.5rem, 1.5vw, 1.5rem); }
+}

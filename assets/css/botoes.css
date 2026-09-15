@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Botões · primário (dourado), secundário (borda), terciário (cor do volume)
+   ========================================================================== */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+	min-height: 2.9rem;
+	padding: .75rem 1.6rem;
+	border: 1px solid transparent;
+	font-family: var(--font-label);
+	font-weight: 600;
+	font-size: .78rem;
+	letter-spacing: .2em;
+	line-height: 1.2;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color .15s, color .15s, border-color .15s, filter .15s;
+}
+
+.btn--primario {
+	background: var(--gold);
+	color: var(--ink);
+}
+.btn--primario:hover { background: #E0BA45; color: var(--ink); }
+
+.btn--secundario {
+	background: transparent;
+	border-color: var(--gold);
+	color: var(--gold);
+}
+.btn--secundario:hover { background: var(--gold); color: var(--ink); }
+.fundo-pergaminho .btn--secundario { border-color: #8C6A1E; color: #5A3E10; }
+.fundo-pergaminho .btn--secundario:hover { background: #5A3E10; color: var(--parch); }
+
+.btn--terciario {
+	background: var(--vol);
+	color: var(--vol-on);
+}
+.btn--terciario:hover { filter: brightness(1.2); color: var(--vol-on); }
+
+.botoes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .75rem 1rem;
+}
+
+/* link com seta, em itálico: "Ler a biografia completa →" */
+.link-seta {
+	font-style: italic;
+	text-decoration: none;
+}
+.link-seta::after { content: " \2192"; font-style: normal; }
+.link-seta:hover { text-decoration: underline; }

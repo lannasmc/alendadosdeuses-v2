@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Convite de compra · caixa ornamentada no fim de cada página
+   ========================================================================== */
+
+.convite {
+	display: grid;
+	gap: 1.5rem;
+	align-items: center;
+}
+.convite h2 {
+	font-size: clamp(1.35rem, 3vw, 1.85rem);
+	color: var(--gold);
+}
+.fundo-pergaminho .convite h2 { color: #3B2418; }
+.convite p { margin-top: .5rem; }
+.convite__acoes {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: .75rem;
+}
+.convite__capas {
+	display: flex;
+	gap: .9rem;
+}
+.convite__capas img {
+	width: 5.25rem;
+	border: 1px solid var(--gold-soft);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, .35);
+}
+
+@media (min-width: 48rem) {
+	.convite { grid-template-columns: 1fr auto; gap: 2.5rem; }
+	.convite--capas { grid-template-columns: auto 1fr auto; }
+	.convite__acoes { align-items: center; }
+}

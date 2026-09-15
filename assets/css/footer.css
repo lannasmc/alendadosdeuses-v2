@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Rodapé · logo, volumes, páginas, contato, capas, copyright
+   ========================================================================== */
+
+.rodape {
+	padding-block: clamp(3rem, 6vw, 4.5rem) 1.5rem;
+	border-top: 1px solid var(--gold-faint);
+	font-size: 1rem;
+}
+
+.rodape__grade {
+	display: grid;
+	gap: 2.5rem 2rem;
+	grid-template-columns: 1fr;
+}
+@media (min-width: 40rem) {
+	.rodape__grade { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 62rem) {
+	.rodape__grade { grid-template-columns: 1.1fr 1fr .85fr 1.2fr; }
+}
+
+.rodape__logo {
+	display: inline-block;
+	font-family: var(--font-title);
+	font-size: 1.9rem;
+	line-height: 1;
+	color: var(--parch);
+	text-decoration: none;
+}
+.rodape__logo small {
+	display: block;
+	margin: .2rem 0 .15rem;
+	font-family: var(--font-label);
+	font-size: .8rem;
+	letter-spacing: .3em;
+	color: var(--gold);
+}
+.rodape__tagline { margin-top: 1rem; color: var(--text-dim); }
+
+.rodape h2 {
+	margin-bottom: 1rem;
+	padding-bottom: .6rem;
+	border-bottom: 1px solid var(--gold-soft);
+	font-family: var(--font-text);
+	font-weight: 600;
+	font-size: 1.3rem;
+	color: var(--parch);
+}
+.rodape .rodape__subtitulo { margin-top: 2rem; }
+
+.rodape__lista li + li { margin-top: .3rem; }
+.rodape__lista a {
+	color: var(--text);
+	text-decoration: none;
+}
+.rodape__lista a:hover,
+.rodape__lista a[aria-current="page"] { color: var(--gold); }
+.rodape__lista small {
+	display: inline-block;
+	min-width: 3.9rem;
+	font-family: var(--font-label);
+	font-size: .72rem;
+	letter-spacing: .06em;
+	color: var(--text-dim);
+}
+
+/* volumes não lançados: apagados e sem clique */
+.rodape__lista .breve a,
+.rodape__lista a[aria-disabled="true"] {
+	pointer-events: none;
+	color: #6F6655;
+}
+.rodape__lista .breve small { color: #5E5647; }
+
+.rodape__email { color: var(--text); text-decoration: none; overflow-wrap: anywhere; }
+.rodape__email:hover { color: var(--gold); }
+
+.redes { display: flex; gap: .6rem; margin-top: .9rem; }
+.redes a {
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border: 1px solid var(--gold-soft);
+	border-radius: 50%;
+	color: var(--gold);
+}
+.redes a:hover { border-color: var(--gold); background: var(--gold); color: var(--ink); }
+.redes svg { width: 1.1rem; height: 1.1rem; }
+
+.rodape__capas {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+.rodape__capas img {
+	width: 4.25rem;
+	border: 1px solid var(--gold-soft);
+	box-shadow: 0 6px 14px rgba(0, 0, 0, .5);
+}
+.rodape__capas a:hover img { border-color: var(--gold); }
+.rodape__onde { margin-left: auto; text-decoration: none; }
+@media (max-width: 39.99rem) { .rodape__onde { margin-left: 0; } }
+
+.rodape__copy {
+	margin-top: 3rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid var(--gold-faint);
+	font-size: .85rem;
+	color: #8A806E;
+}
