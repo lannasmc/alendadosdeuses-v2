@@ -243,7 +243,7 @@ e 404. Personagens e bestiário usam placas retangulares.
 - **Carrossel:** aceita link direto para uma ficha, `personagens/?ficha=aron`
   ou `bestiario/?ficha=zolos`. Setas do teclado trocam a placa. Sem JS,
   todas as fichas aparecem em sequência.
-- **Menu:** abaixo de 72rem (≈ 1150px, ou 1280px com 110%+ de zoom) a
+- **Menu:** abaixo de 78rem (≈ 1250px, ou 1280px com 110%+ de zoom) a
   navegação vira menu. Sem JS, a navegação fica aberta.
 - **Contraste:** pares principais conferidos (WCAG AA, 4,5:1 ou mais),
   inclusive texto claro sobre couro e a cor do volume usada como texto.
