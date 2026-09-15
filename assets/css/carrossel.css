@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Carrossel de fichas · personagens e bestiário
+   Placas retangulares (nunca a moldura alada), a do meio em destaque.
+   Sem JS: todas as placas em grade e todas as fichas uma embaixo da outra.
+   ========================================================================== */
+
+/* ---------- Filtro por classe ---------- */
+.filtro {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: .25rem 1.75rem;
+	margin: -1rem 0 2rem;
+}
+.filtro button {
+	padding: .4rem 0;
+	background: none;
+	border: 0;
+	border-bottom: 1px solid transparent;
+	font-family: var(--font-label);
+	font-size: .72rem;
+	letter-spacing: .22em;
+	text-transform: uppercase;
+	color: var(--text-dim);
+	cursor: pointer;
+}
+.filtro button:hover { color: var(--parch); }
+.filtro button[aria-pressed="true"] { color: var(--gold); border-bottom-color: var(--gold); }
+.sem-js .filtro { display: none; }
+
+/* ---------- Palco ---------- */
+.carrossel__palco {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: .25rem;
+}
+.carrossel__placas {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: clamp(.5rem, 1.5vw, 1rem);
+	min-width: 0;
+	overflow: hidden;
+	padding-block: .5rem;
+}
+.carrossel__placas > li[hidden] { display: none; }
+
+.carrossel__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: .75rem;
+	width: 100%;
+	padding: 0;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+.carrossel__item .placa { width: 100%; overflow: hidden; }
+.carrossel__nome {
+	font-family: var(--font-title);
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	letter-spacing: .06em;
+	color: #8C8170;
+	white-space: nowrap;
+}
+.carrossel__item:hover .carrossel__nome { color: var(--parch); }
+.carrossel__item:hover .placa { border-color: var(--gold); }
+
+/* placas laterais: menores e apagadas */
+.carrossel__placas > li { flex: 0 0 auto; width: var(--lado); }
+.carrossel__placas > li .placa img { filter: brightness(.55) saturate(.8); transition: filter .2s; }
+.carrossel__placas > li:hover .placa img { filter: brightness(.8); }
+
+/* placa do meio */
+.carrossel__placas > li.ativo { width: var(--meio); }
+.carrossel__placas > li.ativo .placa { border-color: var(--gold); }
+.carrossel__placas > li.ativo .placa img { filter: none; }
+.carrossel__placas > li.ativo .carrossel__nome { font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--parch); }
+
+/* retrato (personagens, arte 3:4) */
+.carrossel--retrato { --lado: clamp(4.5rem, 16vw, 10rem); --meio: clamp(11rem, 44vw, 18rem); }
+.carrossel--retrato .placa { aspect-ratio: 3 / 4; }
+.carrossel--retrato .placa img { object-position: top; }
+/* paisagem (bestiário, arte ~16:9) */
+.carrossel--paisagem { --lado: clamp(4.5rem, 14vw, 9rem); --meio: clamp(13rem, 48vw, 22rem); }
+.carrossel--paisagem li:not(.ativo) .placa { aspect-ratio: 4 / 5; }
+.carrossel--paisagem li.ativo .placa { aspect-ratio: 16 / 10; }
+
+@media (max-width: 51.99rem) {
+	.carrossel__placas > li:not(.ativo) .carrossel__nome { visibility: hidden; }
+}
+
+/* setas */
+.carrossel__seta {
+	flex: 0 0 auto;
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: none;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	color: var(--gold);
+	cursor: pointer;
+}
+.carrossel__seta:hover { border-color: var(--gold-soft); }
+.carrossel__seta svg { width: 1rem; height: 1rem; }
+
+/* ---------- Ficha aberta ---------- */
+.carrossel__ficha[hidden] { display: none; }
+.carrossel__ficha .botoes { margin-top: 2rem; }
+
+/* ---------- Sem JS ---------- */
+.sem-js .carrossel__seta { display: none; }
+.sem-js .carrossel__placas { flex-wrap: wrap; overflow: visible; }
+.sem-js .carrossel__placas > li,
+.sem-js .carrossel__placas > li.ativo { width: 9rem; }
+.sem-js .carrossel__placas > li .placa img { filter: none; }
+.sem-js .carrossel--paisagem .placa { aspect-ratio: 4 / 5; }
+.sem-js .carrossel__ficha + .carrossel__ficha { margin-top: 4rem; }

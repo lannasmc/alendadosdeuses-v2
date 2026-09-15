@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Bestiário · A Lenda dos Deuses</title>
+<meta name="description" content="Bestiário de A Lenda dos Deuses: os demônios do Mundo Sombrio, suas classes, resistências e fraquezas.">
+<link rel="preload" href="../assets/fonts/cinzel-decorative-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/footer.css">
+<link rel="stylesheet" href="../assets/css/ornamentos.css">
+<link rel="stylesheet" href="../assets/css/botoes.css">
+<link rel="stylesheet" href="../assets/css/ficha.css">
+<link rel="stylesheet" href="../assets/css/carrossel.css">
+<script src="../assets/js/menu.js" defer></script>
+<script src="../assets/js/carrossel.js" defer></script>
+</head>
+<body data-vol="genesis">
+<!-- ============ CABEÇALHO (idêntico em todas as páginas) ============ -->
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+	<div class="topo__barra wrap">
+		<a class="topo__logo" href="../">A Lenda dos Deuses</a>
+		<a class="btn btn--primario topo__comprar" href="../onde-comprar/">Comprar</a>
+		<button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+			<svg class="ico-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+			<svg class="ico-fechar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+		</button>
+		<nav class="topo__nav" id="menu-principal" aria-label="Principal">
+			<ul>
+				<li><a href="../livros/">Os Livros</a></li>
+				<li><a href="../universo/">O Universo</a></li>
+				<li><a href="../personagens/">Personagens</a></li>
+				<li><a href="../bestiario/" aria-current="page">Bestiário</a></li>
+				<li><a href="../downloads/">Downloads</a></li>
+				<li><a href="../autor/">Autor</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- ============ /CABEÇALHO ============ -->
+
+<main id="conteudo">
+<div class="secao fundo-noite">
+<div class="wrap">
+	<header class="titulo-secao">
+		<h1>O Bestiário</h1>
+		<p class="linha-fina">Quatro exércitos do Mundo Sombrio</p>
+	</header>
+
+<section class="carrossel carrossel--paisagem" data-carrossel aria-roledescription="carrossel" aria-label="Criaturas do bestiário">
+	<div class="filtro" role="group" aria-label="Filtrar por classe">
+		<button type="button" data-grupo="" aria-pressed="true">Todos</button>
+		<button type="button" data-grupo="exercito-de-massa" aria-pressed="false">Exército de Massa</button>
+		<button type="button" data-grupo="exercito-de-magos" aria-pressed="false">Exército de Magos</button>
+		<button type="button" data-grupo="exercito-armado" aria-pressed="false">Exército Armado</button>
+		<button type="button" data-grupo="descendente-de-mamon" aria-pressed="false">Descendentes de Mamon</button>
+	</div>
+	<div class="carrossel__palco">
+		<button class="carrossel__seta carrossel__seta--ant" type="button" aria-label="Criatura anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.5 5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+		<ul class="carrossel__placas">
+			<li data-slug="zolos" data-grupo="exercito-de-massa">
+				<button class="carrossel__item" type="button" aria-controls="ficha-zolos">
+					<span class="placa"><img src="../assets/img/bestiario/zolos.jpg" alt="Zolos: criatura vermelha de olhos verdes num campo em chamas" loading="lazy"></span>
+					<span class="carrossel__nome">Zolos</span>
+				</button>
+			</li>
+			<li data-slug="hiddler" data-grupo="exercito-de-massa">
+				<button class="carrossel__item" type="button" aria-controls="ficha-hiddler">
+					<span class="placa"><img src="../assets/img/bestiario/hiddler.jpg" alt="Ilustração do Hiddler" loading="lazy"></span>
+					<span class="carrossel__nome">Hiddler</span>
+				</button>
+			</li>
+			<li data-slug="korpe" data-grupo="exercito-de-massa">
+				<button class="carrossel__item" type="button" aria-controls="ficha-korpe">
+					<span class="placa"><img src="../assets/img/bestiario/korpe.jpg" alt="Ilustração do Korpe" loading="lazy"></span>
+					<span class="carrossel__nome">Korpe</span>
+				</button>
+			</li>
+			<li data-slug="biskel" data-grupo="exercito-de-massa">
+				<button class="carrossel__item" type="button" aria-controls="ficha-biskel">
+					<span class="placa"><img src="../assets/img/bestiario/biskel.jpg" alt="Ilustração do Biskel" loading="lazy"></span>
+					<span class="carrossel__nome">Biskel</span>
+				</button>
+			</li>
+			<li data-slug="damiyo" data-grupo="exercito-de-magos">
+				<button class="carrossel__item" type="button" aria-controls="ficha-damiyo">
+					<span class="placa"><img src="../assets/img/bestiario/damiyo.jpg" alt="Ilustração do Damiyo" loading="lazy"></span>
+					<span class="carrossel__nome">Damiyo</span>
+				</button>
+			</li>
+			<li data-slug="grarko" data-grupo="exercito-armado">
+				<button class="carrossel__item" type="button" aria-controls="ficha-grarko">
+					<span class="placa"><img src="../assets/img/bestiario/grarko.jpg" alt="Ilustração do Grarko" loading="lazy"></span>
+					<span class="carrossel__nome">Grarko</span>
+				</button>
+			</li>
+			<li data-slug="nixcuae" data-grupo="exercito-de-magos">
+				<button class="carrossel__item" type="button" aria-controls="ficha-nixcuae">
+					<span class="placa"><img src="../assets/img/bestiario/nixcuae.jpg" alt="Ilustração do Nixcuae" loading="lazy"></span>
+					<span class="carrossel__nome">Nixcuae</span>
+				</button>
+			</li>
+			<li data-slug="poghul" data-grupo="exercito-armado">
+				<button class="carrossel__item" type="button" aria-controls="ficha-poghul">
+					<span class="placa"><img src="../assets/img/bestiario/poghul.jpg" alt="Ilustração do Poghul" loading="lazy"></span>
+					<span class="carrossel__nome">Poghul</span>
+				</button>
+			</li>
+			<li data-slug="ghoty" data-grupo="descendente-de-mamon">
+				<button class="carrossel__item" type="button" aria-controls="ficha-ghoty">
+					<span class="placa"><img src="../assets/img/bestiario/ghoty.jpg" alt="Ilustração de Ghoty" loading="lazy"></span>
+					<span class="carrossel__nome">Ghoty</span>
+				</button>
+			</li>
+			<li data-slug="ashura" data-grupo="descendente-de-mamon">
+				<button class="carrossel__item" type="button" aria-controls="ficha-ashura">
+					<span class="placa"><img src="../assets/img/bestiario/ashura.jpg" alt="Ilustração de Ashura" loading="lazy"></span>
+					<span class="carrossel__nome">Ashura</span>
+				</button>
+			</li>
+			<li data-slug="baemondo" data-grupo="descendente-de-mamon">
+				<button class="carrossel__item" type="button" aria-controls="ficha-baemondo">
+					<span class="placa"><img src="../assets/img/bestiario/baemondo.jpg" alt="Ilustração de Baemondo" loading="lazy"></span>
+					<span class="carrossel__nome">Baemondo</span>
+				</button>
+			</li>
+			<li data-slug="scylla" data-grupo="descendente-de-mamon">
+				<button class="carrossel__item" type="button" aria-controls="ficha-scylla">
+					<span class="placa"><img src="../assets/img/bestiario/scylla.jpg" alt="Ilustração de Scylla" loading="lazy"></span>
+					<span class="carrossel__nome">Scylla</span>
+				</button>
+			</li>
+			<li data-slug="astaroth" data-grupo="descendente-de-mamon">
+				<button class="carrossel__item" type="button" aria-controls="ficha-astaroth">
+					<span class="placa"><img src="../assets/img/bestiario/astaroth.jpg" alt="Ilustração de Astaroth" loading="lazy"></span>
+					<span class="carrossel__nome">Astaroth</span>
+				</button>
+			</li>
+		</ul>
+		<button class="carrossel__seta carrossel__seta--prox" type="button" aria-label="Próxima criatura"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 2.5 11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+	</div>
+	<p class="carrossel__aviso sr-only" aria-live="polite"></p>
+
+	<div class="carrossel__fichas">
+		<!-- CONTEÚDO: ficha de Zolos -->
+		<article class="carrossel__ficha" id="ficha-zolos" data-slug="zolos" data-grupo="exercito-de-massa">
+			<h2 class="sr-only">Zolos</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Vinham em bandos. Nunca menos de seis, nunca com pressa.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército de Massa</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Se alimentam de carne podre e vísceras de animais e humanos. Andam em bandos sempre acima de seis. Não são habituados ao uso de armas, mas possuem uma força descomunal e usam de violência quase sempre, até para situações que não a exige.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Lâminas de aço e ataques físicos sem atributo divino.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Sua carcaça não suporta ataques de fogo e sua mente dobra facilmente com ataques psíquicos. Laranjas também são fatais: essa espécie é altamente alérgica a laranjas.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Hiddler -->
+		<article class="carrossel__ficha" id="ficha-hiddler" data-slug="hiddler" data-grupo="exercito-de-massa">
+			<h2 class="sr-only">Hiddler</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército de Massa</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Não são conhecidos exatamente por sua inteligência ou capacidade de raciocínio. Mas, por outro lado, são bastante agressivos, e exalam um odor característico, que afasta qualquer criatura viva, inclusive demônios de outras espécies, o que explica nunca serem vistos em hordas mistas. A baba é altamente ácida, e a mordida possui a potência de uma tonelada.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Nenhuma registrada.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Temperaturas abaixo de 10ºC pode arrebentar sua pele e seus ossos derretem em calor superior a 100ºC. Não conseguem distinguir reflexos de outros de sua espécie.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Korpe -->
+		<article class="carrossel__ficha" id="ficha-korpe" data-slug="korpe" data-grupo="exercito-de-massa">
+			<h2 class="sr-only">Korpe</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército de Massa</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Criaturas altamente violentas. Suas quelas são tão afiadas que conseguem romper aços de alta dureza. A pressão exercida chega a duas toneladas. A cauda possui uma elasticidade peculiar, e, por isso, conseguem lançar as maças que estão nas extremidades até dois metros a frente. São criaturas com intelecto mais elevado, e sabem usar muito bem as centenas de olhos espalhados pela cabeça para analisar o perímetro de combate.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Lâminas de aço comum, ataques de energia sombria e psíquica (inclusive telecinese)</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Lâminas imbuídas com energia divina (exceto a sombria) e vislumbre de comportamentos aleatórios de pequenos felinos (perdem completamente o foco, podendo ficar horas observando a interação entre filhotes).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Biskel -->
+		<article class="carrossel__ficha" id="ficha-biskel" data-slug="biskel" data-grupo="exercito-de-massa">
+			<h2 class="sr-only">Biskel</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército de Massa</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>São frágeis, leves e ágeis. Compõem o exército dos seres menos poderosos do exército demoníaco. Entretanto, a superpopulação é assustadora, e sempre atacam em bandos superiores a trezentas criaturas &mdash; podendo uma horda atingir, em ataques mais contundentes, centenas de milhares dessa espécie. Não se organizam de forma muito estratégica justamente em razão do grande número. Geralmente são agressivos, mas nunca com outros demônios.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Nenhuma registrada.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Aparentemente qualquer objeto é capaz de ferir e até destruir essa criatura. E a tendência de sempre se agruparem facilita o extermínio em massa com rajadas de energia divina.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Damiyo -->
+		<article class="carrossel__ficha" id="ficha-damiyo" data-slug="damiyo" data-grupo="exercito-de-magos">
+			<h2 class="sr-only">Damiyo</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército de Magos</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Dragões de pequena grandeza (o maior não possui 2 metros de altura) que atacam com rajadas de energia sombria, que são projetadas por sua boca em forma de fumaça. O ataque prioritário é à distância, mas sua força bruta também é aprimorada, sendo capazes de destruir rochas com socos e pontapés. Há registros de alguns da espécie conseguirem criar ventanias com bater de asas, cuja potência destruiu cidades e florestas. São conhecidos, também, por sempre estarem em período de reprodução.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Ataques luminosos e sombrios e aço comum.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Lâminas mágicas, ataques de vento e de gelo. Perdem o foco com objetos esféricos e com criaturas de mesma espécie, mas de gênero diverso.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Grarko -->
+		<article class="carrossel__ficha" id="ficha-grarko" data-slug="grarko" data-grupo="exercito-armado">
+			<h2 class="sr-only">Grarko</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército Armado</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Exímios espadachins, com elevadíssima habilidade de combate, tanto direto como na formação. Terrivelmente assustadores, se alimentam de medo e sangue. Quando evocados individualmente, entram na mente da vítima para sufocá-la de pavor durante o sono ou surtos psicóticos. Quando se manifestam fisicamente, atacam em hordas compostas por linhas de combate que incluem bardos e arqueiros.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Quaisquer objetos que não estejam imbuídos de magia são ineficazes.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Ataques luminosos e música harmoniosa. Há registros de que risadas e gargalhadas autênticas conseguiram lançar alguns dessa espécie à loucura mental, inclusive levando ao autoflagelo.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Nixcuae -->
+		<article class="carrossel__ficha" id="ficha-nixcuae" data-slug="nixcuae" data-grupo="exercito-de-magos">
+			<h2 class="sr-only">Nixcuae</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército de Magos</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Inteligentes, ordenados e estratégicos. Apesar de não possuírem olhos, enxergam com perfeição em 360 graus, a partir do som e do cheiro, pois possuem olfato e audição hipersensíveis. Atacam com magia das trevas e sempre à distância. São péssimos em combates corpo-a-corpo e a agilidade também é prejudicada, apesar de alguns dessa espécie conseguir conjurar teletransporte de curto alcance (raio de 2 metros) para se esquivar de ataques lançados a distância ou investidas corporais.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Ataques mágicos (exceto divinos).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Ataques físicos com qualquer objeto, inclusive aço comum, flechas de madeira, latidos contínuos de cães pequenos e uivos de cães grandes.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Poghul -->
+		<article class="carrossel__ficha" id="ficha-poghul" data-slug="poghul" data-grupo="exercito-armado">
+			<h2 class="sr-only">Poghul</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Exército Armado</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Apesar de brandirem espadas mágicas, não são muito bons com o uso de magia e preferem combates corpo-a-corpo. Possuem uma força descomunal, que impressiona diante da ausência de musculatura ou estrutura física. São alvos fáceis de ataques a distância em razão da cabeçorra desproporcional, mas conseguem contra-atacar com magia demoníaca se sobreviverem à investida. Também não se movimentam com facilidade, e facilmente se desequilibram em combates realizados em solo, e não no céu.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Nenhuma registrada.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Ataques mágicos, ataques à distância e enxaqueca.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Ghoty -->
+		<article class="carrossel__ficha" id="ficha-ghoty" data-slug="ghoty" data-grupo="descendente-de-mamon">
+			<h2 class="sr-only">Ghoty</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Ghoty Q. L'Acrois</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Descendente de Mamon</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Sempre irritado, carrega uma profunda mágoa contra a raça humana. Ingressou na guerra para se vingar daqueles que o evocaram e o escravizaram por anos, mas, ao encarnar, não os encontrou. Na antiga era foi absolvido pela deusa suprema pois, apesar de violento e agressivo, não chegou a assassinar nenhum humano, sequer de forma indireta, sendo seu envolvimento na guerra de Lusbel exclusivamente pessoal &mdash; apenas lutou e perdeu o combate direto contra os deuses.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Qualquer objeto que não esteja imbuído de energia divina.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Nenhuma registrada.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Ashura -->
+		<article class="carrossel__ficha" id="ficha-ashura" data-slug="ashura" data-grupo="descendente-de-mamon">
+			<h2 class="sr-only">Ashura</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Ashura Nihilkhan</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Descendente de Mamon</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Um dos nove imperadores do Mundo Sombrio. Possui uma força absurdamente poderosa, e é capaz de resistir aos ataques mais intensos, resultantes da somatória da energia dos deuses. Possui um vasto conhecimento de relíquias antigas, sendo o responsável, inclusive, por influenciar humanos a criá-las. Participou diretamente nos eventos que levaram à queda de Atlântida. Possui um machado forjado por ele mesmo, capaz de abrir fendas na conexão entre realidades para viabilizar a passagem de demônios do Mundo Sombrio ao Mundo Concreto sem a necessidade de intervenção direta de Lusbel (exceto pela materialização de receptáculos).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Qualquer objeto que não esteja imbuído de energia divina.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Nenhuma registrada.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Baemondo -->
+		<article class="carrossel__ficha" id="ficha-baemondo" data-slug="baemondo" data-grupo="descendente-de-mamon">
+			<h2 class="sr-only">Baemondo</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Baemondo Malphas</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Descendente de Mamon</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Gigantesco e superpoderoso, é um orgulhoso guerreiro que nunca havia perdido um combate no Mundo Sombrio. Juntou-se à revolta de Lusbel após o nascimento dos deuses, visando uma batalha que realmente pudesse despertar a emoção do desafio. É excelente usuário de magia, habilidoso com armas de curto e longo alcance, e mestre em artes marciais.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Qualquer objeto que não esteja imbuído de energia divina.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>É facilmente provocado e perde o foco da batalha quando está cego de ódio.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Scylla -->
+		<article class="carrossel__ficha" id="ficha-scylla" data-slug="scylla" data-grupo="descendente-de-mamon">
+			<h2 class="sr-only">Scylla</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Scylla [???]</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Descendente de Mamon</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Desconhecidas. Não participou da revolta de Lusbel na antiga era.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Desconhecidas.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Desconhecidas.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Astaroth -->
+		<article class="carrossel__ficha" id="ficha-astaroth" data-slug="astaroth" data-grupo="descendente-de-mamon">
+			<h2 class="sr-only">Astaroth</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">O Cronista · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Astaroth Valehain</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Classe</dt><dd>Descendente de Mamon</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Características</dt><dd>Uma das criaturas mais poderosas do inferno. Sua força, resistência, energia, velocidade e inteligência são superiores a de todos os imperadores dos Nove Reinos do Mundo Sombrio combinados. É um gênio em combates, e leva vantagem tanto com ataques a distância como corpo-a-corpo. Possui a capacidade de alterar a forma física a cada nível de poder liberado, e sua forma final possui potencial quase ilimitado. Foi o responsável pela criação do deus-demônio, e seu aliciamento por Lusbel alterou os rumos da antiga guerra.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Resistências</dt><dd>Parece resistir a absolutamente tudo &mdash; inclusive energia divina.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Fraquezas</dt><dd>Nenhuma registrada.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../personagens/">Ver os Personagens</a>
+			</div>
+		</article>
+	</div>
+</section>
+</div>
+</div>
+</main>
+
+<!-- ============ RODAPÉ (idêntico em todas as páginas) ============ -->
+<footer class="rodape fundo-tinta">
+	<div class="wrap">
+		<div class="rodape__grade">
+			<div>
+				<a class="rodape__logo" href="../">A Lenda<small>dos</small>Deuses</a>
+				<p class="rodape__tagline">Série literária de Ariel S. Nascimento.</p>
+			</div>
+			<nav aria-labelledby="rodape-volumes">
+				<h2 id="rodape-volumes">Volumes</h2>
+				<ul class="rodape__lista">
+					<li><a href="../livros/genesis/"><small>Vol. I</small> Gênesis</a></li>
+					<li><a href="../livros/cronicas/"><small>Vol. II</small> Crônicas</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. III</small> Provérbios</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. IV</small> Êxodo</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. V</small> Lamentações</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VI</small> Atos</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VII</small> Reis</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VIII</small> Apocalipse</a></li>
+				</ul>
+			</nav>
+			<nav aria-labelledby="rodape-paginas">
+				<h2 id="rodape-paginas">Páginas</h2>
+				<ul class="rodape__lista">
+					<li><a href="../">Página Inicial</a></li>
+					<li><a href="../livros/">Os Livros</a></li>
+					<li><a href="../universo/">O Universo</a></li>
+					<li><a href="../personagens/">Personagens</a></li>
+					<li><a href="../bestiario/" aria-current="page">Bestiário</a></li>
+					<li><a href="../downloads/">Downloads</a></li>
+					<li><a href="../eventos/">Eventos</a></li>
+					<li><a href="../autor/">O Autor</a></li>
+					<li><a href="../onde-comprar/">Onde comprar</a></li>
+				</ul>
+			</nav>
+			<div>
+				<h2>Contato</h2>
+				<a class="rodape__email" href="mailto:ariels.nascimento@gmail.com">ariels.nascimento@gmail.com</a>
+				<ul class="redes">
+					<li><a href="https://www.instagram.com/ariels.n/" target="_blank" rel="noopener" aria-label="Instagram (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a></li>
+					<li><a href="https://www.tiktok.com/@ariels.n" target="_blank" rel="noopener" aria-label="TikTok (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 2.5c.4 2.3 1.9 3.9 4.4 4.2v3.2c-1.6 0-3.1-.5-4.4-1.3v6.6a6.3 6.3 0 1 1-6.3-6.3c.3 0 .7 0 1 .1v3.3a3 3 0 1 0 2 2.9V2.5h3.3z"/></svg></a></li>
+					<li><a href="https://www.threads.com/@ariels.n" target="_blank" rel="noopener" aria-label="Threads (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M17.8 8.2C16.9 5.4 14.8 3.8 12 3.8c-4.4 0-7.2 3.2-7.2 8.2s2.8 8.2 7.2 8.2c3.6 0 6-2 6-4.9 0-2.6-2.1-4.2-5.1-4.2-2.2 0-3.7 1.1-3.7 2.6 0 1.4 1.2 2.3 2.8 2.3 2.5 0 3.7-1.9 3.7-5V9"/></svg></a></li>
+				</ul>
+				<h2 class="rodape__subtitulo">Os livros</h2>
+				<div class="rodape__capas">
+					<a href="../livros/genesis/"><img src="../assets/img/livros/capa-genesis.jpg" alt="Capa do Volume I: Gênesis" width="68" height="94" loading="lazy"></a>
+					<a href="../livros/cronicas/"><img src="../assets/img/livros/capa-cronicas.jpg" alt="Capa do Volume II: Crônicas" width="68" height="94" loading="lazy"></a>
+					<a class="rodape__onde link-seta" href="../onde-comprar/">Onde comprar</a>
+				</div>
+			</div>
+		</div>
+		<p class="rodape__copy">&copy; 2026 Ariel S. Nascimento. Todos os direitos reservados.</p>
+	</div>
+</footer>
+<!-- ============ /RODAPÉ ============ -->
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Os Personagens · A Lenda dos Deuses</title>
+<meta name="description" content="Fichas dos personagens da série A Lenda dos Deuses: Gaia, Aron, Cadu e os outros portadores da Centelha Divina.">
+<link rel="preload" href="../assets/fonts/cinzel-decorative-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/header.css">
+<link rel="stylesheet" href="../assets/css/footer.css">
+<link rel="stylesheet" href="../assets/css/ornamentos.css">
+<link rel="stylesheet" href="../assets/css/botoes.css">
+<link rel="stylesheet" href="../assets/css/ficha.css">
+<link rel="stylesheet" href="../assets/css/carrossel.css">
+<script src="../assets/js/menu.js" defer></script>
+<script src="../assets/js/carrossel.js" defer></script>
+</head>
+<body data-vol="genesis">
+<!-- ============ CABEÇALHO (idêntico em todas as páginas) ============ -->
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+	<div class="topo__barra wrap">
+		<a class="topo__logo" href="../">A Lenda dos Deuses</a>
+		<a class="btn btn--primario topo__comprar" href="../onde-comprar/">Comprar</a>
+		<button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+			<svg class="ico-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+			<svg class="ico-fechar" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+		</button>
+		<nav class="topo__nav" id="menu-principal" aria-label="Principal">
+			<ul>
+				<li><a href="../livros/">Os Livros</a></li>
+				<li><a href="../universo/">O Universo</a></li>
+				<li><a href="../personagens/" aria-current="page">Personagens</a></li>
+				<li><a href="../bestiario/">Bestiário</a></li>
+				<li><a href="../downloads/">Downloads</a></li>
+				<li><a href="../autor/">Autor</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- ============ /CABEÇALHO ============ -->
+
+<main id="conteudo">
+<div class="secao fundo-noite">
+<div class="wrap">
+	<header class="titulo-secao">
+		<h1>Os Personagens</h1>
+		<p class="linha-fina">Quem carrega a Centelha Divina</p>
+	</header>
+
+<section class="carrossel carrossel--retrato" data-carrossel aria-roledescription="carrossel" aria-label="Personagens">
+	<div class="carrossel__palco">
+		<button class="carrossel__seta carrossel__seta--ant" type="button" aria-label="Personagem anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.5 5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+		<ul class="carrossel__placas">
+			<li data-slug="gaia">
+				<button class="carrossel__item" type="button" aria-controls="ficha-gaia">
+					<span class="placa"><img src="../assets/img/personagens/gaia.jpg" alt="Gaia de cabelos azul-claros e manto marrom, segurando uma coxinha" loading="lazy"></span>
+					<span class="carrossel__nome">Gaia</span>
+				</button>
+			</li>
+			<li data-slug="aron">
+				<button class="carrossel__item" type="button" aria-controls="ficha-aron">
+					<span class="placa"><img src="../assets/img/personagens/aron.jpg" alt="Retrato de Aron" loading="lazy"></span>
+					<span class="carrossel__nome">Aron</span>
+				</button>
+			</li>
+			<li data-slug="cadu">
+				<button class="carrossel__item" type="button" aria-controls="ficha-cadu">
+					<span class="placa"><img src="../assets/img/personagens/cadu.jpg" alt="Retrato de Cadu" loading="lazy"></span>
+					<span class="carrossel__nome">Cadu</span>
+				</button>
+			</li>
+			<li data-slug="beto">
+				<button class="carrossel__item" type="button" aria-controls="ficha-beto">
+					<span class="placa"><img src="../assets/img/personagens/beto.jpg" alt="Retrato de Beto" loading="lazy"></span>
+					<span class="carrossel__nome">Beto</span>
+				</button>
+			</li>
+			<li data-slug="carla">
+				<button class="carrossel__item" type="button" aria-controls="ficha-carla">
+					<span class="placa"><img src="../assets/img/personagens/carla.jpg" alt="Retrato de Carla" loading="lazy"></span>
+					<span class="carrossel__nome">Carla</span>
+				</button>
+			</li>
+			<li data-slug="bruno">
+				<button class="carrossel__item" type="button" aria-controls="ficha-bruno">
+					<span class="placa"><img src="../assets/img/personagens/bruno.jpg" alt="Retrato de Bruno" loading="lazy"></span>
+					<span class="carrossel__nome">Bruno</span>
+				</button>
+			</li>
+			<li data-slug="malu">
+				<button class="carrossel__item" type="button" aria-controls="ficha-malu">
+					<span class="placa"><img src="../assets/img/personagens/malu.jpg" alt="Retrato de Malu" loading="lazy"></span>
+					<span class="carrossel__nome">Malu</span>
+				</button>
+			</li>
+			<li data-slug="matheus">
+				<button class="carrossel__item" type="button" aria-controls="ficha-matheus">
+					<span class="placa"><img src="../assets/img/personagens/matheus.jpg" alt="Retrato de Matheus" loading="lazy"></span>
+					<span class="carrossel__nome">Matheus</span>
+				</button>
+			</li>
+			<li data-slug="lucca">
+				<button class="carrossel__item" type="button" aria-controls="ficha-lucca">
+					<span class="placa"><img src="../assets/img/personagens/lucca.jpg" alt="Retrato de Lucca" loading="lazy"></span>
+					<span class="carrossel__nome">Lucca</span>
+				</button>
+			</li>
+			<li data-slug="marina">
+				<button class="carrossel__item" type="button" aria-controls="ficha-marina">
+					<span class="placa"><img src="../assets/img/personagens/marina.jpg" alt="Retrato de Marina" loading="lazy"></span>
+					<span class="carrossel__nome">Marina</span>
+				</button>
+			</li>
+		</ul>
+		<button class="carrossel__seta carrossel__seta--prox" type="button" aria-label="Próximo personagem"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 2.5 11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+	</div>
+	<p class="carrossel__aviso sr-only" aria-live="polite"></p>
+
+	<div class="carrossel__fichas">
+		<!-- CONTEÚDO: ficha de Gaia -->
+		<article class="carrossel__ficha" id="ficha-gaia" data-slug="gaia">
+			<h2 class="sr-only">Gaia</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Eu não pedi para ser deusa. Pedi uma coxinha.&rdquo;</p>
+				<footer class="rotulo">Gaia · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Gaia Helena Allamirah</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>Alguns milhares de anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Atual deusa suprema e <i>sommelier</i> de coxinha.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Comer. Também gosta de atuar, experimentar pratos regionais, tocar instrumentos de sopro e comer alimentos de baixíssimo valor nutricional.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Levar sustos e ficar longos momentos sozinha com suas lembranças.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Aron -->
+		<article class="carrossel__ficha" id="ficha-aron" data-slug="aron">
+			<h2 class="sr-only">Aron</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Aron · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Aron Teixeira</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>16 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Atual deus do fogo, estudante, principal meio-campo (ou pivô, quando jogam futsal) do time de futebol society dos garotos da sua rua e baterista da banda do colégio.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Sair com os amigos, jogar futebol, ouvir música, jogar sinuca e irritar, deliberadamente, os funcionários do colégio.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Estudar, ler, acordar cedo, fazer exercícios físicos e enfrentar situações de racismo.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Cadu -->
+		<article class="carrossel__ficha" id="ficha-cadu" data-slug="cadu">
+			<h2 class="sr-only">Cadu</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Cadu · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Paulo Carlos Eduardo Pinheiro</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>16 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Estudante, guitarrista da banda do colégio e líder do grupo de debates e olimpíadas de matérias teóricas (matemática, física, literatura etc).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Estudar, ler, assistir filmes e séries em streaming, jogar videogame e desenvolver teorias sobre a continuidade de alguma história (literatura, série, HQ ou jogos) no Reddit.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>O bairro onde mora, praticar qualquer atividade física e sofrer bullying.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Beto -->
+		<article class="carrossel__ficha" id="ficha-beto" data-slug="beto">
+			<h2 class="sr-only">Beto</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Beto · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Roberto da Silva Germano</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>15 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>???</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>???</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>???</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Carla -->
+		<article class="carrossel__ficha" id="ficha-carla" data-slug="carla">
+			<h2 class="sr-only">Carla</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Carla · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Carla Navarro Pitanga</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>15 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Estudante e vocalista da banda do colégio.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Cantar, ler quadrinhos, sair com os amigos, experimentar novas sensações, assistir filmes e séries antigas (anos 80/90).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Dias quentes, baratas, filmes de comédia romântica, cheiro de fumaça, mangá, animes e crianças entre 5 e 10 anos de idade.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Bruno -->
+		<article class="carrossel__ficha" id="ficha-bruno" data-slug="bruno">
+			<h2 class="sr-only">Bruno</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Bruno · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Bruno Ozawa Sued</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>15 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Estudante, atual deus das trevas e presidente do grêmio estudantil de seu colégio.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Treinar (academia, artes marciais, habilidades divinas), estudar a antiga era, brincar com filhotes de cães e praticar corte e costura (faz lindas passadeiras de barbante).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Pessoas, aglomerações, legumes cozidos no vapor, som alto e casamentos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Malu -->
+		<article class="carrossel__ficha" id="ficha-malu" data-slug="malu">
+			<h2 class="sr-only">Malu</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Malu · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Maria Luísa Fiorella Fonseca</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>15 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Estudante, assistente de direção do teatro da escola, atriz e vice-líder do grupo de debates e olimpíadas de matérias teóricas (matemática, física, literatura etc).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Ler mangás, assistir animes, estudar, jogar videogame e auxiliar seu pai na realização de atividades culturais em bairros periféricos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Gente folgada, musicais, miojo e música clássica.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Matheus -->
+		<article class="carrossel__ficha" id="ficha-matheus" data-slug="matheus">
+			<h2 class="sr-only">Matheus</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Matheus · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Matheus dos Santos Matterazzi</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>16 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Estudante e MC/DJ na rádio de seu colégio e em festas de amigos e conhecidos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Sair com os amigos, jogar cartas e jogos de tabuleiro, jogar sinuca, assistir filmes de terror e filmes românticos e frequentar restaurantes de gastronomia estrangeira.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Carnaval, comida brasileira, filmes e séries antigas, dias quentes e determinados estilos musicais (funk, rap, sertanejo, forró e samba).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Lucca -->
+		<article class="carrossel__ficha" id="ficha-lucca" data-slug="lucca">
+			<h2 class="sr-only">Lucca</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Lucca · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Lucca H. Doy</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>15 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Estudante.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Jogos de cartas, sair e conversar com os amigos, tomar açaí, filmes de terror, ler livros policiais, de fantasia e um determinado livro antigo com um alfabeto desconhecido.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Insetos, aracnídeos, intolerância de qualquer natureza, pastel de vento e pão de queijo massudo.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+		<!-- CONTEÚDO: ficha de Marina -->
+		<article class="carrossel__ficha" id="ficha-marina" data-slug="marina">
+			<h2 class="sr-only">Marina</h2>
+			<blockquote class="citacao">
+				<p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&rdquo;</p>
+				<footer class="rotulo">Marina · Volume I</footer>
+			</blockquote>
+			<hr class="rule-double">
+			<dl class="ficha ficha--tabela">
+				<div class="ficha-linha"><dt class="rotulo">Nome completo</dt><dd>Marina T. Machado</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Idade</dt><dd>14 anos.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Ocupação</dt><dd>Estudante.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Adora</dt><dd>Sair com os amigos, ouvir música, ler livros de romance, poesias e de terror, filmes de baixa produção, sorbet e restaurantes onde possa comer em uma mesa colocada ao ar livre (inclusive botecos de esquina).</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Detesta</dt><dd>Correr, tomar sol, café, suco de qualquer coisa que não seja fruta, trabalho em grupo e falar em público.</dd></div>
+				<div class="ficha-linha"><dt class="rotulo">Aparece em</dt><dd>Vol. I &middot; Gênesis</dd></div>
+			</dl>
+			<div class="botoes">
+				<a class="btn btn--terciario" href="../livros/genesis/">Ler o Volume I</a>
+				<a class="btn btn--secundario" href="../bestiario/">Ver o Bestiário</a>
+			</div>
+		</article>
+	</div>
+</section>
+</div>
+</div>
+</main>
+
+<!-- ============ RODAPÉ (idêntico em todas as páginas) ============ -->
+<footer class="rodape fundo-tinta">
+	<div class="wrap">
+		<div class="rodape__grade">
+			<div>
+				<a class="rodape__logo" href="../">A Lenda<small>dos</small>Deuses</a>
+				<p class="rodape__tagline">Série literária de Ariel S. Nascimento.</p>
+			</div>
+			<nav aria-labelledby="rodape-volumes">
+				<h2 id="rodape-volumes">Volumes</h2>
+				<ul class="rodape__lista">
+					<li><a href="../livros/genesis/"><small>Vol. I</small> Gênesis</a></li>
+					<li><a href="../livros/cronicas/"><small>Vol. II</small> Crônicas</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. III</small> Provérbios</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. IV</small> Êxodo</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. V</small> Lamentações</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VI</small> Atos</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VII</small> Reis</a></li>
+					<li class="breve"><a aria-disabled="true"><small>Vol. VIII</small> Apocalipse</a></li>
+				</ul>
+			</nav>
+			<nav aria-labelledby="rodape-paginas">
+				<h2 id="rodape-paginas">Páginas</h2>
+				<ul class="rodape__lista">
+					<li><a href="../">Página Inicial</a></li>
+					<li><a href="../livros/">Os Livros</a></li>
+					<li><a href="../universo/">O Universo</a></li>
+					<li><a href="../personagens/" aria-current="page">Personagens</a></li>
+					<li><a href="../bestiario/">Bestiário</a></li>
+					<li><a href="../downloads/">Downloads</a></li>
+					<li><a href="../eventos/">Eventos</a></li>
+					<li><a href="../autor/">O Autor</a></li>
+					<li><a href="../onde-comprar/">Onde comprar</a></li>
+				</ul>
+			</nav>
+			<div>
+				<h2>Contato</h2>
+				<a class="rodape__email" href="mailto:ariels.nascimento@gmail.com">ariels.nascimento@gmail.com</a>
+				<ul class="redes">
+					<li><a href="https://www.instagram.com/ariels.n/" target="_blank" rel="noopener" aria-label="Instagram (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a></li>
+					<li><a href="https://www.tiktok.com/@ariels.n" target="_blank" rel="noopener" aria-label="TikTok (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 2.5c.4 2.3 1.9 3.9 4.4 4.2v3.2c-1.6 0-3.1-.5-4.4-1.3v6.6a6.3 6.3 0 1 1-6.3-6.3c.3 0 .7 0 1 .1v3.3a3 3 0 1 0 2 2.9V2.5h3.3z"/></svg></a></li>
+					<li><a href="https://www.threads.com/@ariels.n" target="_blank" rel="noopener" aria-label="Threads (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M17.8 8.2C16.9 5.4 14.8 3.8 12 3.8c-4.4 0-7.2 3.2-7.2 8.2s2.8 8.2 7.2 8.2c3.6 0 6-2 6-4.9 0-2.6-2.1-4.2-5.1-4.2-2.2 0-3.7 1.1-3.7 2.6 0 1.4 1.2 2.3 2.8 2.3 2.5 0 3.7-1.9 3.7-5V9"/></svg></a></li>
+				</ul>
+				<h2 class="rodape__subtitulo">Os livros</h2>
+				<div class="rodape__capas">
+					<a href="../livros/genesis/"><img src="../assets/img/livros/capa-genesis.jpg" alt="Capa do Volume I: Gênesis" width="68" height="94" loading="lazy"></a>
+					<a href="../livros/cronicas/"><img src="../assets/img/livros/capa-cronicas.jpg" alt="Capa do Volume II: Crônicas" width="68" height="94" loading="lazy"></a>
+					<a class="rodape__onde link-seta" href="../onde-comprar/">Onde comprar</a>
+				</div>
+			</div>
+		</div>
+		<p class="rodape__copy">&copy; 2026 Ariel S. Nascimento. Todos os direitos reservados.</p>
+	</div>
+</footer>
+<!-- ============ /RODAPÉ ============ -->
+</body>
+</html>
