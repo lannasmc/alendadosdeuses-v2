@@ -27,5 +27,5 @@
 		}
 	});
 
-	window.matchMedia('(min-width: 62rem)').addEventListener('change', fechar);
+	window.matchMedia('(min-width: 72rem)').addEventListener('change', fechar);
 })();

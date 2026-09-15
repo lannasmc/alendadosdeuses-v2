@@ -78,7 +78,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 1rem); }
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
-ul[class], ol[class] { list-style: none; padding: 0; }
+:where(ul[class], ol[class]) { list-style: none; padding: 0; }
 img { display: block; max-width: 100%; height: auto; }
 button { font: inherit; color: inherit; }
 table { border-collapse: collapse; }

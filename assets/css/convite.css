@@ -34,3 +34,6 @@
 	.convite--capas { grid-template-columns: auto 1fr auto; }
 	.convite__acoes { align-items: center; }
 }
+
+/* quando não há filete duplo antes */
+.convite--afastado { margin-top: clamp(3rem, 6vw, 4rem); }

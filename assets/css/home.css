@@ -147,30 +147,6 @@
 	text-decoration: none;
 	color: var(--text);
 }
-.portal__moldura {
-	position: relative;
-	width: min(100%, 20rem);
-	aspect-ratio: 1;
-	margin-inline: auto;
-	transition: transform .25s;
-}
-.portal__arte {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	clip-path: ellipse(21.5% 28.5% at 50% 52%);
-	background: var(--leather);
-	filter: saturate(.85) brightness(.85);
-	transition: filter .25s;
-}
-.portal__moldura > img:last-child {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-}
 .portal h3 {
 	margin-top: -1.25rem;
 	position: relative;
@@ -179,8 +155,8 @@
 	text-shadow: 0 2px 10px rgba(0, 0, 0, .9);
 }
 .portal p { margin-top: .25rem; font-style: italic; color: var(--text-dim); }
-.portal:hover .portal__moldura { transform: translateY(-4px); }
-.portal:hover .portal__arte { filter: none; }
+.portal:hover .moldura-alada { transform: translateY(-4px); }
+.portal:hover .moldura-alada__arte { filter: none; }
 .portal:hover h3 { color: var(--gold); }
 
 /* ---------- Autor ---------- */
