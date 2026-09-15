@@ -1,5 +1,6 @@
 # documentacao interna: nao vai para o site publicado
 *.md
+!README-redesign.md
 
 # sistema / editor
 .DS_Store
