@@ -36,7 +36,7 @@ assets/fonts/               Cinzel Decorative, Cinzel, EB Garamond (woff2)
 assets/css/                 um arquivo por componente (lista abaixo)
 assets/js/menu.js           abre e fecha o menu no celular
 assets/js/carrossel.js      carrossel de personagens e bestiário
-assets/img/moldura.png      moldura alada (placeholder, ver abaixo)
+assets/img/moldura.png      moldura alada (arte do logo, quadrada e transparente)
 assets/img/livros/          capas: capa-<volume>.jpg
 assets/img/personagens/     uma imagem por personagem: <nome>.jpg
 assets/img/bestiario/       uma imagem por criatura: <nome>.jpg
@@ -84,7 +84,7 @@ Declarados em `:root`, no topo de `assets/css/base.css`.
 | `--leather` | `#1A1012` | blocos de couro |
 | `--gold` | `#C9A227` | filetes, rótulos, navegação, botão primário |
 | `--parch` | `#EDE4CE` | seções claras |
-| `--vol` | cor do volume | capitular, links no texto, filete sob títulos, borda do selo, botão terciário, gema acesa |
+| `--vol` | cor do volume | capitular, links no texto, filete sob títulos, borda do selo, botão terciário, brilho no centro do emblema |
 
 Derivados: `--vol-text` (a cor do volume clareada, para usar como texto
 sobre fundo escuro sem perder contraste) e `--vol-on` (cor do texto dentro
@@ -166,9 +166,8 @@ Exemplo: Provérbios (Volume III) foi lançado.
    `<section class="compra" id="genesis" …>` e ajuste `id`, `data-vol`,
    capa, título e lojas.
 
-8. **Home.** No emblema (`index.html`), acrescente `gema--acesa` à gema de
-   Provérbios. Se ele virar o volume em destaque, troque também o bloco
-   "VOLUME EM DESTAQUE".
+8. **Home.** Se ele virar o volume em destaque, troque o bloco
+   "VOLUME EM DESTAQUE" e, no emblema, `data-vol` e o rótulo "Volume I".
 
 ---
 
@@ -193,7 +192,7 @@ enfileirado, e as URLs já estão no formato final.
 
 ## O que é real e o que é provisório
 
-**Real (vem do site atual e do blog do cliente):** capas de Gênesis e
+**Real (vem do site atual e do blog do cliente):** moldura alada do logo; capas de Gênesis e
 Crônicas; ilustrações e fichas dos 10 personagens e das 13 criaturas;
 texto da cosmogênese; mapa do Mundo Concreto; bio, trajetória e foto do
 autor; links e preços da Amazon e do Mercado Livre; livrarias; redes
@@ -211,16 +210,16 @@ nos caminhos definitivos; é só sobrescrever com a arte final de mesmo nome):
 
 | Arquivo | Medida sugerida |
 |---|---|
-| `assets/img/moldura.png` | 1000 × 1000, fundo transparente, oval centrado em 50% × 52% |
 | `assets/img/livros/capa-proverbios.jpg` … `capa-apocalipse.jpg` | 867 × 1200 |
 | `assets/img/universo/luminoso.jpg`, `sombrio.jpg` | 1600 × 900 |
 | `assets/img/erro/404.jpg` | 800 × 800 |
 
-A moldura alada existe hoje só desenhada dentro das capas; falta o
-arquivo separado, com o miolo transparente. Se o oval da arte final não
-ficar em 50% × 52% com raios de 21,5% × 28,5%, ajuste o `clip-path` de
-`.moldura-alada__arte` em `ornamentos.css` e as posições das gemas em
-`home.css`.
+A moldura alada (`assets/img/moldura.png`) é a arte do logo, colocada num
+quadrado de 1000 × 1000 com fundo transparente. O miolo fica centrado em
+50% × 52,5%; a arte de dentro é recortada por
+`clip-path: ellipse(26.5% 31% at 50% 52.5%)` em `.moldura-alada__arte`
+(`ornamentos.css`). Se a moldura for trocada por outra, ajuste esse
+recorte. As sete gemas vêm desenhadas na própria arte.
 
 A moldura aparece em três lugares apenas: emblema da home, portais da home
 e 404. Personagens e bestiário usam placas retangulares.

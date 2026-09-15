@@ -140,7 +140,7 @@
 /* a arte fica recortada no oval interno da moldura */
 .moldura-alada > .moldura-alada__arte {
 	object-fit: cover;
-	clip-path: ellipse(21.5% 28.5% at 50% 52%);
+	clip-path: ellipse(26.5% 31% at 50% 52.5%);
 	background: var(--leather);
 	filter: saturate(.85) brightness(.85);
 	transition: filter .25s;

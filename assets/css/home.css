@@ -37,7 +37,7 @@
 	.hero > .wrap { width: 100%; }
 }
 
-/* ---------- Emblema: moldura alada com as gemas dos volumes ---------- */
+/* ---------- Emblema: moldura alada (as gemas já vêm desenhadas na arte) ---------- */
 .emblema {
 	position: relative;
 	width: min(100%, 28rem);
@@ -54,7 +54,7 @@
 .emblema__centro {
 	position: absolute;
 	left: 50%;
-	top: 52%;
+	top: 52.5%;
 	display: grid;
 	place-content: center;
 	width: 34%;
@@ -72,31 +72,6 @@
 	color: var(--parch);
 }
 .emblema__centro .rotulo { margin-top: .4rem; font-size: .55rem; }
-
-.gemas { position: absolute; inset: 0; }
-.gema {
-	position: absolute;
-	width: 5%;
-	aspect-ratio: 1;
-	border-radius: 50%;
-	background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, .45), transparent 45%), var(--vol);
-	border: 2px solid var(--gold);
-	opacity: .45;
-	transform: translate(-50%, -50%);
-}
-.gema--acesa {
-	opacity: 1;
-	box-shadow: 0 0 0 3px color-mix(in oklab, var(--vol), transparent 55%), 0 0 1.25rem var(--vol);
-}
-/* posições sobre a elipse da moldura (centro 50% 52%, raios 21.5% x 28.5%) */
-.gema:nth-child(1) { left: 50%;   top: 23.5%; }
-.gema:nth-child(2) { left: 65.2%; top: 31.8%; }
-.gema:nth-child(3) { left: 71.5%; top: 52%; }
-.gema:nth-child(4) { left: 65.2%; top: 72.2%; }
-.gema:nth-child(5) { left: 50%;   top: 80.5%; }
-.gema:nth-child(6) { left: 34.8%; top: 72.2%; }
-.gema:nth-child(7) { left: 28.5%; top: 52%; }
-.gema:nth-child(8) { left: 34.8%; top: 31.8%; }
 
 /* ---------- Abertura em pergaminho ---------- */
 .abertura p { font-size: clamp(1.15rem, 2vw, 1.3rem); }
