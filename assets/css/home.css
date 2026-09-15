@@ -186,7 +186,7 @@
 .mundo { display: flex; flex-direction: column; }
 .mundo .placa { aspect-ratio: 16 / 9; box-shadow: none; }
 .mundo__texto { padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.25rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3rem); flex: 1; }
-.mundo__texto p { margin-top: .6rem; color: var(--text); font-size: 1.15rem; }
+.mundo__texto p { margin-top: .6rem; color: var(--text); font-size: 1.22rem; }
 .mundo--luminoso { background: #111A20; }
 .mundo--sombrio { background: #1C0C0F; }
 @media (min-width: 48rem) {
