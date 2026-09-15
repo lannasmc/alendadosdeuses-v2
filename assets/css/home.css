@@ -7,12 +7,9 @@
 .hero {
 	position: relative;
 	overflow: hidden;
+	isolation: isolate;
 	padding-block: clamp(3rem, 8vw, 6rem);
-	background-color: var(--ink);
-	background-image:
-		radial-gradient(ellipse 60% 70% at 64% 45%, rgba(201, 162, 39, .10), transparent 70%),
-		repeating-conic-gradient(from 0deg at 64% 45%, rgba(201, 162, 39, .07) 0deg 2.5deg, transparent 2.5deg 22.5deg),
-		linear-gradient(#18110F, var(--ink));
+	background: linear-gradient(#18110F, var(--ink));
 }
 .hero__grade {
 	display: grid;
@@ -46,6 +43,22 @@
 	width: min(100%, 28rem);
 	aspect-ratio: 1;
 	margin-inline: auto;
+}
+/* raios do fundo do hero: partem do centro do miolo da moldura
+   e se espalham pela seção inteira (o .hero corta o excesso) */
+.emblema::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 52.5%;
+	z-index: -1;
+	width: 400vmax;
+	height: 400vmax;
+	transform: translate(-50%, -50%);
+	background:
+		radial-gradient(circle, rgba(201, 162, 39, .10), transparent 18%),
+		repeating-conic-gradient(rgba(201, 162, 39, .07) 0deg 2.5deg, transparent 2.5deg 22.5deg);
+	pointer-events: none;
 }
 .emblema__moldura {
 	position: absolute;
@@ -157,8 +170,8 @@
 .emblema__arte img {
 	position: absolute;
 	left: 50%;
-	top: 55%;
-	width: 60%;
+	top: 54%;
+	width: 49%;
 	height: auto;
 	transform: translate(-50%, -50%);
 	filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, .6));
