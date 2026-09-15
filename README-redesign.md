@@ -192,7 +192,7 @@ enfileirado, e as URLs já estão no formato final.
 
 ## O que é real e o que é provisório
 
-**Real (vem do site atual e do blog do cliente):** moldura alada do logo; arte da 404 (gerada por IA, reenquadrada no miolo da moldura); capas de Gênesis e
+**Real (vem do site atual e do blog do cliente):** moldura alada do logo; arte da 404 (fantasma gerado por IA); capas de Gênesis e
 Crônicas; ilustrações e fichas dos 10 personagens e das 13 criaturas;
 texto da cosmogênese; mapa do Mundo Concreto; bio, trajetória e foto do
 autor; links e preços da Amazon e do Mercado Livre; livrarias; redes

@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .erro { text-align: center; }
-.erro .moldura-alada { width: min(80%, 19rem); }
+.erro .moldura-alada { width: min(90%, 27rem); }
 .erro__codigo {
 	position: relative;
 	margin-top: -1.5rem;
