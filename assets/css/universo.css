@@ -60,7 +60,7 @@
 .mapa figcaption {
 	padding: .8rem .5rem .3rem;
 	font-style: italic;
-	font-size: 1.05rem;
+	font-size: 1.15rem;
 	text-align: center;
 	color: var(--text-dim);
 }
@@ -85,7 +85,7 @@
 }
 .tabela td:first-child {
 	font-family: var(--font-label);
-	font-size: 1.02rem;
+	font-size: 1.15rem;
 	letter-spacing: .06em;
 	color: var(--vol-text);
 	white-space: nowrap;

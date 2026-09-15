@@ -59,7 +59,7 @@
 
 @media (max-width: 26rem) {
 	.topo__logo img { height: 1.8rem; }
-	.topo__comprar { padding: .5rem .7rem; font-size: .74rem; letter-spacing: .14em; min-height: 2.5rem; }
+	.topo__comprar { padding: .5rem .7rem; font-size: .78rem; letter-spacing: .14em; min-height: 2.5rem; }
 }
 
 /* navegação: painel no mobile */

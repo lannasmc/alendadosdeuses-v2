@@ -18,7 +18,7 @@
 	border: 0;
 	border-bottom: 1px solid transparent;
 	font-family: var(--font-label);
-	font-size: .8rem;
+	font-size: .86rem;
 	letter-spacing: .22em;
 	text-transform: uppercase;
 	color: var(--text-dim);
@@ -63,7 +63,7 @@
 	font-family: var(--font-title);
 	font-size: clamp(1rem, 2vw, 1.25rem);
 	letter-spacing: .06em;
-	color: #8C8170;
+	color: #9D9282;
 	white-space: nowrap;
 }
 .carrossel__item:hover .carrossel__nome { color: var(--parch); }
