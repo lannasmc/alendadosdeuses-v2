@@ -36,7 +36,7 @@
 .topo__comprar {
 	order: 3;
 	padding: .55rem 1rem;
-	font-size: .72rem;
+	font-size: .8rem;
 }
 
 /* botão do menu (mobile) */
@@ -59,7 +59,7 @@
 
 @media (max-width: 26rem) {
 	.topo__logo img { height: 1.8rem; }
-	.topo__comprar { padding: .5rem .7rem; letter-spacing: .14em; min-height: 2.5rem; }
+	.topo__comprar { padding: .5rem .7rem; font-size: .74rem; letter-spacing: .14em; min-height: 2.5rem; }
 }
 
 /* navegação: painel no mobile */
@@ -87,7 +87,7 @@
 	padding: .8rem 0;
 	border-bottom: 1px solid var(--gold-faint);
 	font-family: var(--font-label);
-	font-size: .85rem;
+	font-size: .92rem;
 	letter-spacing: .22em;
 	text-transform: uppercase;
 	color: var(--text);
@@ -115,13 +115,13 @@
 		transform: none;
 		transition: none;
 	}
-	.topo__nav ul { display: flex; gap: clamp(1rem, 2vw, 1.75rem); padding: 0; }
+	.topo__nav ul { display: flex; gap: clamp(.9rem, 1.6vw, 1.5rem); padding: 0; }
 	.topo__nav a {
 		padding: .5rem 0;
 		border: 0;
-		font-size: .72rem;
-		letter-spacing: .2em;
+		font-size: .8rem;
+		letter-spacing: .14em;
 		white-space: nowrap;
 	}
-	.topo__comprar { margin-left: clamp(.5rem, 1.5vw, 1.5rem); }
+	.topo__comprar { margin-left: clamp(.75rem, 1.5vw, 1.5rem); letter-spacing: .16em; }
 }

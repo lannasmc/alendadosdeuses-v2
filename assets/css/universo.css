@@ -85,7 +85,7 @@
 }
 .tabela td:first-child {
 	font-family: var(--font-label);
-	font-size: .95rem;
+	font-size: 1.02rem;
 	letter-spacing: .06em;
 	color: var(--vol-text);
 	white-space: nowrap;

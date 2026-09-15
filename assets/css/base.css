@@ -193,7 +193,7 @@ a:hover { color: var(--parch); }
 .rotulo {
 	display: block;
 	font-family: var(--font-label);
-	font-size: .66rem;
+	font-size: .76rem;
 	font-weight: 400;
 	letter-spacing: .28em;
 	line-height: 1.4;
@@ -215,7 +215,7 @@ a:hover { color: var(--parch); }
 	padding: .2rem .7rem;
 	border: 1px solid var(--vol);
 	font-family: var(--font-label);
-	font-size: .62rem;
+	font-size: .72rem;
 	letter-spacing: .26em;
 	line-height: 1.5;
 	text-transform: uppercase;
@@ -230,7 +230,7 @@ a:hover { color: var(--parch); }
 	padding: .15rem .6rem;
 	border: 1px solid var(--gold-soft);
 	font-family: var(--font-label);
-	font-size: .62rem;
+	font-size: .72rem;
 	letter-spacing: .2em;
 	text-transform: uppercase;
 	color: var(--gold);
