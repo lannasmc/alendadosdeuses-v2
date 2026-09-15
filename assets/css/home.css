@@ -45,6 +45,9 @@
 	aspect-ratio: 1;
 	margin-inline: auto;
 }
+@media (min-width: 56rem) {
+	.emblema { width: min(115%, 42rem); margin-inline: -7.5%; justify-self: center; }
+}
 /* raios do fundo do hero: partem do centro do miolo da moldura
    e se espalham pela seção inteira (o .hero corta o excesso) */
 .emblema::before {
@@ -102,25 +105,35 @@
 @keyframes centelha-girar {
 	to { transform: translate(-50%, -50%) rotate(360deg); }
 }
-/* ---------- Personagens no miolo e brilhos saltando para fora da moldura ---------- */
+/* ---------- Personagens saindo da moldura, brilhos saltando ----------
+   A arte aparece duas vezes: atrás da moldura, recortada no oval, e na frente,
+   recortada só acima da linha --corte. Acima dela os personagens passam por
+   cima do aro; abaixo continuam dentro do quadro. */
 .emblema__arte {
+	--corte: 66%;
 	position: absolute;
 	inset: 0;
 	clip-path: ellipse(26.5% 31% at 50% 52.5%);
 }
+.emblema__arte--frente {
+	z-index: 2;
+	clip-path: polygon(0 0, 100% 0, 100% var(--corte), 0 var(--corte));
+}
 .emblema__arte img {
 	position: absolute;
 	left: 50%;
-	top: 54%;
-	width: 49%;
+	top: 45%;
+	width: 62%;
 	height: auto;
 	transform: translate(-50%, -50%);
-	filter: drop-shadow(0 .5rem 1rem rgba(0, 0, 0, .6));
+}
+.emblema__arte--frente img {
+	filter: drop-shadow(0 .6cqw .8cqw rgba(0, 0, 0, .55));
 }
 .brilhos {
 	position: absolute;
 	inset: 0;
-	z-index: 2;
+	z-index: 3;
 	pointer-events: none;
 }
 .brilhos span {
