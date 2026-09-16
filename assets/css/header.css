@@ -36,10 +36,10 @@
 /* o CSS dos botões carrega depois deste arquivo: por isso .topo na frente */
 .topo .topo__comprar {
 	order: 3;
-	min-height: 2.1rem;
-	padding: .35rem .8rem;
-	font-size: .68rem;
-	letter-spacing: .14em;
+	min-height: 2.6rem;
+	padding: .55rem 1.1rem;
+	font-size: .8rem;
+	letter-spacing: .16em;
 }
 
 /* botão do menu (mobile) */
