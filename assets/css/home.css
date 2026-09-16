@@ -48,6 +48,10 @@
 @media (min-width: 56rem) {
 	.emblema { width: min(115%, 42rem); margin-inline: -7.5%; justify-self: center; }
 }
+/* no celular o emblema vem antes do texto, e menor */
+@media (max-width: 55.99rem) {
+	.emblema { order: -1; width: min(74%, 20rem); }
+}
 /* raios do fundo do hero: partem do centro do miolo da moldura
    e se espalham pela seção inteira (o .hero corta o excesso) */
 .emblema::before {
