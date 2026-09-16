@@ -75,6 +75,10 @@
 }
 .redes a:hover { border-color: var(--gold); background: var(--gold); color: var(--ink); }
 .redes svg { width: 1.1rem; height: 1.1rem; }
+/* acerto óptico: os três desenhos oficiais têm massa e largura diferentes */
+.redes .ico--instagram { transform: scale(.88); }
+.redes .ico--tiktok { transform: translateX(3%) scale(1.06); }
+.redes .ico--threads { transform: scale(1.04); }
 
 .rodape__capas {
 	display: flex;
