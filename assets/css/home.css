@@ -24,6 +24,9 @@
 	width: min(88%, 30rem);
 	filter: drop-shadow(0 .4rem 1.2rem rgba(0, 0, 0, .6));
 }
+/* no hero os botões ficam um embaixo do outro, para os rótulos não quebrarem */
+.hero .botoes { grid-auto-flow: row; }
+
 .hero__lema {
 	margin: 1.25rem 0 2rem;
 	font-style: italic;
