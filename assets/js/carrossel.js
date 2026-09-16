@@ -78,32 +78,42 @@
 		if (focoNaPlaca) visiveis()[atual].querySelector('button').focus();
 	});
 
-	/* deslize com o dedo, no celular */
-	var toqueX = 0, toqueY = 0, arrastando = false;
-	palco.addEventListener('touchstart', function (e) {
-		if (e.touches.length !== 1) return;
-		toqueX = e.touches[0].clientX;
-		toqueY = e.touches[0].clientY;
-		arrastando = true;
-	}, { passive: true });
-	palco.addEventListener('touchmove', function (e) {
-		if (!arrastando) return;
-		var dx = e.touches[0].clientX - toqueX;
-		var dy = e.touches[0].clientY - toqueY;
-		/* só assume o gesto se for claramente horizontal, para não
-		   atrapalhar a rolagem da página */
-		if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.5) e.preventDefault();
-	}, { passive: false });
-	palco.addEventListener('touchend', function (e) {
+	/* deslize com o dedo. Usa Pointer Events (funciona no iPhone, no
+	   Android e com o mouse) e cai para touch nos navegadores antigos. */
+	var px = 0, py = 0, arrastando = false, deslizou = false;
+
+	function comecou(x, y) { px = x; py = y; arrastando = true; }
+	function terminou(x, y) {
 		if (!arrastando) return;
 		arrastando = false;
-		var t = e.changedTouches[0];
-		var dx = t.clientX - toqueX;
-		var dy = t.clientY - toqueY;
-		if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;
+		var dx = x - px, dy = y - py;
+		if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+		deslizou = true;
 		mostrar(atual + (dx < 0 ? 1 : -1), true);
-	}, { passive: true });
-	palco.addEventListener('touchcancel', function () { arrastando = false; }, { passive: true });
+	}
+
+	if (window.PointerEvent) {
+		palco.addEventListener('pointerdown', function (e) {
+			if (e.pointerType === 'mouse' && e.button !== 0) return;
+			comecou(e.clientX, e.clientY);
+		});
+		palco.addEventListener('pointerup', function (e) { terminou(e.clientX, e.clientY); });
+		palco.addEventListener('pointercancel', function () { arrastando = false; });
+	} else {
+		palco.addEventListener('touchstart', function (e) {
+			if (e.touches.length === 1) comecou(e.touches[0].clientX, e.touches[0].clientY);
+		}, { passive: true });
+		palco.addEventListener('touchend', function (e) {
+			var t = e.changedTouches[0];
+			terminou(t.clientX, t.clientY);
+		}, { passive: true });
+		palco.addEventListener('touchcancel', function () { arrastando = false; }, { passive: true });
+	}
+
+	/* evita que um deslize também dispare o clique da placa */
+	palco.addEventListener('click', function (e) {
+		if (deslizou) { e.preventDefault(); e.stopPropagation(); deslizou = false; }
+	}, true);
 
 	filtros.forEach(function (b) {
 		b.addEventListener('click', function () {

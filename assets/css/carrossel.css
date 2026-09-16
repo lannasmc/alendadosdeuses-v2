@@ -31,6 +31,7 @@
 /* ---------- Palco ---------- */
 .carrossel__palco {
 	position: relative;
+	touch-action: pan-y;
 	display: flex;
 	align-items: center;
 	gap: .25rem;
