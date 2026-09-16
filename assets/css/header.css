@@ -87,7 +87,8 @@
 .topo__nav ul { list-style: none; margin: 0; padding: .5rem var(--gutter) 1.25rem; }
 .topo__nav a {
 	display: block;
-	padding: .8rem 0;
+	padding: .9rem 0;
+	text-align: center;
 	border-bottom: 1px solid var(--gold-faint);
 	font-family: var(--font-label);
 	font-size: .92rem;
@@ -104,7 +105,7 @@
 	padding: 1.25rem var(--gutter) 1.5rem;
 	border-top: 1px solid var(--gold-faint);
 }
-.topo__redes .redes { margin: 0; }
+.topo__redes .redes { margin: 0; justify-content: center; }
 
 /* sem JS o menu fica sempre aberto no mobile, abaixo do cabeçalho */
 .sem-js .topo__menu { display: none; }
@@ -129,6 +130,7 @@
 	.topo__redes { display: none; }
 	.topo__nav a {
 		padding: .5rem 0;
+		text-align: left;
 		border: 0;
 		font-size: .8rem;
 		letter-spacing: .14em;
