@@ -53,7 +53,9 @@
 @media (max-width: 55.99rem) {
 	.emblema { order: -1; width: min(74%, 20rem); }
 	.hero__grade > div { display: flex; flex-direction: column; align-items: center; text-align: center; }
-	.hero__logo img { width: min(78%, 26rem); }
+	/* o logo é bloco: precisa de margem automática para centralizar mesmo.
+	   O -1,7% compensa a massa do desenho, que puxa para a direita. */
+	.hero__logo img { width: min(70%, 24rem); margin-inline: auto; transform: translateX(-1.7%); }
 	.hero .botoes { justify-content: center; }
 }
 /* raios do fundo do hero: partem do centro do miolo da moldura
