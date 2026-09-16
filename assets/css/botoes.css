@@ -44,10 +44,17 @@
 }
 .btn--terciario:hover { filter: brightness(1.2); color: var(--vol-on); }
 
+/* grupo de botões: todos com a mesma largura, a do maior rótulo.
+   Em tela estreita eles empilham, ainda com a mesma largura. */
 .botoes {
-	display: flex;
-	flex-wrap: wrap;
+	display: inline-grid;
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(0, 1fr);
 	gap: .75rem 1rem;
+	max-width: 100%;
+}
+@media (max-width: 30rem) {
+	.botoes { grid-auto-flow: row; }
 }
 
 /* link com seta, em itálico: "Ler a biografia completa →" */
