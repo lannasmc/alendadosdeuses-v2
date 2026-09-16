@@ -247,5 +247,8 @@ e 404. Personagens e bestiário usam placas retangulares.
   navegação vira menu. Sem JS, a navegação fica aberta.
 - **Contraste:** pares principais conferidos (WCAG AA, 4,5:1 ou mais),
   inclusive texto claro sobre couro e a cor do volume usada como texto.
+- **Ícones das redes:** SVG inline no HTML (rodapé e menu do celular),
+  com os desenhos oficiais do Simple Icons (licença CC0) em `currentColor`.
+  Não há arquivo de imagem nem versão separada para o hover.
 - **Volumes não lançados:** `aria-disabled="true"` e `pointer-events: none`,
   não só cor apagada.
