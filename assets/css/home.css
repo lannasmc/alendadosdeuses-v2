@@ -21,7 +21,7 @@
 	line-height: 0;
 }
 .hero__logo img {
-	width: min(100%, 30rem);
+	width: min(88%, 30rem);
 	filter: drop-shadow(0 .4rem 1.2rem rgba(0, 0, 0, .6));
 }
 .hero__lema {

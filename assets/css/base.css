@@ -77,6 +77,11 @@
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 1rem); }
+/* no celular tudo encolhe junto: como o site é medido em rem, basta
+   reduzir a raiz. Vale para textos, espaçamentos, botões e logos. */
+@media (max-width: 47.99em) {
+	html { font-size: 92%; }
+}
 body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
 :where(ul[class], ol[class]) { list-style: none; padding: 0; }
 img { display: block; max-width: 100%; height: auto; }
