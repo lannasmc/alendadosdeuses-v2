@@ -135,6 +135,13 @@ a:hover { color: var(--parch); }
 }
 
 /* ---------- Layout ---------- */
+/* Safari: dentro de grid/flex, item com imagem pode passar da largura da
+   tela (min-width padrão é auto, e vale o tamanho natural da imagem). */
+.mundos > *, .mundos-cartoes > *, .portais > *, .volumes > *, .cartoes > *,
+.compra > *, .destaque > *, .volume-corpo > *, .hero__grade > *,
+.universo-intro > *, .autor-resumo > *, .carrossel__placas > * { min-width: 0; }
+/* rede de segurança: nada de rolagem lateral */
+html { overflow-x: clip; }
 .wrap {
 	width: 100%;
 	max-width: calc(var(--wrap) + 2 * var(--gutter));
