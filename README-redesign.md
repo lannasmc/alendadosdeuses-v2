@@ -1,7 +1,8 @@
 # A Lenda dos Deuses — redesign v2
 
 Proposta de identidade visual ("o livro como objeto") para apresentar ao
-cliente. Vive só na branch `redesign-v2`; a `main` e o site no ar não mudam.
+cliente. Publicada em <https://lannasmc.github.io/alendadosdeuses-v2/>, num
+repositório separado; o site atual, em `lannasmc/alendadosdeuses`, não muda.
 
 Site estático: HTML, CSS e dois arquivos JS pequenos. Sem build, sem
 `package.json`. Arquivo salvo é arquivo publicado. Tudo pode ser editado
@@ -238,7 +239,7 @@ e 404. Personagens e bestiário usam placas retangulares.
 ## Detalhes técnicos
 
 - **404:** o GitHub Pages serve `404.html` em qualquer endereço inexistente,
-  em qualquer profundidade. Por isso ela usa `<base href="/alendadosdeuses/">`.
+  em qualquer profundidade. Por isso ela usa `<base href="/alendadosdeuses-v2/">`.
   Se o site for para um domínio próprio, troque para `<base href="/">`.
 - **Carrossel:** aceita link direto para uma ficha, `personagens/?ficha=aron`
   ou `bestiario/?ficha=zolos`. Setas do teclado trocam a placa. Sem JS,
