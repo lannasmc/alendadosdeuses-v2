@@ -79,6 +79,8 @@
 .carrossel__placas > li.ativo { width: var(--meio); }
 .carrossel__placas > li.ativo .placa { border-color: var(--gold); }
 .carrossel__placas > li.ativo .placa img { filter: none; }
+/* sem vinheta na placa selecionada: a arte aparece limpa */
+.carrossel__placas > li.ativo .placa::before { box-shadow: none; }
 .carrossel__placas > li.ativo .carrossel__nome { font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--parch); }
 
 /* retrato (personagens, arte 3:4) */
