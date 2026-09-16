@@ -241,9 +241,10 @@ e 404. Personagens e bestiário usam placas retangulares.
 - **404:** o GitHub Pages serve `404.html` em qualquer endereço inexistente,
   em qualquer profundidade. Por isso ela usa `<base href="/alendadosdeuses-v2/">`.
   Se o site for para um domínio próprio, troque para `<base href="/">`.
-- **Carrossel:** aceita link direto para uma ficha, `personagens/?ficha=aron`
-  ou `bestiario/?ficha=zolos`. Setas do teclado trocam a placa. Sem JS,
-  todas as fichas aparecem em sequência.
+- **Carrossel:** troca a ficha nas setas, com as setas do teclado ou
+  deslizando o dedo no celular. Aceita link direto para uma ficha,
+  `personagens/?ficha=aron` ou `bestiario/?ficha=zolos`. Sem JS, todas as
+  fichas aparecem em sequência.
 - **Menu:** abaixo de 78rem (≈ 1250px, ou 1280px com 110%+ de zoom) a
   navegação vira menu. Sem JS, a navegação fica aberta.
 - **Contraste:** pares principais conferidos (WCAG AA, 4,5:1 ou mais),
