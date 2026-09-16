@@ -82,7 +82,7 @@
 	   Android e com o mouse) e cai para touch nos navegadores antigos. */
 	var px = 0, py = 0, arrastando = false, deslizou = false;
 
-	function comecou(x, y) { px = x; py = y; arrastando = true; }
+	function comecou(x, y) { px = x; py = y; arrastando = true; deslizou = false; }
 	function terminou(x, y) {
 		if (!arrastando) return;
 		arrastando = false;
@@ -110,9 +110,13 @@
 		palco.addEventListener('touchcancel', function () { arrastando = false; }, { passive: true });
 	}
 
-	/* evita que um deslize também dispare o clique da placa */
+	/* evita que um deslize também dispare o clique da placa em que ele
+	   começou; a marca vale só para o gesto atual (ver comecou) */
 	palco.addEventListener('click', function (e) {
-		if (deslizou) { e.preventDefault(); e.stopPropagation(); deslizou = false; }
+		if (deslizou && e.target.closest('.carrossel__item')) {
+			e.preventDefault();
+			e.stopPropagation();
+		}
 	}, true);
 
 	filtros.forEach(function (b) {
