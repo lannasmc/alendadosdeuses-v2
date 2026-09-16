@@ -99,6 +99,13 @@
 .topo__nav a:hover,
 .topo__nav a[aria-current="page"] { color: var(--gold); }
 
+/* redes sociais no fim do menu (só no celular) */
+.topo__redes {
+	padding: 1.25rem var(--gutter) 1.5rem;
+	border-top: 1px solid var(--gold-faint);
+}
+.topo__redes .redes { margin: 0; }
+
 /* sem JS o menu fica sempre aberto no mobile, abaixo do cabeçalho */
 .sem-js .topo__menu { display: none; }
 .sem-js .topo__nav { position: static; visibility: visible; opacity: 1; transform: none; }
@@ -119,6 +126,7 @@
 		transition: none;
 	}
 	.topo__nav ul { display: flex; gap: clamp(.9rem, 1.6vw, 1.5rem); padding: 0; }
+	.topo__redes { display: none; }
 	.topo__nav a {
 		padding: .5rem 0;
 		border: 0;
