@@ -51,7 +51,7 @@
 /* no celular o emblema vem antes do texto, e menor; o bloco de texto
    fica centralizado, com o logo um pouco menor */
 @media (max-width: 55.99rem) {
-	.emblema { order: -1; width: min(84%, 23rem); }
+	.emblema { order: -1; width: min(89%, 24rem); }
 	.hero__grade > div { display: flex; flex-direction: column; align-items: center; text-align: center; }
 	/* o logo é bloco: precisa de margem automática para centralizar mesmo.
 	   O -1,7% compensa a massa do desenho, que puxa para a direita. */
