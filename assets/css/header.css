@@ -35,8 +35,10 @@
 /* botão COMPRAR: sempre visível */
 .topo__comprar {
 	order: 3;
-	padding: .55rem 1rem;
-	font-size: .8rem;
+	min-height: 2.4rem;
+	padding: .45rem .9rem;
+	font-size: .74rem;
+	letter-spacing: .16em;
 }
 
 /* botão do menu (mobile) */
@@ -59,7 +61,7 @@
 
 @media (max-width: 26rem) {
 	.topo__logo img { height: 1.8rem; }
-	.topo__comprar { padding: .5rem .7rem; font-size: .78rem; letter-spacing: .14em; min-height: 2.5rem; }
+	.topo__comprar { padding: .4rem .65rem; font-size: .72rem; letter-spacing: .12em; min-height: 2.3rem; }
 }
 
 /* navegação: painel no mobile */
