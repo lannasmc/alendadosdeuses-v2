@@ -33,12 +33,13 @@
 .topo__logo:hover img { filter: brightness(1.15) drop-shadow(0 0 .4rem rgba(201, 162, 39, .35)); }
 
 /* botão COMPRAR: sempre visível */
-.topo__comprar {
+/* o CSS dos botões carrega depois deste arquivo: por isso .topo na frente */
+.topo .topo__comprar {
 	order: 3;
-	min-height: 2.4rem;
-	padding: .45rem .9rem;
-	font-size: .74rem;
-	letter-spacing: .16em;
+	min-height: 2.1rem;
+	padding: .35rem .8rem;
+	font-size: .68rem;
+	letter-spacing: .14em;
 }
 
 /* botão do menu (mobile) */
@@ -61,7 +62,7 @@
 
 @media (max-width: 26rem) {
 	.topo__logo img { height: 1.8rem; }
-	.topo__comprar { padding: .4rem .65rem; font-size: .72rem; letter-spacing: .12em; min-height: 2.3rem; }
+	.topo .topo__comprar { padding: .3rem .6rem; font-size: .64rem; letter-spacing: .1em; min-height: 2rem; }
 }
 
 /* navegação: painel no mobile */
